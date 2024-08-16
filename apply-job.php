@@ -41,7 +41,7 @@
                                             <h3 class="mb-1">Apply for: <span id="positionTitle">[Position Title]</span></h3>
                                             <h5 class="text-muted">Location: <span id="locationTitle">[Location]</span></h5>
                                         </div>
-                                        <form class="row needs-validation g-3" novalidate>
+                                        <form class="row needs-validation g-3" novalidate onsubmit="redirectToThankYouPage(event)">
                                             <div class="col-lg-6 col-12">
                                                 <label for="applicantFirstnameInput" class="form-label">
                                                     First Name
@@ -108,7 +108,6 @@
         </section>
         <!--Form section end-->
 
-
     </main>
 
     <!-- Footer -->
@@ -117,6 +116,62 @@
 
     <!-- Scripts -->
     <?php include 'includes/scripts.php'; ?>
+
+    <!-- Form Submission -->
+    <script>
+        function redirectToThankYouPage(event) {
+            event.preventDefault(); 
+
+            // Get form elements
+            const firstName = document.getElementById('applicantFirstnameInput');
+            const lastName = document.getElementById('applicantLastnameInput');
+            const email = document.getElementById('applicantEmailInput');
+            const phone = document.getElementById('applicantPhoneInput');
+            const resume = document.getElementById('resumeUploadInput');
+
+            // Check if all required fields are filled
+            if (firstName.value.trim() === '' || lastName.value.trim() === '' ||
+                email.value.trim() === '' || phone.value.trim() === '' || resume.files.length === 0) {
+
+                // If any field is empty, show validation messages
+                if (firstName.value.trim() === '') {
+                    firstName.classList.add('is-invalid');
+                } else {
+                    firstName.classList.remove('is-invalid');
+                }
+
+                if (lastName.value.trim() === '') {
+                    lastName.classList.add('is-invalid');
+                } else {
+                    lastName.classList.remove('is-invalid');
+                }
+
+                if (email.value.trim() === '') {
+                    email.classList.add('is-invalid');
+                } else {
+                    email.classList.remove('is-invalid');
+                }
+
+                if (phone.value.trim() === '') {
+                    phone.classList.add('is-invalid');
+                } else {
+                    phone.classList.remove('is-invalid');
+                }
+
+                if (resume.files.length === 0) {
+                    resume.classList.add('is-invalid');
+                } else {
+                    resume.classList.remove('is-invalid');
+                }
+
+                return; 
+            }
+
+            // If all fields are valid, Redirect
+            window.location.href = "thank-you-apply-job.php";
+        }
+    </script>
+
 
 </body>
 
