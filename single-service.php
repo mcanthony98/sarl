@@ -3,7 +3,7 @@
 
 <head>
 
-    <title>Aluminium & uPVC Fabrications | SARL</title>
+    <title>Single Service | SARL</title>
 
     <!-- Head Content -->
     <?php include 'includes/head-content.php'; ?>
@@ -17,7 +17,6 @@
 
     <main>
         <!--Page Content-->
-        <div class="pattern-square"></div>
         <!--Overview start-->
         <section class="py-5 py-lg-6">
             <div class="container">
@@ -57,22 +56,22 @@
                         <div id="projectCarousel" class="carousel slide mb-lg-5 mb-md-3 mb-3" data-bs-ride="carousel">
                             <div class="carousel-inner">
                                 <div class="carousel-item active">
-                                    <img src="assets/images/portfolio/portfolio-img-4.jpg" class="d-block w-100 rounded-3" alt="Project Image" style="height: 400px; object-fit: cover;">
+                                    <img src="assets/images/service/s1.jpg" class="d-block w-100 rounded-3" alt="Project Image" style="height: 400px; object-fit: cover;">
                                 </div>
                                 <div class="carousel-item">
-                                    <img src="assets/images/portfolio/portfolio-img-2.jpg" class="d-block w-100 rounded-3" alt="Project Image" style="height: 400px; object-fit: cover;">
+                                    <img src="assets/images/service/s2.jpg" class="d-block w-100 rounded-3" alt="Project Image" style="height: 400px; object-fit: cover;">
                                 </div>
                                 <div class="carousel-item">
-                                    <img src="assets/images/portfolio/portfolio-img-4.jpg" class="d-block w-100 rounded-3" alt="Project Image" style="height: 400px; object-fit: cover;">
+                                    <img src="assets/images/service/s3.jpg" class="d-block w-100 rounded-3" alt="Project Image" style="height: 400px; object-fit: cover;">
                                 </div>
                                 <div class="carousel-item">
-                                    <img src="assets/images/portfolio/portfolio-img-2.jpg" class="d-block w-100 rounded-3" alt="Project Image" style="height: 400px; object-fit: cover;">
+                                    <img src="assets/images/service/s4.jpg" class="d-block w-100 rounded-3" alt="Project Image" style="height: 400px; object-fit: cover;">
                                 </div>
                                 <div class="carousel-item">
-                                    <img src="assets/images/portfolio/portfolio-img-4.jpg" class="d-block w-100 rounded-3" alt="Project Image" style="height: 400px; object-fit: cover;">
+                                    <img src="assets/images/service/s5.jpg" class="d-block w-100 rounded-3" alt="Project Image" style="height: 400px; object-fit: cover;">
                                 </div>
                                 <div class="carousel-item">
-                                    <img src="assets/images/portfolio/portfolio-img-2.jpg" class="d-block w-100 rounded-3" alt="Project Image" style="height: 400px; object-fit: cover;">
+                                    <img src="assets/images/service/s6.jpg" class="d-block w-100 rounded-3" alt="Project Image" style="height: 400px; object-fit: cover;">
                                 </div>
                             </div>
                             <button class="carousel-control-prev" type="button" data-bs-target="#projectCarousel" data-bs-slide="prev">

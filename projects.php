@@ -18,7 +18,6 @@
     <main>
         <!--Page Content-->
         <!--Square Pattern Start-->
-        <div class="pattern-square"></div>
         <!--Square Pattern End-->
 
         <!--Pageheader start-->
@@ -45,7 +44,7 @@
                 <div class="row g-5">
                     <div class="col-lg-4 col-md-6 col-12">
                         <div class="card border-0 h-100 card-lift">
-                            <a href="single-project.php"><img src="assets/images/landings/it-company/it-company-case-study-1.jpg" alt="Office Workspace, Workable LLP - Sanlam Towers, 6th Floor (2023)" class="img-fluid rounded-top-3" /></a>
+                            <a href="single-project.php"><img src="assets/images/project.jpg" alt="Office Workspace, Workable LLP - Sanlam Towers, 6th Floor (2023)" class="img-fluid rounded-top-3" /></a>
                             <div class="card-body">
                                 <div class="d-flex flex-column gap-2">
                                     <div>
@@ -61,7 +60,7 @@
 
                     <div class="col-lg-4 col-md-6 col-12">
                         <div class="card border-0 h-100 card-lift">
-                            <a href="single-project.php"><img src="assets/images/landings/it-company/it-company-case-study-2.jpg" alt="Office Fitout in Lavington (2020)" class="img-fluid rounded-top-3" /></a>
+                            <a href="single-project.php"><img src="assets/images/project.jpg" alt="Office Fitout in Lavington (2020)" class="img-fluid rounded-top-3" /></a>
                             <div class="card-body">
                                 <div class="d-flex flex-column gap-2">
                                     <div>
@@ -77,7 +76,7 @@
 
                     <div class="col-lg-4 col-md-6 col-12">
                         <div class="card border-0 h-100 card-lift">
-                            <a href="single-project.php"><img src="assets/images/landings/it-company/it-company-case-study-3.jpg" alt="Aluminium & Glazing Works, The Address, Waiyaki Way (2017)" class="img-fluid rounded-top-3" /></a>
+                            <a href="single-project.php"><img src="assets/images/project.jpg" alt="Aluminium & Glazing Works, The Address, Waiyaki Way (2017)" class="img-fluid rounded-top-3" /></a>
                             <div class="card-body">
                                 <div class="d-flex flex-column gap-2">
                                     <div>
@@ -93,7 +92,7 @@
 
                     <div class="col-lg-4 col-md-6 col-12">
                         <div class="card border-0 h-100 card-lift">
-                            <a href="single-project.php"><img src="assets/images/landings/it-company/it-company-case-study-4.jpg" alt="AKUHN ETB 4th Floor - Parklands (2023)" class="img-fluid rounded-top-3" /></a>
+                            <a href="single-project.php"><img src="assets/images/project.jpg" alt="AKUHN ETB 4th Floor - Parklands (2023)" class="img-fluid rounded-top-3" /></a>
                             <div class="card-body">
                                 <div class="d-flex flex-column gap-2">
                                     <div>
@@ -109,7 +108,7 @@
 
                     <div class="col-lg-4 col-md-6 col-12">
                         <div class="card border-0 h-100 card-lift">
-                            <a href="single-project.php"><img src="assets/images/landings/it-company/it-company-case-study-5.jpg" alt="Mahogany Hardwood CNC Designed Queen Bed (Custom Project)" class="img-fluid rounded-top-3" /></a>
+                            <a href="single-project.php"><img src="assets/images/project.jpg" alt="Mahogany Hardwood CNC Designed Queen Bed (Custom Project)" class="img-fluid rounded-top-3" /></a>
                             <div class="card-body">
                                 <div class="d-flex flex-column gap-2">
                                     <div>
@@ -125,7 +124,7 @@
 
                     <div class="col-lg-4 col-md-6 col-12">
                         <div class="card border-0 h-100 card-lift">
-                            <a href="single-project.php"><img src="assets/images/landings/it-company/it-company-case-study-6.jpg" alt="Sponsorship of Sikh Golfing Society (SGS) Tournament at Vetlab Sports Club (2023)" class="img-fluid rounded-top-3" /></a>
+                            <a href="single-project.php"><img src="assets/images/project.jpg" alt="Sponsorship of Sikh Golfing Society (SGS) Tournament at Vetlab Sports Club (2023)" class="img-fluid rounded-top-3" /></a>
                             <div class="card-body">
                                 <div class="d-flex flex-column gap-2">
                                     <div>

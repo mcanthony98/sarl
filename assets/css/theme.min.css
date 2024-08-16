@@ -81,7 +81,7 @@
   border-left: dashed !important;
 }
 .bg-primary-gradient {
-  background: linear-gradient(180deg, #9b58ff, #8837ff 47.92%, #7a20ff);
+  background: linear-gradient(180deg, #00a5b7, #00a5b7 47.92%, #00a5b7);
 }
 .color-facebook {
   color: #1877f2;
@@ -134,8 +134,8 @@
     linear-gradient(0deg, #fff 0, hsla(0, 0%, 100%, 0) 100%),
     linear-gradient(
       245deg,
-      rgba(108, 73, 250, 0.41) 0,
-      rgba(211, 38, 142, 0.1) 100%
+      rgba(0, 165, 183, 0.41) 0,
+      rgba(0, 165, 183, 0.1) 100%
     )
   );
 }
