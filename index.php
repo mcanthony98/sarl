@@ -8,6 +8,89 @@
     <!-- Head Content -->
     <?php include 'includes/head-content.php'; ?>
 
+    <!-- Hero Slider -->
+    <style>
+        .hero-slider {
+            z-index: 1;
+        }
+
+        .hero-slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            opacity: 0;
+            animation: slide-animation 25s infinite;
+        }
+
+        .hero-slide:nth-child(1) {
+            animation-delay: 0s;
+        }
+
+        .hero-slide:nth-child(2) {
+            animation-delay: 5s;
+        }
+
+        .hero-slide:nth-child(3) {
+            animation-delay: 10s;
+        }
+
+        .hero-slide:nth-child(4) {
+            animation-delay: 15s;
+        }
+
+        .hero-slide:nth-child(5) {
+            animation-delay: 20s;
+        }
+
+        @keyframes slide-animation {
+            0% {
+                opacity: 0;
+                transform: scale(1.05);
+            }
+
+            10% {
+                opacity: 1;
+                transform: scale(1);
+            }
+
+            25% {
+                opacity: 1;
+                transform: scale(1);
+            }
+
+            35% {
+                opacity: 0;
+                transform: scale(1.05);
+            }
+
+            100% {
+                opacity: 0;
+            }
+        }
+
+        .overlay {
+            z-index: 2;
+        }
+
+        .hero-slider,
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .container {
+            z-index: 3;
+            position: relative;
+        }
+    </style>
+
 </head>
 
 <body>
@@ -20,23 +103,33 @@
 
         <!--Hero start-->
         <section class="position-relative py-4">
-            <video class="w-100" autoplay muted loop style="object-fit: cover" playsinline>
-                <source src="assets/images/landings/it-company/video.mp4" type="video/mp4" />
-            </video>
+            <!-- Black Overlay -->
+            <div class="overlay position-absolute top-0 start-0 w-100 h-100 bg-black opacity-50"></div>
+
+            <!-- Background Slider -->
+            <div class="hero-slider position-absolute top-0 start-0 w-100 h-100">
+                <div class="hero-slide" style="background-image: url('assets/images/service.jpg');"></div>
+                <div class="hero-slide" style="background-image: url('assets/images/project.jpg');"></div>
+                <div class="hero-slide" style="background-image: url('assets/images/hero-1.jpg');"></div>
+                <div class="hero-slide" style="background-image: url('assets/images/hero-2.jpg');"></div>
+                <div class="hero-slide" style="background-image: url('assets/images/hero-3.jpg');"></div>
+            </div>
+
+            <!-- Hero Content -->
             <div class="container position-relative py-lg-10" data-cue="fadeIn">
                 <div class="row py-lg-10 justify-content-center text-center">
                     <div class="col-lg-9 col-12">
                         <div class="d-flex flex-column gap-6">
                             <div class="d-flex flex-column gap-4">
                                 <h1 class="text-white-stable display-4 mb-0">High-End Architectural Fabrication Solutions</h1>
-                                <p class="mb-0 text-white-50 lead px-lg-10">
+                                <p class="mb-0 text-white lead px-lg-10">
                                     Innovative designs and precise craftsmanship, creating unparalleled spaces with SARL’s expertise in aluminum, uPVC, and steel fabrications.
                                 </p>
                             </div>
                             <div class="d-md-flex d-grid align-items-center justify-content-md-center gap-4">
-                                <a href="contact.php" class="btn btn-primary rounded-pill">Get Free Estimation</a>
+                                <a href="contact.php" class="btn btn-primary rounded-pill">Get a Free Quote Today</a>
                                 <a href="projects.php" class="link-white icon-link icon-link-hover card-grid-link d-flex justify-content-center">
-                                    Recent Projects
+                                    View Our Projects
                                     <i class="bi bi-arrow-right"></i>
                                 </a>
                             </div>
@@ -98,7 +191,7 @@
                     </div>
                     <div class="col-xl-6 col-lg-5" data-cue="slideInRight">
                         <div>
-                            <img src="assets/images/seo/about.jpg" alt="About SARL" class="img-fluid rounded-3" />
+                            <img src="assets/images/SARL.png" alt="About SARL" class="img-fluid rounded-3" />
                         </div>
                     </div>
                 </div>
@@ -223,86 +316,66 @@
                 </div>
                 <div class="swiper-container swiper" id="swiper-1" data-pagination-type="" data-speed="400" data-space-between="100" data-pagination="false" data-navigation="true" data-autoplay="true" data-autoplay-delay="3000" data-breakpoints='{"480": {"slidesPerView": 1}, "768": {"slidesPerView": 1}, "1024": {"slidesPerView": 2}, "1200": {"slidesPerView": 3}}'>
                     <div class="swiper-wrapper pb-lg-8 pb-6 pt-1">
+                        <!-- Slide 1 -->
                         <div class="swiper-slide" data-cue="zoomIn">
                             <div class="card border-0 h-100 card-lift">
-                                <a href="single-project.php"><img src="assets/images/landings/it-company/it-company-case-study-1.jpg" alt="SARL Project 1" class="img-fluid rounded-top-3" /></a>
+                                <a href="single-project.php"><img src="assets/images/project.jpg" alt="Office Workspace, Workable LLP - Sanlam Towers, 6th Floor (2023)" class="img-fluid rounded-top-3" /></a>
                                 <div class="card-body">
                                     <div class="d-flex flex-column gap-2">
-                                        <div>
-                                            <img src="assets/images/landings/it-company/casestudy-logo-1.svg" alt="SARL Project Logo 1" />
-                                        </div>
-                                        <div class="d-flex flex-column gap-4">
-                                            <h4><a href="single-project.php" class="text-reset">Revolutionizing Commercial Spaces</a></h4>
-                                            <a href="single-project.php" class="icon-link icon-link-hover">
-                                                Read Case Study
-                                                <i class="bi bi-arrow-right"></i>
-                                            </a>
-                                        </div>
+                                        <h4><a href="single-project.php" class="text-reset">Office Workspace</a></h4>
+                                        <p class="mb-1">Workable LLP - Sanlam Towers, 6th Floor</p>
+                                        <p class="mb-3">2023</p>
+                                        <a href="single-project.php" class="btn btn-primary">View Project</a>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
+                        <!-- Slide 2 -->
                         <div class="swiper-slide" data-cue="zoomIn">
                             <div class="card border-0 h-100 card-lift">
-                                <a href="single-project.php"><img src="assets/images/landings/it-company/it-company-case-study-2.jpg" alt="SARL Project 2" class="img-fluid rounded-top-3" /></a>
+                                <a href="single-project.php"><img src="assets/images/project.jpg" alt="Office Fitout in Lavington (2020)" class="img-fluid rounded-top-3" /></a>
                                 <div class="card-body">
                                     <div class="d-flex flex-column gap-2">
-                                        <div>
-                                            <img src="assets/images/landings/it-company/casestudy-logo-2.svg" alt="SARL Project Logo 2" />
-                                        </div>
-                                        <div class="d-flex flex-column gap-4">
-                                            <h4><a href="single-project.php" class="text-reset">Transforming Residential Interiors</a></h4>
-
-                                            <a href="single-project.php" class="icon-link icon-link-hover">
-                                                Read Case Study
-                                                <i class="bi bi-arrow-right"></i>
-                                            </a>
-                                        </div>
+                                        <h4><a href="single-project.php" class="text-reset">Office Fitout</a></h4>
+                                        <p class="mb-1">Lavington</p>
+                                        <p class="mb-3">2020</p>
+                                        <a href="single-project.php" class="btn btn-primary">View Project</a>
                                     </div>
                                 </div>
                             </div>
                         </div>
+
+                        <!-- Slide 3 -->
                         <div class="swiper-slide" data-cue="zoomIn">
                             <div class="card border-0 h-100 card-lift">
-                                <a href="single-project.php"><img src="assets/images/landings/it-company/it-company-case-study-3.jpg" alt="SARL Project 3" class="img-fluid rounded-top-3" /></a>
+                                <a href="single-project.php"><img src="assets/images/project.jpg" alt="Aluminium & Glazing Works, The Address, Waiyaki Way (2017)" class="img-fluid rounded-top-3" /></a>
                                 <div class="card-body">
                                     <div class="d-flex flex-column gap-2">
-                                        <div>
-                                            <img src="assets/images/landings/it-company/casestudy-logo-3.svg" alt="SARL Project Logo 3" />
-                                        </div>
-                                        <div class="d-flex flex-column gap-4">
-                                            <h4><a href="single-project.php" class="text-reset">Innovating Public Spaces</a></h4>
-
-                                            <a href="single-project.php" class="icon-link icon-link-hover">
-                                                Read Case Study
-                                                <i class="bi bi-arrow-right"></i>
-                                            </a>
-                                        </div>
+                                        <h4><a href="single-project.php" class="text-reset">Aluminium & Glazing Works</a></h4>
+                                        <p class="mb-1">The Address, Waiyaki Way</p>
+                                        <p class="mb-3">2017</p>
+                                        <a href="single-project.php" class="btn btn-primary">View Project</a>
                                     </div>
                                 </div>
                             </div>
                         </div>
+
+                        <!-- Slide 4 -->
                         <div class="swiper-slide" data-cue="zoomIn">
                             <div class="card border-0 h-100 card-lift">
-                                <a href="single-project.php"><img src="assets/images/landings/it-company/it-company-case-study-4.jpg" alt="SARL Project 4" class="img-fluid rounded-top-3" /></a>
+                                <a href="single-project.php"><img src="assets/images/project.jpg" alt="AKUHN ETB 4th Floor - Parklands (2023)" class="img-fluid rounded-top-3" /></a>
                                 <div class="card-body">
                                     <div class="d-flex flex-column gap-2">
-                                        <div>
-                                            <img src="assets/images/landings/it-company/casestudy-logo-4.svg" alt="SARL Project Logo 4" />
-                                        </div>
-                                        <div class="d-flex flex-column gap-4">
-                                            <h4><a href="single-project.php" class="text-reset">Redefining Luxury Interiors</a></h4>
-
-                                            <a href="single-project.php" class="icon-link icon-link-hover">
-                                                Read Case Study
-                                                <i class="bi bi-arrow-right"></i>
-                                            </a>
-                                        </div>
+                                        <h4><a href="single-project.php" class="text-reset">Office Fitout</a></h4>
+                                        <p class="mb-1">AKUHN ETB 4th Floor - Parklands</p>
+                                        <p class="mb-3">2023</p>
+                                        <a href="single-project.php" class="btn btn-primary">View Project</a>
                                     </div>
                                 </div>
                             </div>
                         </div>
+
                         <!-- Add more slides as needed -->
                     </div>
                     <!-- Add Pagination -->
@@ -316,6 +389,7 @@
             </div>
         </section>
         <!--Projects end-->
+
 
         <!--Why Us start-->
         <section class="my-lg-7 py-6">
@@ -359,21 +433,12 @@
                         </div>
 
                         <a href="contact.php" class="btn btn-primary me-2">Contact Us</a>
-                        <a href="apply-job.php" class="btn btn-outline-primary">Apply for a Job</a>
+                        <a href="careers.php" class="btn btn-outline-primary">Apply for a Job</a>
                     </div>
                     <div class="col-lg-7 col-12">
                         <div class="position-relative mx-3">
                             <figure>
-                                <img src="assets/images/landings/account/account-support.jpg" alt="SARL Support" class="rounded-3 img-fluid px-lg-1" />
-                            </figure>
-                            <div class="position-absolute top-100 start-50 translate-middle">
-                                <div class="rounded-3 bg-success-subtle text-success-emphasis px-2 py-2 text-center">
-                                    <span class="fs-6">
-                                        <span>😀</span>
-                                        <span class="ms-1">Real support from real people, every step of the way.</span>
-                                    </span>
-                                </div>
-                            </div>
+                                <img src="assets/images/service.jpg" alt="SARL Support" class="rounded-3 img-fluid px-lg-1" />
                         </div>
                     </div>
                 </div>
@@ -389,7 +454,7 @@
                         <div class="text-center mb-4 mb-lg-7">
                             <small class="text-uppercase ls-md fw-semibold">
                                 Trusted by
-                                <span class="fw-bold text-dark">Thousands</span>
+                                <span class="fw-bold text-dark">our</span>
                                 of Clients
                             </small>
                         </div>
@@ -441,7 +506,7 @@
                 <div class="offset-xl-2 col-xl-5 col-md-5">
                     <div class="text-lg-center">
                         <p class="text-white-stick">Contact us today to discuss your requirements and receive a tailored solution.</p>
-                        <a href="contact.php" class="btn btn-warning">Contact Us Now</a>
+                        <a href="contact.php" class="btn btn-dark">Contact Us Now</a>
                     </div>
                 </div>
             </div>
