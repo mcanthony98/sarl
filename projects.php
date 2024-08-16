@@ -45,14 +45,14 @@
                 <div class="row g-5">
                     <div class="col-lg-4 col-md-6 col-12">
                         <div class="card border-0 h-100 card-lift">
-                            <a href="#!"><img src="assets/images/landings/it-company/it-company-case-study-1.jpg" alt="Office Workspace, Workable LLP - Sanlam Towers, 6th Floor (2023)" class="img-fluid rounded-top-3" /></a>
+                            <a href="single-project.php"><img src="assets/images/landings/it-company/it-company-case-study-1.jpg" alt="Office Workspace, Workable LLP - Sanlam Towers, 6th Floor (2023)" class="img-fluid rounded-top-3" /></a>
                             <div class="card-body">
                                 <div class="d-flex flex-column gap-2">
                                     <div>
-                                        <h4><a href="#!" class="text-reset">Office Workspace</a></h4>
+                                        <h4><a href="single-project.php" class="text-reset">Office Workspace</a></h4>
                                         <p class="mb-1">Workable LLP - Sanlam Towers, 6th Floor</p>
                                         <p class="mb-3">2023</p>
-                                        <a href="#!" class="btn btn-primary">View Project</a>
+                                        <a href="single-project.php" class="btn btn-primary">View Project</a>
                                     </div>
                                 </div>
                             </div>
@@ -61,14 +61,14 @@
 
                     <div class="col-lg-4 col-md-6 col-12">
                         <div class="card border-0 h-100 card-lift">
-                            <a href="#!"><img src="assets/images/landings/it-company/it-company-case-study-2.jpg" alt="Office Fitout in Lavington (2020)" class="img-fluid rounded-top-3" /></a>
+                            <a href="single-project.php"><img src="assets/images/landings/it-company/it-company-case-study-2.jpg" alt="Office Fitout in Lavington (2020)" class="img-fluid rounded-top-3" /></a>
                             <div class="card-body">
                                 <div class="d-flex flex-column gap-2">
                                     <div>
-                                        <h4><a href="#!" class="text-reset">Office Fitout</a></h4>
+                                        <h4><a href="single-project.php" class="text-reset">Office Fitout</a></h4>
                                         <p class="mb-1">Lavington</p>
                                         <p class="mb-3">2020</p>
-                                        <a href="#!" class="btn btn-primary">View Project</a>
+                                        <a href="single-project.php" class="btn btn-primary">View Project</a>
                                     </div>
                                 </div>
                             </div>
@@ -77,14 +77,14 @@
 
                     <div class="col-lg-4 col-md-6 col-12">
                         <div class="card border-0 h-100 card-lift">
-                            <a href="#!"><img src="assets/images/landings/it-company/it-company-case-study-3.jpg" alt="Aluminium & Glazing Works, The Address, Waiyaki Way (2017)" class="img-fluid rounded-top-3" /></a>
+                            <a href="single-project.php"><img src="assets/images/landings/it-company/it-company-case-study-3.jpg" alt="Aluminium & Glazing Works, The Address, Waiyaki Way (2017)" class="img-fluid rounded-top-3" /></a>
                             <div class="card-body">
                                 <div class="d-flex flex-column gap-2">
                                     <div>
-                                        <h4><a href="#!" class="text-reset">Aluminium & Glazing Works</a></h4>
+                                        <h4><a href="single-project.php" class="text-reset">Aluminium & Glazing Works</a></h4>
                                         <p class="mb-1">The Address, Waiyaki Way</p>
                                         <p class="mb-3">2017</p>
-                                        <a href="#!" class="btn btn-primary">View Project</a>
+                                        <a href="single-project.php" class="btn btn-primary">View Project</a>
                                     </div>
                                 </div>
                             </div>
@@ -93,14 +93,14 @@
 
                     <div class="col-lg-4 col-md-6 col-12">
                         <div class="card border-0 h-100 card-lift">
-                            <a href="#!"><img src="assets/images/landings/it-company/it-company-case-study-4.jpg" alt="AKUHN ETB 4th Floor - Parklands (2023)" class="img-fluid rounded-top-3" /></a>
+                            <a href="single-project.php"><img src="assets/images/landings/it-company/it-company-case-study-4.jpg" alt="AKUHN ETB 4th Floor - Parklands (2023)" class="img-fluid rounded-top-3" /></a>
                             <div class="card-body">
                                 <div class="d-flex flex-column gap-2">
                                     <div>
-                                        <h4><a href="#!" class="text-reset">Office Fitout</a></h4>
+                                        <h4><a href="single-project.php" class="text-reset">Office Fitout</a></h4>
                                         <p class="mb-1">AKUHN ETB 4th Floor - Parklands</p>
                                         <p class="mb-3">2023</p>
-                                        <a href="#!" class="btn btn-primary">View Project</a>
+                                        <a href="single-project.php" class="btn btn-primary">View Project</a>
                                     </div>
                                 </div>
                             </div>
@@ -109,14 +109,14 @@
 
                     <div class="col-lg-4 col-md-6 col-12">
                         <div class="card border-0 h-100 card-lift">
-                            <a href="#!"><img src="assets/images/landings/it-company/it-company-case-study-5.jpg" alt="Mahogany Hardwood CNC Designed Queen Bed (Custom Project)" class="img-fluid rounded-top-3" /></a>
+                            <a href="single-project.php"><img src="assets/images/landings/it-company/it-company-case-study-5.jpg" alt="Mahogany Hardwood CNC Designed Queen Bed (Custom Project)" class="img-fluid rounded-top-3" /></a>
                             <div class="card-body">
                                 <div class="d-flex flex-column gap-2">
                                     <div>
-                                        <h4><a href="#!" class="text-reset">Custom Project</a></h4>
+                                        <h4><a href="single-project.php" class="text-reset">Custom Project</a></h4>
                                         <p class="mb-1">Mahogany Hardwood CNC Designed Queen Bed</p>
                                         <p class="mb-3">2023</p>
-                                        <a href="#!" class="btn btn-primary">View Project</a>
+                                        <a href="single-project.php" class="btn btn-primary">View Project</a>
                                     </div>
                                 </div>
                             </div>
@@ -125,14 +125,14 @@
 
                     <div class="col-lg-4 col-md-6 col-12">
                         <div class="card border-0 h-100 card-lift">
-                            <a href="#!"><img src="assets/images/landings/it-company/it-company-case-study-6.jpg" alt="Sponsorship of Sikh Golfing Society (SGS) Tournament at Vetlab Sports Club (2023)" class="img-fluid rounded-top-3" /></a>
+                            <a href="single-project.php"><img src="assets/images/landings/it-company/it-company-case-study-6.jpg" alt="Sponsorship of Sikh Golfing Society (SGS) Tournament at Vetlab Sports Club (2023)" class="img-fluid rounded-top-3" /></a>
                             <div class="card-body">
                                 <div class="d-flex flex-column gap-2">
                                     <div>
-                                        <h4><a href="#!" class="text-reset">Event Sponsorship</a></h4>
+                                        <h4><a href="single-project.php" class="text-reset">Event Sponsorship</a></h4>
                                         <p class="mb-1">Sikh Golfing Society (SGS) Tournament</p>
                                         <p class="mb-3">2023</p>
-                                        <a href="#!" class="btn btn-primary">View Project</a>
+                                        <a href="single-project.php" class="btn btn-primary">View Project</a>
                                     </div>
                                 </div>
                             </div>
