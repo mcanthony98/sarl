@@ -7,7 +7,7 @@
                 <div class="mb-7 mb-xl-0">
                     <div class="mb-4">
                         <a href="index.php">
-                            <img src="assets/images/logo/logo.svg" alt="SARL Logo" class="text-inverse" />
+                            <img src="assets/images/logo/sarl-logo.jpg" style="height: 60px;" alt="SARL Logo" class="text-inverse" />
                         </a>
                     </div>
                     <p class="mb-5">Specialized Aluminium Renovators Ltd (SARL) has been a trusted name in high-quality aluminum and uPVC fabrications, interior fitouts, and bespoke architectural solutions across East Africa since 1992. Our commitment to excellence and innovation drives everything we do.</p>
