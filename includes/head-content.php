@@ -2,6 +2,11 @@
 
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+    <!-- Custom Stylesheets -->
+    <link rel="stylesheet" href="assets/libs/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="assets/libs/glightbox/dist/css/glightbox.min.css" />
+
     <!-- Favicon icon-->
     <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicon/sarl-logo.jpg" />
     <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon/sarl-logo.jpg" />
