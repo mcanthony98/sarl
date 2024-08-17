@@ -34,7 +34,6 @@
                     </ul>
                     <div class="mt-3 mt-lg-0 d-flex align-items-center">
                         <a href="contact.php" class="btn btn-primary mx-2">Speak to an Expert</a>
-                        <a href="careers.php" class="btn btn-light">Apply for a Job</a>
                     </div>
                 </div>
             </div>
