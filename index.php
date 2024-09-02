@@ -1,3 +1,10 @@
+<?php
+session_start();
+require "includes/connect.php";
+date_default_timezone_set("Africa/Nairobi");
+$date = date("Y-m-d");
+$eres = $conn->query("SELECT * FROM event WHERE event_status = 1  ORDER BY event_id DESC LIMIT 7");
+?>
 <!doctype html>
 <html lang="en">
 
@@ -123,7 +130,7 @@
                             <div class="d-flex flex-column gap-4">
                                 <h1 class="text-white-stable display-4 mb-0">High-End Architectural Fabrication Solutions</h1>
                                 <p class="mb-0 text-white lead px-lg-10">
-                                    Innovative designs and precise craftsmanship, creating unparalleled spaces with SARL’s expertise in aluminum, uPVC, and steel fabrications.
+                                    Innovative designs and precise craftsmanship, creating unparalleled spaces with SARL's expertise in aluminum, uPVC, and steel fabrications.
                                 </p>
                             </div>
                             <div class="d-md-flex d-grid align-items-center justify-content-md-center gap-4">
@@ -316,65 +323,23 @@
                 </div>
                 <div class="swiper-container swiper" id="swiper-1" data-pagination-type="" data-speed="400" data-space-between="100" data-pagination="false" data-navigation="true" data-autoplay="true" data-autoplay-delay="3000" data-breakpoints='{"480": {"slidesPerView": 1}, "768": {"slidesPerView": 1}, "1024": {"slidesPerView": 2}, "1200": {"slidesPerView": 3}}'>
                     <div class="swiper-wrapper pb-lg-8 pb-6 pt-1">
+
+                    <?php while($erow = $eres->fetch_assoc()){?>
                         <!-- Slide 1 -->
                         <div class="swiper-slide" data-cue="zoomIn">
                             <div class="card border-0 h-100 card-lift">
-                                <a href="single-project.php"><img src="assets/images/project.jpg" alt="Office Workspace, Workable LLP - Sanlam Towers, 6th Floor (2023)" class="img-fluid rounded-top-3" /></a>
+                                <a href="project.php?id=<?php echo $erow['event_id'];?>&<?php echo slagify($erow['title']); ?>"><img loading="lazy" src="uploads/<?php echo $erow['cover_image'];?>" alt="project at <?php echo $erow['title'];?>" class="img-fluid rounded-top-3" /></a>
                                 <div class="card-body">
                                     <div class="d-flex flex-column gap-2">
-                                        <h4><a href="single-project.php" class="text-reset">Office Workspace</a></h4>
-                                        <p class="mb-1">Workable LLP - Sanlam Towers, 6th Floor</p>
-                                        <p class="mb-3">2023</p>
-                                        <a href="single-project.php" class="btn btn-primary">View Project</a>
+                                        <h4><a href="project.php?id=<?php echo $erow['event_id'];?>&<?php echo slagify($erow['title']); ?>" class="text-reset"><?php echo $erow['title'];?></a></h4>
+                                        <p class="mb-1"><?php echo $erow['short_desc'];?></p>
+                                        <a href="project.php?id=<?php echo $erow['event_id'];?>&<?php echo slagify($erow['title']); ?>" class="btn btn-primary">View Project</a>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                        <?php }?>
 
-                        <!-- Slide 2 -->
-                        <div class="swiper-slide" data-cue="zoomIn">
-                            <div class="card border-0 h-100 card-lift">
-                                <a href="single-project.php"><img src="assets/images/project.jpg" alt="Office Fitout in Lavington (2020)" class="img-fluid rounded-top-3" /></a>
-                                <div class="card-body">
-                                    <div class="d-flex flex-column gap-2">
-                                        <h4><a href="single-project.php" class="text-reset">Office Fitout</a></h4>
-                                        <p class="mb-1">Lavington</p>
-                                        <p class="mb-3">2020</p>
-                                        <a href="single-project.php" class="btn btn-primary">View Project</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Slide 3 -->
-                        <div class="swiper-slide" data-cue="zoomIn">
-                            <div class="card border-0 h-100 card-lift">
-                                <a href="single-project.php"><img src="assets/images/project.jpg" alt="Aluminium & Glazing Works, The Address, Waiyaki Way (2017)" class="img-fluid rounded-top-3" /></a>
-                                <div class="card-body">
-                                    <div class="d-flex flex-column gap-2">
-                                        <h4><a href="single-project.php" class="text-reset">Aluminium & Glazing Works</a></h4>
-                                        <p class="mb-1">The Address, Waiyaki Way</p>
-                                        <p class="mb-3">2017</p>
-                                        <a href="single-project.php" class="btn btn-primary">View Project</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Slide 4 -->
-                        <div class="swiper-slide" data-cue="zoomIn">
-                            <div class="card border-0 h-100 card-lift">
-                                <a href="single-project.php"><img src="assets/images/project.jpg" alt="AKUHN ETB 4th Floor - Parklands (2023)" class="img-fluid rounded-top-3" /></a>
-                                <div class="card-body">
-                                    <div class="d-flex flex-column gap-2">
-                                        <h4><a href="single-project.php" class="text-reset">Office Fitout</a></h4>
-                                        <p class="mb-1">AKUHN ETB 4th Floor - Parklands</p>
-                                        <p class="mb-3">2023</p>
-                                        <a href="single-project.php" class="btn btn-primary">View Project</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
 
                         <!-- Add more slides as needed -->
                     </div>

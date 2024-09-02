@@ -1,3 +1,8 @@
+<?php
+require "includes/connect.php";
+
+$servresall = $conn->query("SELECT * FROM service WHERE status=1");
+?>
 <!doctype html>
 <html lang="en">
 
@@ -37,11 +42,12 @@
             <div class="container">
                 <div class="row g-7">
 
+                <?php while($servrow = $servresall->fetch_assoc()){?>
                     <!-- Aluminium & uPVC Fabrications -->
                     <div class="col-sm-6 col-md-6">
                         <div class="position-relative mb-7">
-                            <a href="single-service.php">
-                                <img src="assets/images/service.jpg" style="height:300px; width:600px;" alt="Aluminium & uPVC Fabrications" class="rounded-3 img-fluid" />
+                            <a href="service.php?id=<?php echo $servrow['service_id'];?>&<?php echo $servrow['slag'];?>">
+                                <img src="uploads/<?php echo $servrow['image'];?>" style="height:300px; width:600px;" alt="<?php echo $servrow['name'];?>" loading="lazy" class="rounded-3 img-fluid" />
                             </a>
                             <div class="position-absolute top-md-100 start-md-0 top-100 start-50 translate-middle">
                                 <div class="p-3 icon-xl icon-shape rounded bg-primary border border-2 border-white ms-md-10">
@@ -50,15 +56,16 @@
                             </div>
                         </div>
                         <div class="px-lg-4">
-                            <a href="single-service.php">
-                                <h2 class="mb-3 h3">Aluminium & uPVC Fabrications</h2>
+                            <a href="service.php?id=<?php echo $servrow['service_id'];?>&<?php echo $servrow['slag'];?>">
+                                <h2 class="mb-3 h3"><?php echo $servrow['name'];?></h2>
                             </a>
-                            <p class="mb-5">Crafting durable and elegant architectural elements, our Aluminium and uPVC fabrications blend precision engineering with refined aesthetics, perfect for high-end residential and commercial projects.</p>
-                            <a href="single-service.php" class="btn btn-primary">
+                            <p class="mb-5"><?php echo $servrow['short_desc'];?></p>
+                            <a href="service.php?id=<?php echo $servrow['service_id'];?>&<?php echo $servrow['slag'];?>" class="btn btn-primary">
                                 Get This Service Today
                             </a>
                         </div>
                     </div>
+                <?php } ?>
 
                     <!-- Gypsum & Acoustic Ceilings -->
                     <div class="col-sm-6 col-md-6">
