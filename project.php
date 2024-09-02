@@ -45,9 +45,9 @@ $imgres = $conn->query("SELECT * FROM event_gallery WHERE event_id='$id'");
             <div class="container">
                 <div class="row">
                     <div class="col-lg-8 offset-lg-2 col-md-12 col-12">
-                        <p>
+                     
                         <?php echo $erow['description'];?>
-                        </p>
+                      
                     </div>
                 </div>
             </div>
