@@ -1,3 +1,10 @@
+<?php
+session_start();
+require "includes/connect.php";
+date_default_timezone_set("Africa/Nairobi");
+$date = date("Y-m-d");
+$eres = $conn->query("SELECT * FROM event WHERE event_status = 1  ORDER BY event_id DESC");
+?>
 <!doctype html>
 <html lang="en">
 
@@ -42,101 +49,23 @@
         <section class="mb-xl-9 my-4">
             <div class="container">
                 <div class="row g-5">
-                    <div class="col-lg-4 col-md-6 col-12">
-                        <div class="card border-0 h-100 card-lift">
-                            <a href="single-project.php"><img src="assets/images/project.jpg" alt="Office Workspace, Workable LLP - Sanlam Towers, 6th Floor (2023)" class="img-fluid rounded-top-3" /></a>
-                            <div class="card-body">
-                                <div class="d-flex flex-column gap-2">
-                                    <div>
-                                        <h4><a href="single-project.php" class="text-reset">Office Workspace</a></h4>
-                                        <p class="mb-1">Workable LLP - Sanlam Towers, 6th Floor</p>
-                                        <p class="mb-3">2023</p>
-                                        <a href="single-project.php" class="btn btn-primary">View Project</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
 
+                <?php while($erow = $eres->fetch_assoc()){?>
                     <div class="col-lg-4 col-md-6 col-12">
                         <div class="card border-0 h-100 card-lift">
-                            <a href="single-project.php"><img src="assets/images/project.jpg" alt="Office Fitout in Lavington (2020)" class="img-fluid rounded-top-3" /></a>
+                            <a href="project.php?id=<?php echo $erow['event_id'];?>&<?php echo slagify($erow['title']); ?>"><img loading="lazy" src="uploads/<?php echo $erow['cover_image'];?>" alt="project at <?php echo $erow['title'];?>" class="img-fluid rounded-top-3" /></a>
                             <div class="card-body">
                                 <div class="d-flex flex-column gap-2">
                                     <div>
-                                        <h4><a href="single-project.php" class="text-reset">Office Fitout</a></h4>
-                                        <p class="mb-1">Lavington</p>
-                                        <p class="mb-3">2020</p>
-                                        <a href="single-project.php" class="btn btn-primary">View Project</a>
+                                        <h4><a href="project.php?id=<?php echo $erow['event_id'];?>&<?php echo slagify($erow['title']); ?>" class="text-reset"><?php echo $erow['title'];?></a></h4>
+                                        <p class="mb-1"><?php echo $erow['short_desc'];?></p>
+                                        <a href="project.php?id=<?php echo $erow['event_id'];?>&<?php echo slagify($erow['title']); ?>" class="btn btn-primary">View Project</a>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-
-                    <div class="col-lg-4 col-md-6 col-12">
-                        <div class="card border-0 h-100 card-lift">
-                            <a href="single-project.php"><img src="assets/images/project.jpg" alt="Aluminium & Glazing Works, The Address, Waiyaki Way (2017)" class="img-fluid rounded-top-3" /></a>
-                            <div class="card-body">
-                                <div class="d-flex flex-column gap-2">
-                                    <div>
-                                        <h4><a href="single-project.php" class="text-reset">Aluminium & Glazing Works</a></h4>
-                                        <p class="mb-1">The Address, Waiyaki Way</p>
-                                        <p class="mb-3">2017</p>
-                                        <a href="single-project.php" class="btn btn-primary">View Project</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 col-12">
-                        <div class="card border-0 h-100 card-lift">
-                            <a href="single-project.php"><img src="assets/images/project.jpg" alt="AKUHN ETB 4th Floor - Parklands (2023)" class="img-fluid rounded-top-3" /></a>
-                            <div class="card-body">
-                                <div class="d-flex flex-column gap-2">
-                                    <div>
-                                        <h4><a href="single-project.php" class="text-reset">Office Fitout</a></h4>
-                                        <p class="mb-1">AKUHN ETB 4th Floor - Parklands</p>
-                                        <p class="mb-3">2023</p>
-                                        <a href="single-project.php" class="btn btn-primary">View Project</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 col-12">
-                        <div class="card border-0 h-100 card-lift">
-                            <a href="single-project.php"><img src="assets/images/project.jpg" alt="Mahogany Hardwood CNC Designed Queen Bed (Custom Project)" class="img-fluid rounded-top-3" /></a>
-                            <div class="card-body">
-                                <div class="d-flex flex-column gap-2">
-                                    <div>
-                                        <h4><a href="single-project.php" class="text-reset">Custom Project</a></h4>
-                                        <p class="mb-1">Mahogany Hardwood CNC Designed Queen Bed</p>
-                                        <p class="mb-3">2023</p>
-                                        <a href="single-project.php" class="btn btn-primary">View Project</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 col-12">
-                        <div class="card border-0 h-100 card-lift">
-                            <a href="single-project.php"><img src="assets/images/project.jpg" alt="Sponsorship of Sikh Golfing Society (SGS) Tournament at Vetlab Sports Club (2023)" class="img-fluid rounded-top-3" /></a>
-                            <div class="card-body">
-                                <div class="d-flex flex-column gap-2">
-                                    <div>
-                                        <h4><a href="single-project.php" class="text-reset">Event Sponsorship</a></h4>
-                                        <p class="mb-1">Sikh Golfing Society (SGS) Tournament</p>
-                                        <p class="mb-3">2023</p>
-                                        <a href="single-project.php" class="btn btn-primary">View Project</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <?php }?>
 
                     <div class="col-lg-12 text-center">
                         <div class="mt-xl-7 mt-3">

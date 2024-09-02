@@ -8,15 +8,10 @@
     <link rel="stylesheet" href="assets/libs/glightbox/dist/css/glightbox.min.css" />
 
     <!-- Favicon icon-->
-    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicon/sarl-logo.jpg" />
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon/sarl-logo.jpg" />
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon/sarl-logo.jpg" />
-    <link rel="manifest" href="assets/images/favicon/site.html" />
-    <link rel="mask-icon" href="assets/images/favicon/block-safari-pinned-tab.svg" color="#8b3dff" />
-    <link rel="shortcut icon" href="assets/images/favicon/favicon.ico" />
-    <meta name="msapplication-TileColor" content="#8b3dff" />
-    <meta name="msapplication-config" content="assets/images/favicon/tile.xml" />
-
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/logo/favicon.jpg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/logo/favicon.jpg" />
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/logo/favicon.jpg" />
+   
     <!-- Color modes -->
     <script src="assets/js/vendors/color-modes.js"></script>
 
@@ -32,18 +27,7 @@
 
     <!-- Theme CSS -->
     <link rel="stylesheet" href="assets/css/theme.min.css">
-    <!-- Analytics Code -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-M8S4MT3EYG"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-        gtag("js", new Date());
-
-        gtag("config", "G-M8S4MT3EYG");
-    </script>
+   
     <script type="text/javascript">
         (function(c, l, a, r, i, t, y) {
             c[a] =
@@ -58,3 +42,16 @@
             y.parentNode.insertBefore(t, y);
         })(window, document, "clarity", "script", "kss8za9j58");
     </script>
+
+<?php
+function slagify($input) {
+    // Convert the string to lowercase
+    $lowercaseString = strtolower($input);
+
+    // Replace spaces with hyphens
+    $formattedString = str_replace(' ', '-', $lowercaseString);
+
+    return $formattedString;
+}
+
+?>
