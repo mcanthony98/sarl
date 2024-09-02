@@ -18,7 +18,10 @@ $eres = $conn->query("SELECT * FROM event WHERE event_status = 1  ORDER BY event
     <!-- Hero Slider -->
     <style>
         .hero-slider {
-            z-index: 1;
+            position: relative;
+            width: 100%;
+            height: 65vh;
+            overflow: hidden;
         }
 
         .hero-slide {
@@ -30,71 +33,54 @@ $eres = $conn->query("SELECT * FROM event WHERE event_status = 1  ORDER BY event
             background-size: cover;
             background-position: center;
             opacity: 0;
-            animation: slide-animation 25s infinite;
+            transition: opacity 1s ease-in-out;
         }
 
-        .hero-slide:nth-child(1) {
-            animation-delay: 0s;
+        .hero-slide.active {
+            opacity: 1;
         }
 
-        .hero-slide:nth-child(2) {
-            animation-delay: 5s;
-        }
-
-        .hero-slide:nth-child(3) {
-            animation-delay: 10s;
-        }
-
-        .hero-slide:nth-child(4) {
-            animation-delay: 15s;
-        }
-
-        .hero-slide:nth-child(5) {
-            animation-delay: 20s;
-        }
-
-        @keyframes slide-animation {
-            0% {
-                opacity: 0;
-                transform: scale(1.05);
-            }
-
-            10% {
-                opacity: 1;
-                transform: scale(1);
-            }
-
-            25% {
-                opacity: 1;
-                transform: scale(1);
-            }
-
-            35% {
-                opacity: 0;
-                transform: scale(1.05);
-            }
-
-            100% {
-                opacity: 0;
-            }
-        }
-
-        .overlay {
-            z-index: 2;
-        }
-
-        .hero-slider,
         .overlay {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1;
         }
 
-        .container {
-            z-index: 3;
+        .hero-content {
             position: relative;
+            z-index: 2;
+            color: white;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: 100%;
+        }
+
+        .hero-content h1 {
+            font-size: 2.7rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero-content p {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+        }
+
+        .hero-content .btn {
+            font-size: 1rem;
+        }
+
+        .gap-4 {
+            gap: 1.5rem;
+        }
+
+        .gap-6 {
+            gap: 2rem;
         }
     </style>
 
@@ -109,23 +95,21 @@ $eres = $conn->query("SELECT * FROM event WHERE event_status = 1  ORDER BY event
         <!--Page Content-->
 
         <!--Hero start-->
-        <section class="position-relative py-4">
-            <!-- Black Overlay -->
-            <div class="overlay position-absolute top-0 start-0 w-100 h-100 bg-black opacity-50"></div>
+        <section class="hero-slider">
+            <!-- Overlay -->
+            <div class="overlay"></div>
 
-            <!-- Background Slider -->
-            <div class="hero-slider position-absolute top-0 start-0 w-100 h-100">
-                <div class="hero-slide" style="background-image: url('assets/images/service.jpg');"></div>
-                <div class="hero-slide" style="background-image: url('assets/images/project.jpg');"></div>
-                <div class="hero-slide" style="background-image: url('assets/images/hero-1.jpg');"></div>
-                <div class="hero-slide" style="background-image: url('assets/images/hero-2.jpg');"></div>
-                <div class="hero-slide" style="background-image: url('assets/images/hero-3.jpg');"></div>
-            </div>
+            <!-- Bg Slider -->
+            <div class="hero-slide active" style="background-image: url('assets/images/service.jpg');"></div>
+            <div class="hero-slide" style="background-image: url('assets/images/project.jpg');"></div>
+            <div class="hero-slide" style="background-image: url('assets/images/hero-1.jpg');"></div>
+            <div class="hero-slide" style="background-image: url('assets/images/hero-2.jpg');"></div>
+            <div class="hero-slide" style="background-image: url('assets/images/hero-3.jpg');"></div>
 
-            <!-- Hero Content -->
-            <div class="container position-relative py-lg-10" data-cue="fadeIn">
+            <!-- Hero -->
+            <div class="container hero-content py-lg-10" data-cue="fadeIn">
                 <div class="row py-lg-10 justify-content-center text-center">
-                    <div class="col-lg-9 col-12">
+                    <div class="col-lg-10 col-12">
                         <div class="d-flex flex-column gap-6">
                             <div class="d-flex flex-column gap-4">
                                 <h1 class="text-white-stable display-4 mb-0">High-End Architectural Fabrication Solutions</h1>
@@ -427,32 +411,30 @@ $eres = $conn->query("SELECT * FROM event WHERE event_status = 1  ORDER BY event
                             <div class="swiper-wrapper pb-6">
                                 <div class="swiper-slide">
                                     <figure class="text-center">
-                                        <img src="assets/images/client-logo/clients-logo-1.svg" alt="Client Logo 1" />
+                                        <img src="assets/images/client.png" alt="Client Logo 1" class="img-fluid"/>
                                     </figure>
                                 </div>
                                 <div class="swiper-slide">
                                     <figure class="text-center">
-                                        <img src="assets/images/client-logo/clients-logo-2.svg" alt="Client Logo 2" />
+                                        <img src="assets/images/client.png" alt="Client Logo 2" class="img-fluid"/>
                                     </figure>
                                 </div>
                                 <div class="swiper-slide">
                                     <figure class="text-center">
-                                        <img src="assets/images/client-logo/clients-logo-3.svg" alt="Client Logo 3" />
+                                        <img src="assets/images/client.png" alt="Client Logo 3" class="img-fluid"/>
                                     </figure>
                                 </div>
                                 <div class="swiper-slide">
                                     <figure class="text-center">
-                                        <img src="assets/images/client-logo/clients-logo-4.svg" alt="Client Logo 4" />
+                                        <img src="assets/images/client.png" alt="Client Logo 4" class="img-fluid"/>
                                     </figure>
                                 </div>
                                 <div class="swiper-slide">
                                     <figure class="text-center">
-                                        <img src="assets/images/client-logo/clients-logo-5.svg" alt="Client Logo 5" />
+                                        <img src="assets/images/client.png" alt="Client Logo 5" class="img-fluid"/>
                                     </figure>
                                 </div>
-                                <!-- Add more slides as needed -->
                             </div>
-                            <!-- Add Pagination -->
                             <div class="swiper-pagination"></div>
                         </div>
                     </div>
@@ -487,6 +469,21 @@ $eres = $conn->query("SELECT * FROM event WHERE event_status = 1  ORDER BY event
     <!-- Scripts -->
     <?php include 'includes/scripts.php'; ?>
 
+    <script>
+        // Hero Slider JS
+        document.addEventListener('DOMContentLoaded', function() {
+            const slides = document.querySelectorAll('.hero-slide');
+            let currentSlide = 0;
+
+            function showNextSlide() {
+                slides[currentSlide].classList.remove('active');
+                currentSlide = (currentSlide + 1) % slides.length;
+                slides[currentSlide].classList.add('active');
+            }
+
+            setInterval(showNextSlide, 5000);
+        });
+    </script>
 
 </body>
 
