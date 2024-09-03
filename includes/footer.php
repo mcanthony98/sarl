@@ -1,3 +1,6 @@
+<?php
+$footservresall = $conn->query("SELECT * FROM service WHERE status=1");
+?>
 <!-- Footer -->
 <footer class="pt-7">
     <div class="container">
@@ -54,24 +57,11 @@
                         </div>
                         <div class="collapse d-lg-block" id="collapseServices" data-bs-parent="#ft-links">
                             <ul class="list-unstyled mb-0 py-3 py-lg-0">
+                            <?php while($footservrow = $footservresall->fetch_assoc()){?>
                                 <li class="mb-2">
-                                    <a href="single-service.php?id=1" class="text-decoration-none text-reset">Aluminium & uPVC Fabrications</a>
+                                    <a href="service.php?id=<?php echo $footservrow['service_id'];?>&<?php echo $footservrow['slag'];?>" class="text-decoration-none text-reset"><?php echo $footservrow['name'];?></a>
                                 </li>
-                                <li class="mb-2">
-                                    <a href="single-service.php?id=2" class="text-decoration-none text-reset">Gypsum & Acoustic Ceilings</a>
-                                </li>
-                                <li class="mb-2">
-                                    <a href="single-service.php?id=3" class="text-decoration-none text-reset">Drywall & Partitioning Systems</a>
-                                </li>
-                                <li class="mb-2">
-                                    <a href="single-service.php?id=4" class="text-decoration-none text-reset">Interior Fitouts</a>
-                                </li>
-                                <li class="mb-2">
-                                    <a href="single-service.php?id=5" class="text-decoration-none text-reset">Stainless & Mild Steel Fabrications</a>
-                                </li>
-                                <li class="mb-2">
-                                    <a href="single-service.php?id=6" class="text-decoration-none text-reset">Joinery Works</a>
-                                </li>
+                                <?php } ?>
                             </ul>
                         </div>
                     </div>
