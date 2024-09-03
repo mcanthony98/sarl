@@ -22,7 +22,7 @@
 
 			<!-- Content Wrapper. Contains page content -->
 			<div class="content-wrapper">
-				
+
 				<!-- Content Header (Page header) -->
 				<section class="content-header">
 					<div class="container-fluid">
@@ -69,7 +69,7 @@
 										<dt class="col-sm-4 mb-2">CV</dt>
 										<dd class="col-sm-8 mb-2">
 											<?php if (!empty($row['cv_file_path'])): ?>
-											<a href="<?php echo $row['cv_file_path']; ?>" download target="_blank">Download This CV</a>
+											<a href="../<?php echo $row['cv_file_path']; ?>" download target="_blank">Download This CV</a>
 
 											<?php else: ?>
 											No CV uploaded.

@@ -66,7 +66,7 @@
 											<td><?php echo $row["name"];?></td>
 											<td><?php echo $row["email"];?></td>
 											<td><?php echo $row["phone_number"];?></td>
-											<td><span class="text-nowrap"><?php echo date('M d, Y H:m A', strtotime($row['date_created']));?></span></td>
+											<td><span class="text-nowrap"><?php echo ($row['date_created']);?></span></td>
 											
 											<td>
 												<a href="application.php?id=<?php echo $row['application_id'];?>" class="btn btn-sm btn-primary">

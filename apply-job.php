@@ -80,7 +80,6 @@
             echo "Error uploading CV file.";
         }
     }
-    var_dump($job_title)
     // var_dump($selected_job_title);
     // var_dump($selected_job_location);
 ?>
