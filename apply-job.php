@@ -5,11 +5,16 @@
     $selected_job_title = '';
     $selected_job_location = '';
 
+    $query = $conn -> prepare("SELECT job_title, location, deadline FROM jobs WHERE job_id = ?");
+    $query -> bind_param("i", $job_id);
+    $query -> execute();
+    $result = $query -> get_result();
+
     if ($job_id) {
-        $query = $conn -> prepare("SELECT job_title, location, deadline FROM jobs WHERE job_id = ?");
-        $query -> bind_param("i", $job_id);
-        $query -> execute();
-        $result = $query -> get_result();
+        // $query = $conn -> prepare("SELECT job_title, location, deadline FROM jobs WHERE job_id = ?");
+        // $query -> bind_param("i", $job_id);
+        // $query -> execute();
+        // $result = $query -> get_result();
 
         if ($result -> num_rows > 0) {
             $row = $result -> fetch_assoc();
@@ -38,6 +43,8 @@
 
         $query -> close();
     }
+
+    $job_title = $selected_job_title;
     
     if (isset($_POST['submit_application'])) {
         $first_name = $_POST['first_name'];
@@ -47,6 +54,7 @@
         $email = $_POST['email'];
         $phone = $_POST['phone'];
         $linkedin = $_POST['linkedin'];
+        $date = date('Y-m-d H:i:s');
         // $job_title = $selected_job_title;
         // $location = $selected_job_location;
 
@@ -55,9 +63,9 @@
         $cv_file_path = $upload_dir . uniqid('', true) . "-" . $cv_file_name;
     
         if (move_uploaded_file($_FILES['resume']['tmp_name'], $cv_file_path)) {
-            $sql = "INSERT INTO applications (name, email, phone_number, job_title, location, linkedin, cv_file_path) VALUES (?, ?, ?, ?, ?, ?, ?)";
+            $sql = "INSERT INTO applications (name, email, phone_number, job_title, location, linkedin, cv_file_path, date_created) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
             $stmt = $conn->prepare($sql);
-            $stmt->bind_param('sssssss', $name, $email, $phone, $selected_job_title, $selected_job_location, $linkedin, $cv_file_path);
+            $stmt->bind_param('ssssssss', $name, $email, $phone, $job_title, $selected_job_location, $linkedin, $cv_file_path, $date);
     
             if ($stmt->execute()) {
                 echo "Application submitted successfully!";
@@ -72,7 +80,7 @@
             echo "Error uploading CV file.";
         }
     }
-
+    var_dump($job_title)
     // var_dump($selected_job_title);
     // var_dump($selected_job_location);
 ?>
