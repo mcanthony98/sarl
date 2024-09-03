@@ -1,3 +1,82 @@
+<?php
+    require 'includes/connect.php';
+
+    $job_id = isset($_GET['id']) ? $_GET['id'] : null;
+    $selected_job_title = '';
+    $selected_job_location = '';
+
+    if ($job_id) {
+        $query = $conn -> prepare("SELECT job_title, location, deadline FROM jobs WHERE job_id = ?");
+        $query -> bind_param("i", $job_id);
+        $query -> execute();
+        $result = $query -> get_result();
+
+        if ($result -> num_rows > 0) {
+            $row = $result -> fetch_assoc();
+            $selected_job_title = $row["job_title"];
+            $selected_job_location = $row["location"];
+            $job_deadline = $row["deadline"];
+
+            // This is set so that a user cannot tamper with the
+            // website's url to access any opportunities whose
+            // deadlines have passed.
+            if (new DateTime() > new DateTime($job_deadline)) {
+                echo "<h1>Application Closed</h1>";
+                echo "<p>The application deadline for this job has passed. You cannot apply for this position anymore.</p>";
+                exit();
+            }
+        } else {
+            // This is meant to handle a situation where a user will
+            // try to access an opportunity that isn't available. 
+            // Let's say I have opportunities with ID 1 to 5
+            // and a user tries to access the 6th or 7th or even 8th,
+            // then, the system will give him an error message.
+            echo "<h1>Job Not Found</h1>";
+            echo "<p>The job you are trying to apply for does not exist.</p>";
+            exit();
+        }
+
+        $query -> close();
+    }
+    
+    if (isset($_POST['submit_application'])) {
+        $first_name = $_POST['first_name'];
+        $middle_name = $_POST['middle_name'];
+        $last_name = $_POST['last_name'];
+        $name = $first_name . ' ' . $middle_name . ' ' . $last_name;
+        $email = $_POST['email'];
+        $phone = $_POST['phone'];
+        $linkedin = $_POST['linkedin'];
+        // $job_title = $selected_job_title;
+        // $location = $selected_job_location;
+
+        $upload_dir = 'uploads/cvs/';
+        $cv_file_name = basename($_FILES['resume']['name']);
+        $cv_file_path = $upload_dir . uniqid('', true) . "-" . $cv_file_name;
+    
+        if (move_uploaded_file($_FILES['resume']['tmp_name'], $cv_file_path)) {
+            $sql = "INSERT INTO applications (name, email, phone_number, job_title, location, linkedin, cv_file_path) VALUES (?, ?, ?, ?, ?, ?, ?)";
+            $stmt = $conn->prepare($sql);
+            $stmt->bind_param('sssssss', $name, $email, $phone, $selected_job_title, $selected_job_location, $linkedin, $cv_file_path);
+    
+            if ($stmt->execute()) {
+                echo "Application submitted successfully!";
+                header('Location: thank-you-apply-job.php');
+                exit;
+            } else {
+                echo "Error: " . $stmt->error;
+            }
+    
+            $stmt->close();
+        } else {
+            echo "Error uploading CV file.";
+        }
+    }
+
+    // var_dump($selected_job_title);
+    // var_dump($selected_job_location);
+?>
+
 <!doctype html>
 <html lang="en">
 
@@ -38,30 +117,32 @@
                                 <div class="col-xl-6 col-md-6">
                                     <div class="card-body p-md-5">
                                         <div class="mb-4">
-                                            <h3 class="mb-1">Apply for: <span id="positionTitle">[Position Title]</span></h3>
-                                            <h5 class="text-muted">Location: <span id="locationTitle">[Location]</span></h5>
+                                            <h3 class="mb-1">Apply for: <span id="positionTitle"><?= htmlspecialchars ($selected_job_title);?></span></h3>
+                                            <h5 class="text-muted">Location: <span id="locationTitle"><?= htmlspecialchars($selected_job_location);?></span></h5>
                                         </div>
-                                        <form class="row needs-validation g-3" novalidate onsubmit="redirectToThankYouPage(event)">
+
+                                        <!-- Replaced onsubmit="redirectToThankYouPage(event) with action and  -->
+                                        <form class="row needs-validation g-3" novalidate method="post" action="apply-job.php" enctype="multipart/form-data">
                                             <div class="col-lg-6 col-12">
                                                 <label for="applicantFirstnameInput" class="form-label">
                                                     First Name
                                                     <span class="text-danger">*</span>
                                                 </label>
-                                                <input type="text" class="form-control" id="applicantFirstnameInput" required />
+                                                <input type="text" class="form-control" id="applicantFirstnameInput" name="first_name" required />
                                                 <div class="invalid-feedback">Please enter your first name.</div>
                                             </div>
                                             <div class="col-lg-6 col-12">
                                                 <label for="applicantMiddlenameInput" class="form-label">
                                                     Middle Name
                                                 </label>
-                                                <input type="text" class="form-control" id="applicantMiddlenameInput" />
+                                                <input type="text" class="form-control" id="applicantMiddlenameInput" name="middle_name" />
                                             </div>
                                             <div class="col-lg-12 col-12">
                                                 <label for="applicantLastnameInput" class="form-label">
                                                     Last Name
                                                     <span class="text-danger">*</span>
                                                 </label>
-                                                <input type="text" class="form-control" id="applicantLastnameInput" required />
+                                                <input type="text" class="form-control" id="applicantLastnameInput" name="last_name" required />
                                                 <div class="invalid-feedback">Please enter your last name.</div>
                                             </div>
                                             <div class="col-md-12">
@@ -69,7 +150,7 @@
                                                     Email
                                                     <span class="text-danger">*</span>
                                                 </label>
-                                                <input type="email" class="form-control" id="applicantEmailInput" required />
+                                                <input type="email" class="form-control" id="applicantEmailInput" name="email" required />
                                                 <div class="invalid-feedback">Please enter your email.</div>
                                             </div>
                                             <div class="col-md-12">
@@ -77,25 +158,25 @@
                                                     Phone Number
                                                     <span class="text-danger">*</span>
                                                 </label>
-                                                <input type="tel" class="form-control" id="applicantPhoneInput" required />
+                                                <input type="tel" class="form-control" id="applicantPhoneInput" name="phone" required />
                                                 <div class="invalid-feedback">Please enter your phone number.</div>
                                             </div>
                                             <div class="col-md-12">
                                                 <label for="linkedinProfileInput" class="form-label">
                                                     LinkedIn Profile
                                                 </label>
-                                                <input type="url" class="form-control" id="linkedinProfileInput" placeholder="https://www.linkedin.com/in/yourprofile" />
+                                                <input type="url" class="form-control" id="linkedinProfileInput" name="linkedin" placeholder="https://www.linkedin.com/in/yourprofile" />
                                             </div>
                                             <div class="col-md-12">
                                                 <label for="resumeUploadInput" class="form-label">
                                                     Upload CV/Resume
                                                     <span class="text-danger">*</span>
                                                 </label>
-                                                <input type="file" class="form-control" id="resumeUploadInput" required />
+                                                <input type="file" class="form-control" id="resumeUploadInput" name="resume" required />
                                                 <div class="invalid-feedback">Please upload your CV/Resume.</div>
                                             </div>
                                             <div class="d-grid">
-                                                <button class="btn btn-primary rounded-pill" type="submit">Submit Application</button>
+                                                <button class="btn btn-primary rounded-pill" type="submit" name="submit_application">Submit Application</button>
                                             </div>
                                         </form>
                                     </div>

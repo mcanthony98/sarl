@@ -109,6 +109,57 @@ elseif(isset($_POST["edit-srv-img"])){
           }
 }
 
+elseif(isset($_POST["new-job"])){
+    $job_title = mysqli_real_escape_string($conn, $_POST["job_title"]);
+    $job_desc = mysqli_real_escape_string($conn, $_POST["job_description"]);
+    $location = mysqli_real_escape_string($conn, $_POST["location"]);
+    $deadline = mysqli_real_escape_string($conn, $_POST["deadline"]);
+
+    $insert = "INSERT INTO jobs (job_title, job_description, job_status, location, deadline) VALUES ('$job_title', '$job_desc', 1, '$location', '$deadline')";
+    
+    if ($conn->query($insert) === TRUE) {
+        $pk = $conn->insert_id;
+        $_SESSION["success"] = "New Job Added Successfully.";
+        header("location: jobs.php?id=$pk");
+    } else {
+        $_SESSION["error"] = "Error Occurred. Please Try Again. " . $conn->error;
+        header("location: add-job.php");
+    }
+}
+
+elseif (isset($_POST["edit-job"])) {
+    $id = mysqli_real_escape_string($conn, $_POST["job_id"]);
+    $job_title = mysqli_real_escape_string($conn, $_POST["job_title"]);
+    $location = mysqli_real_escape_string($conn, $_POST["location"]);
+    $deadline = mysqli_real_escape_string($conn, $_POST["deadline"]);
+    $job_desc = mysqli_real_escape_string($conn, $_POST["job_description"]);
+    $status = mysqli_real_escape_string($conn, $_POST["status"]);
+
+    $update = "UPDATE `jobs` SET `job_title`='$job_title', `location`='$location', `deadline`='$deadline', `job_description`='$job_desc', `job_status`='$status' WHERE job_id='$id'";
+    
+    if ($conn->query($update) === TRUE) {
+        $_SESSION["success"] = "Job Advert Updated Successfully.";
+        header("location: jobs.php?id=$id");
+    } else {
+        $_SESSION["error"] = "Error Occurred. Please Try Again. " . $conn->error;
+        header("location: edit-job.php?id=$id");
+    }
+}
+
+elseif (isset($_GET['delete-job'])) {
+    $job_id = mysqli_real_escape_string($conn, $_GET['delete-job']);
+
+    $delete = "DELETE FROM jobs WHERE job_id = '$job_id'";
+    
+    if ($conn->query($delete) === TRUE) {
+        $_SESSION["success"] = "Job deleted successfully.";
+        header("Location: jobs.php");
+    } else {
+        $_SESSION["error"] = "Error occurred. Please try again. " . $conn->error;
+        header("Location: jobs.php");
+    }
+}
+
 elseif(isset($_POST["new-prof"])){
     $name = mysqli_real_escape_string($conn, $_POST["name"]);
     $desc = mysqli_real_escape_string($conn, $_POST["desc"]);

@@ -1,3 +1,16 @@
+<!-- Introduced a database connect for the program to link the jobs -->
+<!-- posted by the admin to be viewed by the clients. The data selected -->
+<!-- has been filtered such that only active jobs are displayed -->
+<!-- as well as opportunities that haven't expired. -->
+<?php 
+    session_start();
+    include "includes/connect.php";
+
+    $current_date = date('Y-m-d');
+
+    $result = $conn->query("SELECT * FROM jobs WHERE job_status = 1 AND deadline > '$current_date' ORDER BY job_id");
+?>
+
 <!doctype html>
 <html lang="en">
 
@@ -77,175 +90,65 @@
                     <div class="col-lg-12">
                         <div class="list-group list-group-flush" id="jobList">
 
-                            <!-- Job 1 -->
-                            <div class="list-group-item d-flex align-items-center justify-content-between border-top p-4" data-department="Project Management" data-location="Nairobi">
+                            <!-- Replaced the original code with one that reads data -->
+                            <!-- straight from the database and displays the information -->
+                            <!-- for the clients. By doing so, it renders the program -->
+                            <!-- to be more dynamic. Meaning for every change in the db -->
+                            <!-- clients will be able to see the difference in realtime. -->
+                            <?php
+                                while ($row = $result->fetch_assoc()) {
+                                    $jobId = $row['job_id'];
+                                    $jobTitle = $row['job_title'];
+                                    $jobLocation = $row['location'];
+                                    $jobDescription = $row['job_description'];
+                                    $jobDeadline = $row['deadline'];
+                            ?>
+
+                            <div class="list-group-item d-flex align-items-center justify-content-between p-4" data-location="<?php echo htmlspecialchars($row['location']); ?>">
                                 <div>
-                                    <h4 class="mb-1">Project Manager</h4>
-                                    <span class="text-primary fw-medium">Nairobi, Kenya</span>
+                                    <h4 class="mb-1"><?php echo htmlspecialchars($jobTitle); ?></h4>
+                                    <span class="text-primary fw-medium"><?php echo htmlspecialchars($jobLocation); ?></span>
                                 </div>
+                                
                                 <div>
-                                    <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#job1Modal">
+                                    <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#job<?php echo $jobId; ?>Modal">
                                         View Details
                                     </button>
-                                    <a href="apply-job.php" class="btn btn-primary">
+
+                                    <a href="apply-job.php?id=<?php echo $jobId; ?>" class="btn btn-primary">
                                         Apply
                                     </a>
                                 </div>
                             </div>
 
-                            <!-- Job 1 Modal -->
-                            <div class="modal fade" id="job1Modal" tabindex="-1" aria-labelledby="job1ModalLabel" aria-hidden="true">
+                            <!-- Job modal as seen on the original code -->
+                            <div class="modal fade" id="job<?php echo $jobId; ?>Modal" tabindex="-1" aria-labelledby="job<?php echo $jobId; ?>ModalLabel" aria-hidden="true">
                                 <div class="modal-dialog">
                                     <div class="modal-content">
                                         <div class="modal-header">
-                                            <h5 class="modal-title" id="job1ModalLabel">Project Manager - Nairobi, Kenya</h5>
+                                            <h5 class="modal-title" id="job<?php echo $jobId; ?>ModalLabel"><?php echo htmlspecialchars($jobTitle); ?> - <?php echo htmlspecialchars($jobLocation); ?></h5>
+                                            
                                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                         </div>
+
                                         <div class="modal-body">
-                                            <p>The Project Manager is responsible for overseeing all aspects of project planning, execution, and delivery. This role requires a highly organized and motivated individual with experience in construction and project management. The successful candidate will coordinate with various stakeholders, ensure project timelines and budgets are met, and maintain high standards of quality and safety.</p>
+                                            <p><?php echo htmlspecialchars($jobDescription); ?></p>
+                                            
+                                            <p><strong>Application Deadline:</strong> <?php echo htmlspecialchars($jobDeadline); ?></p>
                                         </div>
+                                        
                                         <div class="modal-footer">
+                                            <a href="apply-job.php?id=<?php echo $jobId; ?>" class="btn btn-primary">Apply</a>
+                                            
                                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                                         </div>
                                     </div>
                                 </div>
                             </div>
 
-                            <!-- Job 2 -->
-                            <div class="list-group-item d-flex align-items-center justify-content-between p-4" data-department="Interior Design" data-location="Mombasa">
-                                <div>
-                                    <h4>Interior Designer</h4>
-                                    <span class="text-primary fw-medium">Mombasa, Kenya</span>
-                                </div>
-                                <div>
-                                    <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#job2Modal">
-                                        View Details
-                                    </button>
-                                    <a href="apply-job.php" class="btn btn-primary">
-                                        Apply
-                                    </a>
-                                </div>
-                            </div>
-
-                            <!-- Job 2 Modal -->
-                            <div class="modal fade" id="job2Modal" tabindex="-1" aria-labelledby="job2ModalLabel" aria-hidden="true">
-                                <div class="modal-dialog">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h5 class="modal-title" id="job2ModalLabel">Interior Designer - Mombasa, Kenya</h5>
-                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                        </div>
-                                        <div class="modal-body">
-                                            <p>The Interior Designer will be responsible for conceptualizing and implementing innovative design solutions for various interior spaces. The role demands creativity, an eye for detail, and a strong understanding of materials, finishes, and furnishings. The Interior Designer will work closely with clients to understand their vision and deliver designs that meet their needs and exceed their expectations.</p>
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Job 3 -->
-                            <div class="list-group-item d-flex align-items-center justify-content-between p-4" data-department="Sales and Marketing" data-location="Kisumu">
-                                <div>
-                                    <h4>Sales and Marketing Executive</h4>
-                                    <span class="text-primary fw-medium">Kisumu, Kenya</span>
-                                </div>
-                                <div>
-                                    <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#job3Modal">
-                                        View Details
-                                    </button>
-                                    <a href="apply-job.php" class="btn btn-primary">
-                                        Apply
-                                    </a>
-                                </div>
-                            </div>
-
-                            <!-- Job 3 Modal -->
-                            <div class="modal fade" id="job3Modal" tabindex="-1" aria-labelledby="job3ModalLabel" aria-hidden="true">
-                                <div class="modal-dialog">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h5 class="modal-title" id="job3ModalLabel">Sales and Marketing Executive - Kisumu, Kenya</h5>
-                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                        </div>
-                                        <div class="modal-body">
-                                            <p>The Sales and Marketing Executive will drive the company's growth by developing and implementing effective sales strategies. This position requires a results-oriented individual with strong communication skills and a deep understanding of market trends. Responsibilities include managing client relationships, identifying new business opportunities, and contributing to the overall sales strategy.</p>
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Job 4 -->
-                            <div class="list-group-item d-flex align-items-center justify-content-between border-bottom p-4" data-department="Aluminium Fabrication" data-location="Nakuru">
-                                <div>
-                                    <h4>Aluminium Fabrication Specialist</h4>
-                                    <span class="text-primary fw-medium">Nakuru, Kenya</span>
-                                </div>
-                                <div>
-                                    <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#job4Modal">
-                                        View Details
-                                    </button>
-                                    <a href="apply-job.php" class="btn btn-primary">
-                                        Apply
-                                    </a>
-                                </div>
-                            </div>
-
-                            <!-- Job 4 Modal -->
-                            <div class="modal fade" id="job4Modal" tabindex="-1" aria-labelledby="job4ModalLabel" aria-hidden="true">
-                                <div class="modal-dialog">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h5 class="modal-title" id="job4ModalLabel">Aluminium Fabrication Specialist - Nakuru, Kenya</h5>
-                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                        </div>
-                                        <div class="modal-body">
-                                            <p>The Aluminium Fabrication Specialist will work on creating custom aluminium products according to project specifications. This role requires precision, attention to detail, and extensive experience in metalworking. The specialist will collaborate with the design team to bring concepts to life, ensuring that all products meet quality and safety standards.</p>
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Job 5 -->
-                            <div class="list-group-item d-flex align-items-center justify-content-between border-bottom p-4" data-department="Project Management" data-location="Eldoret">
-                                <div>
-                                    <h4>Assistant Project Manager</h4>
-                                    <span class="text-primary fw-medium">Eldoret, Kenya</span>
-                                </div>
-                                <div>
-                                    <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#job5Modal">
-                                        View Details
-                                    </button>
-                                    <a href="apply-job.php" class="btn btn-primary">
-                                        Apply
-                                    </a>
-                                </div>
-                            </div>
-
-                            <!-- Job 5 Modal -->
-                            <div class="modal fade" id="job5Modal" tabindex="-1" aria-labelledby="job5ModalLabel" aria-hidden="true">
-                                <div class="modal-dialog">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h5 class="modal-title" id="job5ModalLabel">Assistant Project Manager - Eldoret, Kenya</h5>
-                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                        </div>
-                                        <div class="modal-body">
-                                            <p>The Assistant Project Manager will support the Project Manager in all phases of project management. This includes planning, scheduling, budgeting, and coordinating project activities. The ideal candidate will have a strong background in construction or a related field and be able to work effectively in a fast-paced environment. Attention to detail and excellent communication skills are essential for this role.</p>
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            <?php
+                                }
+                            ?>
 
                         </div>
                     </div>

@@ -65,10 +65,10 @@ $res=$conn->query("SELECT * FROM applications ORDER BY application_id DESC");
                                          ?>
                                         <tr>
                                             <td><?php echo $row["application_id"];?></td>
-                                            <td><?php echo $row["firstname"]." ".$row["lastname"];?></td>
+                                            <td><?php echo $row["name"];?></td>
                                             <td><?php echo $row["email"];?></td>
-                                            <td><?php echo $row["phone"];?></td>
-                                            <td><span class="text-nowrap"><?php echo date('M d, Y H:m A', strtotime($row['date_created']));?></span></td>
+                                            <td><?php echo $row["phone_number"];?></td>
+                                            <!-- <td><span class="text-nowrap"><?php echo date('M d, Y H:m A', strtotime($row['date_created']));?></span></td> -->
                                             <td><a href="application.php?id=<?php echo $row['application_id'];?>" class="btn btn-sm btn-primary"><i class="fas fa-eye"></i> View</a></td>
                                         </tr>
                                         <?php } ?>
