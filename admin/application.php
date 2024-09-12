@@ -47,7 +47,7 @@
 						<div class="col-md-12 mx-auto">
 							<div class="card card-primary card-outline">
 								<div class="card-header">
-									<h3 class="card-title">Application for <strong><?php echo $row['application_id'];?></strong> by <strong><?php echo $row['name'];?></strong></h3>
+									<h3 class="card-title">Application for <strong><?php echo $row['job_title'];?></strong> by <strong><?php echo $row['name'];?></strong></h3>
 									<h3 class="card-title" style="float: right;">Date Applied: <strong><?php echo date('M d, Y H:m A', strtotime($row['date_created']));?></strong></h3>
 								</div>
 

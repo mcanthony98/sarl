@@ -5,16 +5,11 @@
     $selected_job_title = '';
     $selected_job_location = '';
 
-    $query = $conn -> prepare("SELECT job_title, location, deadline FROM jobs WHERE job_id = ?");
-    $query -> bind_param("i", $job_id);
-    $query -> execute();
-    $result = $query -> get_result();
-
     if ($job_id) {
-        // $query = $conn -> prepare("SELECT job_title, location, deadline FROM jobs WHERE job_id = ?");
-        // $query -> bind_param("i", $job_id);
-        // $query -> execute();
-        // $result = $query -> get_result();
+        $query = $conn -> prepare("SELECT job_title, location, deadline FROM jobs WHERE job_id = ?");
+        $query -> bind_param("i", $job_id);
+        $query -> execute();
+        $result = $query -> get_result();
 
         if ($result -> num_rows > 0) {
             $row = $result -> fetch_assoc();
@@ -41,12 +36,16 @@
             exit();
         }
 
-        $query -> close();
+        // $query -> close();
     }
-
-    $job_title = $selected_job_title;
     
     if (isset($_POST['submit_application'])) {
+        $job_title = $_POST['job_title'];
+        $job_location = $_POST['job_location'];
+
+        echo "Job Title inside form submission: " . $job_title . "<br>";
+        echo "Location inside form submission: " . $job_location . "<br>";
+
         $first_name = $_POST['first_name'];
         $middle_name = $_POST['middle_name'];
         $last_name = $_POST['last_name'];
@@ -55,8 +54,6 @@
         $phone = $_POST['phone'];
         $linkedin = $_POST['linkedin'];
         $date = date('Y-m-d H:i:s');
-        // $job_title = $selected_job_title;
-        // $location = $selected_job_location;
 
         $upload_dir = 'uploads/cvs/';
         $cv_file_name = basename($_FILES['resume']['name']);
@@ -65,7 +62,7 @@
         if (move_uploaded_file($_FILES['resume']['tmp_name'], $cv_file_path)) {
             $sql = "INSERT INTO applications (name, email, phone_number, job_title, location, linkedin, cv_file_path, date_created) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
             $stmt = $conn->prepare($sql);
-            $stmt->bind_param('ssssssss', $name, $email, $phone, $job_title, $selected_job_location, $linkedin, $cv_file_path, $date);
+            $stmt->bind_param('ssssssss', $name, $email, $phone, $job_title, $job_location, $linkedin, $cv_file_path, $date);
     
             if ($stmt->execute()) {
                 echo "Application submitted successfully!";
@@ -80,8 +77,6 @@
             echo "Error uploading CV file.";
         }
     }
-    // var_dump($selected_job_title);
-    // var_dump($selected_job_location);
 ?>
 
 <!doctype html>
@@ -130,6 +125,11 @@
 
                                         <!-- Replaced onsubmit="redirectToThankYouPage(event) with action and  -->
                                         <form class="row needs-validation g-3" novalidate method="post" action="apply-job.php" enctype="multipart/form-data">
+
+                                            <!-- Introduced some hidden fields to capture the specific career's details -->
+                                            <input type="hidden" name="job_title" value="<?php echo htmlspecialchars($selected_job_title); ?>">
+                                            <input type="hidden" name="job_location" value="<?php echo htmlspecialchars($selected_job_location); ?>">
+
                                             <div class="col-lg-6 col-12">
                                                 <label for="applicantFirstnameInput" class="form-label">
                                                     First Name

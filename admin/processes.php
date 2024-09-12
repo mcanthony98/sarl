@@ -207,14 +207,10 @@ elseif(isset($_POST["new-event"])){
     $name = mysqli_real_escape_string($conn, $_POST["name"]);
     $sdesc = mysqli_real_escape_string($conn, $_POST["sdesc"]);
     $desc = mysqli_real_escape_string($conn, $_POST["desc"]);
-    
-    
-
+    $category = $_POST['category'];
     $image = $_FILES['photos']['tmp_name'];
     $imgContent = addslashes(file_get_contents($image));
     
-			
-
     $file_name = $_FILES["photos"]["name"];
     $_FILES["photos"]["type"];
     $tmp_file = $_FILES["photos"]["tmp_name"];
@@ -225,8 +221,7 @@ elseif(isset($_POST["new-event"])){
     $new = $filedate.$file_name;
     $new_name = rename('../uploads/'.$file_name , '../uploads/'.$new);
 
-
-    $insert = "INSERT INTO `event`(`title`, `short_desc`, `description`, `cover_image`, `event_status`, `date_added`, `date_modified`) VALUES ('$name', '$sdesc', '$desc', '$new','1','$date','$date')";
+    $insert = "INSERT INTO `event`(`title`, `short_desc`, `description`, `category`, `cover_image`, `event_status`, `date_added`, `date_modified`) VALUES ('$name', '$sdesc', '$desc', '$category', '$new','1','$date','$date')";
     
     if ($conn->query($insert)===TRUE){
         $pk = $conn->insert_id;
@@ -244,26 +239,20 @@ elseif(isset($_POST["edit-event"])){
     $name = mysqli_real_escape_string($conn, $_POST["name"]);
     $sdesc = mysqli_real_escape_string($conn, $_POST["sdesc"]);
     $desc = mysqli_real_escape_string($conn, $_POST["desc"]);
+    $category = $_POST['category'];
     
     $status = mysqli_real_escape_string($conn, $_POST["status"]);
     
-
-    
-
-
-    $insert = "UPDATE `event` SET `title`='$name',`short_desc`='$sdesc',`description`='$desc',`location`='$loc',`services`='$serv',`slots`='$slots',`start_datetime`='$st',`end_datetime`='$et', `event_status`='$status', `date_modified`='$date' WHERE event_id='$id'";
+    $insert = "UPDATE `event` SET `title`='$name',`short_desc`='$sdesc',`description`='$desc', `category`='$category', `location`='$loc',`services`='$serv',`slots`='$slots',`start_datetime`='$st',`end_datetime`='$et', `event_status`='$status', `date_modified`='$date' WHERE event_id='$id'";
     
     if ($conn->query($insert)===TRUE){
-        
-          
-          $_SESSION["success"] = "Project Updated Sucessfully.";
-          header("location: edit-event.php?id=$id");
-          
-      }else{
-          $_SESSION["error"] = "Error Occured. Please Try Again". $conn->error;
-          header("location: edit-event.php?id=$id");
-      }
+        $_SESSION["success"] = "Project Updated Sucessfully.";
+        header("location: edit-event.php?id=$id");
+    }else{
+        $_SESSION["error"] = "Error Occured. Please Try Again". $conn->error;
+        header("location: edit-event.php?id=$id");
     }
+}
     
 elseif(isset($_POST["edit-event-img"])){
         $id = mysqli_real_escape_string($conn, $_POST["edit-event-img"]);

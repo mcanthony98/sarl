@@ -1,190 +1,201 @@
 <?php 
-session_start();
-include "includes/sessions.php";
-include "../includes/connect.php";
+	session_start();
+	include "includes/sessions.php";
+	include "../includes/connect.php";
 
-$pkid = $_GET['id'];
+	$pkid = $_GET['id'];
 
-$res=$conn->query("SELECT * FROM event e WHERE e.event_id='$pkid'");
-$row = $res->fetch_assoc();
+	$res=$conn->query("SELECT * FROM event e WHERE e.event_id='$pkid'");
+	$row = $res->fetch_assoc();
 
-$imgres = $conn->query("SELECT * FROM `event_gallery` WHERE event_id='$pkid'");
+	$category = $row['category'];
 
+	$imgres = $conn->query("SELECT * FROM `event_gallery` WHERE event_id='$pkid'");
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
-<head>
- <?php include "includes/header.php";?>
-</head>
-<body class="hold-transition sidebar-mini layout-fixed">
-<div class="wrapper">
+	<head>
+		<?php include "includes/header.php";?>
+	</head>
 
+	<body class="hold-transition sidebar-mini layout-fixed">
+		<div class="wrapper">
+			<?php include "includes/navbar.php";?>
+			<?php include "includes/sidebar.php";?>
 
-    <?php include "includes/navbar.php";?>
+			<!-- Content Wrapper. Contains page content -->
+			<div class="content-wrapper">
+				<!-- Content Header (Page header) -->
+				<section class="content-header">
+					<div class="container-fluid">
+						<div class="row mb-2">
+							<div class="col-sm-6">
+								<h1>Edit Project </h1>
+							</div>
+							
+							<div class="col-sm-6">
+								<ol class="breadcrumb float-sm-right">
+									<li class="breadcrumb-item"><a href="#">Home</a></li>
+									<li class="breadcrumb-item active">Project Edit</li>
+								</ol>
+							</div>
+						</div>
+					</div><!-- /.container-fluid -->
+				</section>
 
+				<!-- Main content -->
+				<section class="content">
+					<div class="row">
+						<div class="col-md-12 mx-auto">
+							<div class="card card-primary">
+								<div class="card-header">
+									<h3 class="card-title">Enter Details</h3>
 
-    <?php include "includes/sidebar.php";?>
- 
+									<div class="card-tools">
+										<button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
+											<i class="fas fa-minus"></i>
+										</button>
+									</div>
+								</div>
+				
+								<div class="card-body">
+									<form method="post" action="processes.php" enctype="multipart/form-data">
+										<input type="hidden" name="rid" value="<?php echo $pkid;?>" >
 
-  <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
-    <section class="content-header">
-      <div class="container-fluid">
-        <div class="row mb-2">
-          <div class="col-sm-6">
-            <h1>Edit Project </h1>
-          </div>
-          <div class="col-sm-6">
-            <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Project Edit</li>
-            </ol>
-          </div>
-        </div>
-      </div><!-- /.container-fluid -->
-    </section>
+										<div class="form-group">
+											<label for="inputName">Name/Title</label>
+											<input type="text" id="inputName" name="name"  value="<?php echo $row['title'];?>"  class="form-control" required>
+										</div>
 
-    <!-- Main content -->
-    <section class="content">
-      <div class="row">
-        <div class="col-md-12 mx-auto">
-          <div class="card card-primary">
-            <div class="card-header">
-              <h3 class="card-title">Enter Details</h3>
+										<div class="form-group">
+											<label >Short Description (Subtitle/Tagline/Theme)</label>
+											<textarea class="form-control" name="sdesc" rows="3" required><?php echo $row['short_desc'];?></textarea>
+										</div>
 
-              <div class="card-tools">
-                <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
-                  <i class="fas fa-minus"></i>
-                </button>
-              </div>
-            </div>
-            <div class="card-body">
-            <form method="post" action="processes.php" enctype="multipart/form-data">
-                
-            <input type="hidden" name="rid" value="<?php echo $pkid;?>" >
+										<div class="form-group">
+											<label for="summernote2">Description</label>
+											<textarea id="summernote2" class="form-control" name="desc" rows="5" required><?php echo $row['description'];?></textarea>
+										</div>
 
-              <div class="form-group">
-                <label for="inputName">Name/Title</label>
-                <input type="text" id="inputName" name="name"  value="<?php echo $row['title'];?>"  class="form-control" required>
-              </div>
+										<div class="form-group">
+											<label for="category">Category</label>
+											
+											<select class="form-control" id="category" name="category" required>
+												<option value="">Select Category</option>
+												<option value="Aluminium" <?php if($category == 'Aluminium') echo 'selected'; ?>>Aluminium</option>
+												<option value="Interior fit-outs" <?php if($category == 'Interior fit-outs') echo 'selected'; ?>>Interior Fit-outs</option>
+											</select>
+										</div>
 
-              
-              <div class="form-group">
-                    <label >Short Description (Subtitle/Tagline/Theme)</label>
-                    <textarea class="form-control" name="sdesc" rows="3" required><?php echo $row['short_desc'];?></textarea>
-                </div>
+										<div class="row">
+											<div class="form-group col-md-6">
+												<label for="inputStatus">Visibility</label>
+												
+												<select id="inputStatus" class="form-control custom-select" name="status" required>
+													<option <?php if($row['event_status'] == 0){echo "selected";}?> value="0">Hidden</option>
+													<option <?php if($row['event_status'] == 1){echo "selected";}?> value="1">Visible</option>
+												</select>
+											</div>
+										</div>
+										<!-- /.card-body -->
+										
+										<div class="card-footer">
+											<input type="submit" value="Save Changes" name="edit-event" class="btn btn-success float-right mr-3">
+									</form>
+										</div>
+								</div>
+								<!-- /.card -->
 
+								<div class="card card-secondary" id="img">
+									<div class="card-header">
+										<h3 class="card-title">Cover Image</h3>
 
-              <div class="form-group">
-                    <label for="summernote2">Description</label>
-                    <textarea id="summernote2" class="form-control" name="desc" rows="5" required><?php echo $row['description'];?></textarea>
-                </div>
+										<div class="card-tools">
+											<button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
+												<i class="fas fa-minus"></i>
+											</button>
+										</div>
+									</div>
+				
+									<div class="card-body">
+										<form method="post" action="processes.php" enctype="multipart/form-data">
+											<input type="hidden" name="edit-event-img" value="<?php echo $pkid;?>" >
+											
+											<div>
+												<img src="../uploads/<?php echo $row['cover_image'];?>" style="max-width: 400px">
+											</div>
+											
+											<div class="form-group">
+												<label for="exampleInputFile">Choose image (Preferred ratio: 3:2 or 16:9)</label>
+													
+												<div class="input-group">
+													<div class="custom-file">
+														<input type="file" class="custom-file-input" name="photos" onchange="this.form.submit();" id="exampleInputFile">
+														<label class="custom-file-label"  for="exampleInputFile">Choose image</label>
+													</div>
+												</div>
+											</div>
+									</div>
+									<!-- /.card-body -->
+										</form>
+								</div>
+								<!-- /.card -->
+								 
+								<div class="card card-info card-outline" id="gallery">
+									<div class="card-header">
+										<h3 class="card-title">Project Gallery</h3>
 
+										<div class="card-tools">
+											<form method="post" action="processes.php" enctype="multipart/form-data">
+												<input type="hidden" name="add-gallery" value="<?php echo $pkid;?>" >
+												
+												<div class="form-group py-0">
+													<div class="btn btn-success btn-file">
+														<i class="fas fa-plus"></i> Add New Image
+														<input type="file" name="photos" onchange="this.form.submit();" id="exampleInputFile">
+													</div>
+												</div>
+											</form>
+										</div>
+									</div>
+									
+									<div class="card-body">
+										<div class="row">
+											<?php 
+												while($imgrow = $imgres->fetch_assoc()) {
+											?> 
+											
+													<div class="col-sm-4 px-1 mb-4 bg-light shadow">
+														<img src="../uploads/<?php echo $imgrow['image'];?>" class="img-fluid">
+														
+														<div class="py-2 text-center">
+															<a class="btn btn-sm btn-default" href="processes.php?eid=<?php echo $pkid;?>&del-gallery=<?php echo $imgrow['event_gallery_id'];?>"><i class="fas fa-times"></i> Remove</a>
+														</div>
+													</div>
+					
+											<?php 
+												} 
+											?>
 
-              <div class="row">
-              
-                
+										</div>
+									</div>
+									<!-- /.card-body -->
+								</div>
+								<!-- /.card -->
+							</div>
+						</div>
+					</div>
+				</section>
+				<!-- /.content -->
+			</div>
+			<!-- /.content-wrapper -->
 
-               
-                <div class="form-group col-md-6">
-                <label for="inputStatus">Visibility</label>
-                <select id="inputStatus" class="form-control custom-select" name="status" required>
-                <option <?php if($row['event_status'] == 0){echo "selected";}?> value="0">Hidden</option>
-                <option <?php if($row['event_status'] == 1){echo "selected";}?> value="1">Visible</option>
-                </select>
-                </div>
-              
-            </div>
-            <!-- /.card-body -->
-            <div class="card-footer">
-                <input type="submit" value="Save Changes" name="edit-event" class="btn btn-success float-right mr-3">
-                </form>
-            </div>
-          </div>
-          <!-- /.card -->
+			<?php include "includes/footer.php";?>
 
-          <div class="card card-secondary" id="img">
-            <div class="card-header">
-                <h3 class="card-title">Cover Image</h3>
+		</div>
+		<!-- ./wrapper -->
 
-                <div class="card-tools">
-                    <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
-                    <i class="fas fa-minus"></i>
-                    </button>
-                </div>
-            </div>
-            <div class="card-body">
-                <form method="post" action="processes.php" enctype="multipart/form-data">
-                   <input type="hidden" name="edit-event-img" value="<?php echo $pkid;?>" >
-                <div>
-                    <img src="../uploads/<?php echo $row['cover_image'];?>" style="max-width: 400px">
-                </div>
-                <div class="form-group">
-                    <label for="exampleInputFile">Choose image (Preferred ratio: 3:2 or 16:9)</label>
-                    <div class="input-group">
-                        <div class="custom-file">
-                            <input type="file" class="custom-file-input" name="photos" onchange="this.form.submit();" id="exampleInputFile">
-                            <label class="custom-file-label"  for="exampleInputFile">Choose image</label>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- /.card-body -->
-            </form>
-        </div>
-        <!-- /.card -->
-
-
-    
-
-
-        <div class="card card-info card-outline" id="gallery">
-            <div class="card-header">
-                <h3 class="card-title">Project Gallery</h3>
-
-                <div class="card-tools">
-                <form method="post" action="processes.php" enctype="multipart/form-data">
-                  <input type="hidden" name="add-gallery" value="<?php echo $pkid;?>" >
-                    <div class="form-group py-0">
-                      <div class="btn btn-success btn-file">
-                        <i class="fas fa-plus"></i> Add New Image
-                        <input type="file" name="photos" onchange="this.form.submit();" id="exampleInputFile">
-                      </div>
-                    </div>
-                    </form>
-                </div>
-            </div>
-            <div class="card-body">
-                <div class="row">
-                  <?php while($imgrow = $imgres->fetch_assoc()){?> 
-                  <div class="col-sm-4 px-1 mb-4 bg-light shadow">
-                    <img src="../uploads/<?php echo $imgrow['image'];?>" class="img-fluid">
-                    <div class="py-2 text-center">
-                      <a class="btn btn-sm btn-default" href="processes.php?eid=<?php echo $pkid;?>&del-gallery=<?php echo $imgrow['event_gallery_id'];?>"><i class="fas fa-times"></i> Remove</a>
-                    </div>
-                  </div>
-                  <?php } ?>
-
-                </div>
-            </div>
-            <!-- /.card-body -->
-        </div>
-        <!-- /.card -->
-
-
-        </div>
-      </div>
-    </section>
-    <!-- /.content -->
-  </div>
-  <!-- /.content-wrapper -->
-  
-  <?php include "includes/footer.php";?>
- 
-</div>
-<!-- ./wrapper -->
-
-<?php include "includes/scripts.php";?>
-</body>
+		<?php include "includes/scripts.php";?>
+	</body>
 </html>
