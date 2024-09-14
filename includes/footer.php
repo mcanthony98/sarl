@@ -13,7 +13,7 @@ $footservresall = $conn->query("SELECT * FROM service WHERE status=1");
                             <img src="assets/images/logo/sarl-logo.jpg" style="height: 60px;" alt="SARL Logo" class="text-inverse" />
                         </a>
                     </div>
-                    <p class="mb-5">Specialized Aluminium Renovators Ltd (SARL) has been a trusted name in high-quality aluminum and uPVC fabrications, interior fitouts, and bespoke architectural solutions across East Africa since 1992. Our commitment to excellence and innovation drives everything we do.</p>
+                    <p class="mb-5">Specialized Aluminium Renovators Ltd (SARL) has been a trusted name in high-quality aluminum renovations, interior solutions, and bespoke fitouts across East Africa since 1992. Our commitment to excellence and innovation drives everything we do.</p>
 
                 </div>
             </div>

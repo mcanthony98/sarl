@@ -38,7 +38,7 @@
                             <div class="mb-4">
                                 <h1 class="mb-2">Build Your Future with SARL. Join Our Team.</h1>
                                 <p class="mb-0">
-                                    We're always on the lookout for passionate and skilled individuals looking to contribute to our mission of excellence in architectural fabrication and interior fit-outs. Think you have what it takes? You might belong at SARL.
+                                    We're always on the lookout for passionate and skilled individuals looking to contribute to our mission of excellence in aluminium fabrication and interior fit-outs. Think you have what it takes? You might belong at SARL.
                                 </p>
                             </div>
                             <a href="#openPosition" class="btn btn-dark me-2">Open Positions</a>

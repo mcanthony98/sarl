@@ -112,13 +112,13 @@ $eres = $conn->query("SELECT * FROM event WHERE event_status = 1  ORDER BY event
                     <div class="col-lg-10 col-12">
                         <div class="d-flex flex-column gap-6">
                             <div class="d-flex flex-column gap-4">
-                                <h1 class="text-white-stable display-4 mb-0">High-End Architectural Fabrication Solutions</h1>
+                                <h1 class="text-white-stable display-4 mb-0">High-End Fitout & Aluminium Solutions</h1>
                                 <p class="mb-0 text-white lead px-lg-10">
-                                    Innovative designs and precise craftsmanship, creating unparalleled spaces with SARL's expertise in aluminum, uPVC, and steel fabrications.
+                                    Innovative designs and precise craftsmanship, creating unparalleled spaces with SARL's expertise in aluminum and steel fitouts.
                                 </p>
                             </div>
                             <div class="d-md-flex d-grid align-items-center justify-content-md-center gap-4">
-                                <a href="contact.php" class="btn btn-primary rounded-pill">Get a Free Quote Today</a>
+                                <a href="contact.php" class="btn btn-primary rounded-pill">Reach Out to an Expert</a>
                                 <a href="projects.php" class="link-white icon-link icon-link-hover card-grid-link d-flex justify-content-center">
                                     View Our Projects
                                     <i class="bi bi-arrow-right"></i>
@@ -147,7 +147,7 @@ $eres = $conn->query("SELECT * FROM event WHERE event_status = 1  ORDER BY event
                             <div class="col-lg-6">
                                 <div>
                                     <h3 class="fs-4">Expertise</h3>
-                                    <p class="mb-0">Years of experience in architectural fabrication, delivering exceptional quality and precision in every project.</p>
+                                    <p class="mb-0">Years of experience in fitout solutions, delivering exceptional quality and precision in every project.</p>
                                 </div>
                             </div>
                             <div class="col-lg-6">
@@ -161,7 +161,7 @@ $eres = $conn->query("SELECT * FROM event WHERE event_status = 1  ORDER BY event
                             <div class="col-4 border-end">
                                 <div class="ps-md-4">
                                     <h3 class="fs-5">Completed Projects</h3>
-                                    <span class="fs-2 fw-bold text-primary">200+</span>
+                                    <span class="fs-2 fw-bold text-primary">400+</span>
                                 </div>
                             </div>
 
@@ -175,7 +175,7 @@ $eres = $conn->query("SELECT * FROM event WHERE event_status = 1  ORDER BY event
                             <div class="col-4">
                                 <div class="ps-md-4">
                                     <h3 class="fs-5">Years of Experience</h3>
-                                    <span class="fs-2 fw-bold text-primary">25+</span>
+                                    <span class="fs-2 fw-bold text-primary">35+</span>
                                 </div>
                             </div>
                         </div>
@@ -197,13 +197,13 @@ $eres = $conn->query("SELECT * FROM event WHERE event_status = 1  ORDER BY event
                 <div class="row mb-6" data-cue="zoomIn">
                     <div class="col-lg-5">
                         <div>
-                            <h2 class="mb-0">Our Expertise in Architectural Solutions</h2>
+                            <h2 class="mb-0">Our Expertise in Fitout & Aluminium Solutions</h2>
                         </div>
                     </div>
                     <div class="offset-xl-1 col-xl-6">
                         <div>
                             <p class="mb-0">
-                                SARL excels in delivering tailored solutions in aluminum & uPVC fabrications, ceilings, partitioning systems, and more. Our expertise ensures that every project is a testament to our dedication to quality and precision.
+                                SARL excels in delivering tailored solutions in high-end fitouts, ceilings, partitioning systems, and more. Our expertise ensures that every project is a testament to our dedication to quality and precision.
                             </p>
                         </div>
                     </div>
@@ -215,8 +215,8 @@ $eres = $conn->query("SELECT * FROM event WHERE event_status = 1  ORDER BY event
                                 <i class="bi bi-house-door-fill text-primary" style="font-size: 40px;"></i>
                             </div>
                             <div>
-                                <h3>Aluminium & uPVC Fabrications</h3>
-                                <p class="mb-0 text-primary-emphasis">High-quality, customized solutions for doors, windows, and other aluminum and uPVC fabrications.</p>
+                                <h3>Aluminium Fitouts</h3>
+                                <p class="mb-0 text-primary-emphasis">High-quality, customized solutions for doors, windows, and other aluminum fabrications.</p>
                             </div>
                         </div>
                     </div>
@@ -394,54 +394,6 @@ $eres = $conn->query("SELECT * FROM event WHERE event_status = 1  ORDER BY event
             </div>
         </section>
         <!--Why Us end-->
-
-        <!-- Clients start-->
-        <div class="my-xl-7 py-5" data-cue="fadeIn">
-            <div class="container py-2">
-                <div class="row">
-                    <div class="col-lg-10 offset-lg-1">
-                        <div class="text-center mb-4 mb-lg-7">
-                            <small class="text-uppercase ls-md fw-semibold">
-                                Trusted by
-                                <span class="fw-bold text-dark">our</span>
-                                of Clients
-                            </small>
-                        </div>
-                        <div class="swiper-container swiper" id="swiper-1" data-pagination-type="" data-speed="400" data-space-between="100" data-pagination="true" data-navigation="false" data-autoplay="true" data-autoplay-delay="3000" data-breakpoints='{"480": {"slidesPerView": 2}, "768": {"slidesPerView": 3}, "1024": {"slidesPerView": 5}}'>
-                            <div class="swiper-wrapper pb-6">
-                                <div class="swiper-slide">
-                                    <figure class="text-center">
-                                        <img src="assets/images/client.png" alt="Client Logo 1" class="img-fluid"/>
-                                    </figure>
-                                </div>
-                                <div class="swiper-slide">
-                                    <figure class="text-center">
-                                        <img src="assets/images/client.png" alt="Client Logo 2" class="img-fluid"/>
-                                    </figure>
-                                </div>
-                                <div class="swiper-slide">
-                                    <figure class="text-center">
-                                        <img src="assets/images/client.png" alt="Client Logo 3" class="img-fluid"/>
-                                    </figure>
-                                </div>
-                                <div class="swiper-slide">
-                                    <figure class="text-center">
-                                        <img src="assets/images/client.png" alt="Client Logo 4" class="img-fluid"/>
-                                    </figure>
-                                </div>
-                                <div class="swiper-slide">
-                                    <figure class="text-center">
-                                        <img src="assets/images/client.png" alt="Client Logo 5" class="img-fluid"/>
-                                    </figure>
-                                </div>
-                            </div>
-                            <div class="swiper-pagination"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Clients end -->
 
         <!-- CTA start -->
         <div class="container py-5" data-bs-theme="dark">

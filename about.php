@@ -26,16 +26,16 @@
                             <h1 class="mb-3">Introduction</h1>
                             <p class="lead mb-4">Innovation in Every Detail</p>
                             <p class="mb-6 me-xl-6">
-                                Specialized Aluminium Renovators Limited (SARL) is a Nairobi-based company established in 1992, recognized across East Africa as general contractors providing highly professional services, including interior fit-outs, aluminum and glass works, suspended ceilings, bespoke joinery works, architectural stainless steel products, and paint works. Our specialties serve a cross-section of the market—domestic, commercial, and contract customers.
+                                Specialized Aluminium Renovators Limited (SARL) is a Nairobi-based company established in 1992, recognized across East Africa as premium renovators providing highly professional services, including interior fit-outs, aluminum and glass works, suspended ceilings, bespoke joinery works, architectural stainless steel products, and paint works. Our specialties serve a cross-section of the market—domestic, commercial, and contract customers.
                             </p>
                             <p class="mb-6 me-xl-6">
-                                SARL has built its expertise through personal recommendations from many happy clients whose projects stand as testimony to our professional, reliable, friendly, timely, and disciplined work. SARL has been accredited as one of the top 100 mid-sized companies for several years, including 2011-2012, 2012-2013, 2013-2014, 2014-2015, 2016-2017, and 2018-2019.
+                                SARL has built its expertise through personal recommendations from many happy clients whose projects stand as testimony to our professional, reliable, friendly, timely, and disciplined work. SARL has been accredited as one of the top 100 mid-sized companies for several years from 2011 to 2019.
                             </p>
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-12">
                         <figure>
-                            <img src="assets/images/about-img/about-hero-img.jpg" alt="About SARL" class="img-fluid rounded-3" />
+                            <img src="assets/images/about-hero.jpg" alt="About SARL" class="img-fluid rounded-3" />
                         </figure>
                     </div>
                 </div>
@@ -125,19 +125,19 @@
                 <div class="row g-5">
                     <div class="col-md-4 col-6">
                         <div class="text-center">
-                            <h2 class="text-white-stable">1992</h2>
-                            <h5 class="text-white-stable mb-0">Founded</h5>
+                            <h2 class="text-white-stable">35+</h2>
+                            <h5 class="text-white-stable mb-0">Years of Experience</h5>
                         </div>
                     </div>
                     <div class="col-md-4 col-6">
                         <div class="text-center">
-                            <h2 class="text-white-stable">425+</h2>
+                            <h2 class="text-white-stable">400+</h2>
                             <h5 class="text-white-stable mb-0">Projects Shipped</h5>
                         </div>
                     </div>
                     <div class="col-md-4 col-6">
                         <div class="text-center">
-                            <h2 class="text-white-stable">55+</h5>
+                            <h2 class="text-white-stable">80+</h5>
                                 <h5 class="text-white-stable mb-0">Team Members</h5>
                         </div>
                     </div>
@@ -157,44 +157,27 @@
                         </div>
                     </div>
                 </div>
-                <div class="row gy-5">
-                    <div class="col-lg-3 col-md-6 col-12">
+                <div class="row justify-content-center gy-5">
+                    <div class="col-lg-6 col-md-6 col-12 text-center">
                         <figure class="mb-4 zoom-img">
-                            <img src="assets/images/user.png" alt="Jitu Chauhna" class="rounded-3 img-fluid" />
+                            <img src="assets/images/user.png" alt="Jitu Chauhna" class="rounded-3 img-fluid mx-auto" />
                         </figure>
                         <div class="mb-4">
                             <h4 class="mb-1"><a href="single-project.php" class="text-reset">Person</a></h4>
                             <span class="fs-6">Co-Founder & CEO</span>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-md-6 col-12">
+                    <div class="col-lg-6 col-md-6 col-12 text-center">
                         <figure class="mb-4 zoom-img">
-                            <img src="assets/images/user.png" alt="Anita Parmar" class="rounded-3 img-fluid" />
-                        </figure>
-                        <div class="mb-4">
-                            <h4 class="mb-1"><a href="single-project.php" class="text-reset">Person</a></h4>
-                            <span class="fs-6">CFO</span>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-12">
-                        <figure class="mb-4 zoom-img">
-                            <img src="assets/images/user.png" alt="Sandip Chauhan" class="rounded-3 img-fluid" />
+                            <img src="assets/images/user.png" alt="Sandip Chauhan" class="rounded-3 img-fluid mx-auto" />
                         </figure>
                         <div class="mb-4">
                             <h4 class="mb-1"><a href="single-project.php" class="text-reset">Person</a></h4>
                             <span class="fs-6">COO</span>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-md-6 col-12">
-                        <figure class="mb-4 zoom-img">
-                            <img src="assets/images/user.png" alt="Manasvi Suthar" class="rounded-3 img-fluid" />
-                        </figure>
-                        <div class="mb-4">
-                            <h4 class="mb-1"><a href="single-project.php" class="text-reset">Person</a></h4>
-                            <span class="fs-6">Sales Manager</span>
-                        </div>
-                    </div>
                 </div>
+
             </div>
         </section>
         <!--Behind the block end-->

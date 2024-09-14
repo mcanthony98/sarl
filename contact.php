@@ -141,7 +141,7 @@
                                                     <!-- then it'll pass the first option and check on the second one, and it goes on  -->
                                                     <!-- till it finds a condition that's true. -->
                                                     <option value="Interior Fitouts" <?php echo ($selected_service == 'Interior Fitouts') ? 'selected' : ''; ?>>Interior Fitouts</option>
-                                                    <option value="Aluminium & UPVC Fabrications" <?php echo ($selected_service == 'Aluminium & UPVC Fabrications') ? 'selected' : ''; ?>>Aluminium & UPVC Fabrications</option>
+                                                    <option value="Aluminium & UPVC Fabrications" <?php echo ($selected_service == 'Aluminium & UPVC Fabrications') ? 'selected' : ''; ?>>Aluminium Fabrications</option>
                                                     <option value="Gypsum & Acoustic Ceilings" <?php echo ($selected_service == 'Gypsum & Acoustic Ceilings') ? 'selected' : ''; ?>>Gypsum & Acoustic Ceilings</option>
                                                     <option value="Drywall & Partitioning Systems" <?php echo ($selected_service == 'Drywall & Partitioning Systems') ? 'selected' : ''; ?>>Drywall & Partitioning Systems</option>
                                                     <option value="Stainless & Mild Steel Fabrications" <?php echo ($selected_service == 'Stainless & Mild Steel Fabrications') ? 'selected' : ''; ?>>Stainless & Mild Steel Fabrications</option>

@@ -28,7 +28,7 @@ $servresall = $conn->query("SELECT * FROM service WHERE status=1");
                     <div class="col-lg-8 offset-lg-2 col-md-12 col-12">
                         <div class="text-center">
                             <small class="text-uppercase ls-md fw-bold text-primary">Services</small>
-                            <h1 class="mt-4">High-End Architectural Solutions</h1>
+                            <h1 class="mt-4">High-End Renovation & Fitout Solutions</h1>
                             <p class="lead">SARL offers specialized services to meet the unique needs of our clients, ensuring exceptional quality and innovation in every project.</p>
                         </div>
                     </div>
@@ -43,7 +43,7 @@ $servresall = $conn->query("SELECT * FROM service WHERE status=1");
                 <div class="row g-7">
 
                 <?php while($servrow = $servresall->fetch_assoc()){?>
-                    <!-- Aluminium & uPVC Fabrications -->
+                    <!-- Aluminium Fabrications -->
                     <div class="col-sm-6 col-md-6">
                         <div class="position-relative mb-7">
                             <a href="service.php?id=<?php echo $servrow['service_id'];?>&<?php echo $servrow['slag'];?>">
@@ -219,13 +219,13 @@ $servresall = $conn->query("SELECT * FROM service WHERE status=1");
                         <div class="row align-items-center">
                             <div class="col-lg-8 col-md-7">
                                 <div class="text-center text-md-start mb-6 mb-md-0">
-                                    <h2 class="text-white-stable">Need a Free Quotation?</h2>
+                                    <h2 class="text-white-stable">Need to make an inquiry?</h2>
                                     <p class="mb-0 text-dark-50">Contact us today to get a personalized quote for your project. Our team is ready to assist with expert services tailored to your needs.</p>
                                 </div>
                             </div>
                             <div class="col-lg-4 col-md-5">
                                 <div class="text-center">
-                                    <a href="contact.php" class="btn btn-primary">Request a Quote</a>
+                                    <a href="contact.php" class="btn btn-primary">Speak to an Expert Today</a>
                                 </div>
                             </div>
                         </div>
