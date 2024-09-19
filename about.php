@@ -1,3 +1,8 @@
+<?php
+    session_start();
+    require "includes/connect.php";
+   
+?>
 <!doctype html>
 <html lang="en">
 
@@ -26,7 +31,7 @@
                             <h1 class="mb-3">Introduction</h1>
                             <p class="lead mb-4">Innovation in Every Detail</p>
                             <p class="mb-6 me-xl-6">
-                                Specialized Aluminium Renovators Limited (SARL) is a Nairobi-based company established in 1992, recognized across East Africa as premium renovators providing highly professional services, including interior fit-outs, aluminum and glass works, suspended ceilings, bespoke joinery works, architectural stainless steel products, and paint works. Our specialties serve a cross-section of the market—domestic, commercial, and contract customers.
+                                Specialized Aluminium Renovators Limited (SARL) is a Nairobi-based company established in 1992, recognized across East Africa as high-end interior fitouts specialist and bespoke aluminium solutions. Our specialties serve a cross-section of the market—domestic, commercial, and contract customers.
                             </p>
                             <p class="mb-6 me-xl-6">
                                 SARL has built its expertise through personal recommendations from many happy clients whose projects stand as testimony to our professional, reliable, friendly, timely, and disciplined work. SARL has been accredited as one of the top 100 mid-sized companies for several years from 2011 to 2019.

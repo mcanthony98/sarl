@@ -118,7 +118,7 @@ $eres = $conn->query("SELECT * FROM event WHERE event_status = 1  ORDER BY event
                                 </p>
                             </div>
                             <div class="d-md-flex d-grid align-items-center justify-content-md-center gap-4">
-                                <a href="contact.php" class="btn btn-primary rounded-pill">Reach Out to an Expert</a>
+                                <a href="contact.php" class="btn btn-primary rounded-pill">Reach Out Today!</a>
                                 <a href="projects.php" class="link-white icon-link icon-link-hover card-grid-link d-flex justify-content-center">
                                     View Our Projects
                                     <i class="bi bi-arrow-right"></i>
@@ -197,13 +197,13 @@ $eres = $conn->query("SELECT * FROM event WHERE event_status = 1  ORDER BY event
                 <div class="row mb-6" data-cue="zoomIn">
                     <div class="col-lg-5">
                         <div>
-                            <h2 class="mb-0">Our Expertise in Fitout & Aluminium Solutions</h2>
+                            <h2 class="mb-0">Our Expertise in High-end Fitout & Aluminium Solutions</h2>
                         </div>
                     </div>
                     <div class="offset-xl-1 col-xl-6">
                         <div>
                             <p class="mb-0">
-                                SARL excels in delivering tailored solutions in high-end fitouts, ceilings, partitioning systems, and more. Our expertise ensures that every project is a testament to our dedication to quality and precision.
+                                SARL excels in delivering tailored solutions in high-end fitouts, and innovative solutions. Our expertise ensures that every project is a testament to our dedication to quality and precision.
                             </p>
                         </div>
                     </div>
@@ -215,8 +215,8 @@ $eres = $conn->query("SELECT * FROM event WHERE event_status = 1  ORDER BY event
                                 <i class="bi bi-house-door-fill text-primary" style="font-size: 40px;"></i>
                             </div>
                             <div>
-                                <h3>Aluminium Fitouts</h3>
-                                <p class="mb-0 text-primary-emphasis">High-quality, customized solutions for doors, windows, and other aluminum fabrications.</p>
+                                <h3>Stainless & Mild Steel</h3>
+                                <p class="mb-0 text-primary-emphasis">Durable and aesthetically pleasing steel fabrications for diverse applications.</p>
                             </div>
                         </div>
                     </div>
@@ -226,22 +226,12 @@ $eres = $conn->query("SELECT * FROM event WHERE event_status = 1  ORDER BY event
                                 <i class="bi bi-building text-success" style="font-size: 40px;"></i>
                             </div>
                             <div>
-                                <h3>Gypsum & Acoustic Ceilings</h3>
-                                <p class="mb-0 text-success-emphasis">Innovative ceiling solutions that enhance acoustics and aesthetics in commercial and residential spaces.</p>
+                                <h3>Joinery Works</h3>
+                                <p class="mb-0 text-success-emphasis">Craftsmanship at its best, delivering premium joinery works for bespoke interiors.</p>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-md-6" data-cue="zoomIn" data-duration="1000">
-                        <div class="card bg-info bg-opacity-10 p-4 border-0 h-100 card-lift">
-                            <div class="mb-4">
-                                <i class="bi bi-layout-text-window-reverse text-info" style="font-size: 40px;"></i>
-                            </div>
-                            <div>
-                                <h3>Drywall & Partitioning Systems</h3>
-                                <p class="mb-0 text-info-emphasis">Flexible partitioning systems that adapt to your space, offering both functionality and style.</p>
-                            </div>
-                        </div>
-                    </div>
+                    
                     <div class="col-lg-3 col-md-6" data-cue="zoomIn" data-duration="1200">
                         <div class="card bg-danger bg-opacity-10 p-4 border-0 h-100 card-lift">
                             <div class="mb-4">
@@ -253,38 +243,15 @@ $eres = $conn->query("SELECT * FROM event WHERE event_status = 1  ORDER BY event
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="row g-4 mt-2">
+
                     <div class="col-lg-3 col-md-6" data-cue="zoomIn" data-duration="600">
-                        <div class="card bg-warning bg-opacity-10 p-4 border-0 h-100 card-lift">
+                        <div class="card bg-primary bg-opacity-10 p-4 border-0 h-100 card-lift">
                             <div class="mb-4">
-                                <i class="bi bi-wrench-adjustable-circle text-warning" style="font-size: 40px;"></i>
+                                <i class="bi bi-house-door-fill text-primary" style="font-size: 40px;"></i>
                             </div>
                             <div>
-                                <h3>Stainless & Mild Steel Fabrications</h3>
-                                <p class="mb-0 text-warning-emphasis">Durable and aesthetically pleasing steel fabrications for diverse applications.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6" data-cue="zoomIn" data-duration="800">
-                        <div class="card bg-secondary bg-opacity-10 p-4 border-0 h-100 card-lift">
-                            <div class="mb-4">
-                                <i class="bi bi-cup-straw text-secondary" style="font-size: 40px;"></i>
-                            </div>
-                            <div>
-                                <h3>Joinery Works</h3>
-                                <p class="mb-0 text-secondary-emphasis">Craftsmanship at its best, delivering premium joinery works for bespoke interiors.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6" data-cue="zoomIn" data-duration="1000">
-                        <div class="card bg-dark bg-opacity-10 p-4 border-0 h-100 card-lift">
-                            <div class="mb-4">
-                                <i class="bi bi-award-fill text-dark" style="font-size: 40px;"></i>
-                            </div>
-                            <div>
-                                <h3>High-End Custom Solutions</h3>
-                                <p class="mb-0 text-dark-emphasis">Tailored solutions for those seeking unique, high-quality fabrications that stand out.</p>
+                                <h3>Aluminium Fitouts</h3>
+                                <p class="mb-0 text-primary-emphasis">High-quality, customized solutions your aluminum fabrications.</p>
                             </div>
                         </div>
                     </div>

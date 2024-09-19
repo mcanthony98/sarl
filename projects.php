@@ -8,146 +8,121 @@
     $interior_projects = $conn->query("SELECT * FROM event WHERE event_status = 1 AND category = 'Interior fit-outs' ORDER BY event_id DESC");
     $aluminium_projects = $conn->query("SELECT * FROM event WHERE event_status = 1 AND category = 'Aluminium' ORDER BY event_id DESC");
 ?>
-
 <!doctype html>
 <html lang="en">
 
-    <head>
-        <title>Projects | SARL</title>
+<head>
+    <title>Projects | SARL</title>
 
-        <!-- Head Content -->
-        <?php include 'includes/head-content.php'; ?>
-    </head>
-
-    <body>
-        <!-- Navbar -->
-        <?php include 'includes/navbar.php'; ?>
+    <!-- Head Content -->
+    <?php include 'includes/head-content.php'; ?>
 
 
-        <main>
-            <!--Page Content-->
-            <!--Square Pattern Start-->
-            <!--Square Pattern End-->
+    <style>
+        /* Project Label */
+        .project-label {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            margin: 10px;
+            background-color: rgba(0, 115, 127, 0.8);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
 
-            <!--Pageheader start-->
-            <section class="py-5 py-lg-8">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-12 col-md-12 col-12">
-                            <div class="text-center">
-                                <h1 class="mb-3">Our Projects</h1>
-                                <p class="mb-0 text-center" style="text-align: justify; text-align-last: center;">
-                                    Discover how we transform spaces and bring visions to life with precision, innovation, and unmatched quality.
-                                </p>
+        /* Img Container */
+        .project-image-container {
+            position: relative;
+        }
 
-                            </div>
+        .project-image-container img {
+            width: 100%;
+            border-radius: 0.25rem 0.25rem 0 0;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <?php include 'includes/navbar.php'; ?>
+
+    <main>
+        <!--Page Content-->
+        <section class="py-5 py-lg-8">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-12">
+                        <div class="text-center">
+                            <h1 class="mb-3">Our Projects</h1>
+                            <p class="mb-0 text-center" style="text-align: justify; text-align-last: center;">
+                                Discover how we transform spaces and bring visions to life with precision, innovation, and unmatched quality.
+                            </p>
                         </div>
                     </div>
                 </div>
-            </section>
-            <!--Pageheader end-->
 
-            <!--career study start-->
-            <section class="mb-xl-9 my-4">
-                <div class="container">
-                    <div class="row g-5">
+                <!-- Tab Btns -->
+                <div class="text-center my-4">
+                    <button class="btn btn-outline-primary mx-2 active" id="allProjectsButton" onclick="filterProjects('all')">All Projects</button>
+                    <button class="btn btn-outline-primary mx-2" id="interiorButton" onclick="filterProjects('Interior fit-outs')">Interior Fitouts</button>
+                    <button class="btn btn-outline-primary mx-2" id="aluminiumButton" onclick="filterProjects('Aluminium')">Aluminium</button>
+                </div>
 
-                    <!-- <?php while($erow = $eres->fetch_assoc()){?>
-                        <div class="col-lg-4 col-md-6 col-12">
-                            <div class="card border-0 h-100 card-lift">
-                                <a href="project.php?id=<?php echo $erow['event_id'];?>&<?php echo slagify($erow['title']); ?>"><img loading="lazy" src="uploads/<?php echo $erow['cover_image'];?>" alt="project at <?php echo $erow['title'];?>" class="img-fluid rounded-top-3" /></a>
-                                <div class="card-body">
-                                    <div class="d-flex flex-column gap-2">
-                                        <div>
-                                            <h4><a href="project.php?id=<?php echo $erow['event_id'];?>&<?php echo slagify($erow['title']); ?>" class="text-reset"><?php echo $erow['title'];?></a></h4>
-                                            <p class="mb-1"><?php echo $erow['short_desc'];?></p>
-                                            <a href="project.php?id=<?php echo $erow['event_id'];?>&<?php echo slagify($erow['title']); ?>" class="btn btn-primary">View Project</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    <?php }?> -->
+                <!-- Projects -->
+                <div class="row g-5" id="projectsContainer">
 
-                    <div class="col-lg-6">
-                        <h3 class="text-center mb-4">Interior Fit-outs</h3>
-                        <div class="row g-4">
-                            <?php while($interior_row = $interior_projects->fetch_assoc()){ ?>
-                                <div class="col-lg-6 col-md-12">
-                                    <div class="card border-0 h-100 card-lift">
-                                        <a href="project.php?id=<?php echo $interior_row['event_id']; ?>&<?php echo slagify($interior_row['title']); ?>">
-                                            <img loading="lazy" src="uploads/<?php echo $interior_row['cover_image']; ?>" alt="project at <?php echo $interior_row['title']; ?>" class="img-fluid rounded-top-3" />
-                                        </a>
-                                        <div class="card-body">
-                                            <h4>
-                                                <a href="project.php?id=<?php echo $interior_row['event_id']; ?>&<?php echo slagify($interior_row['title']); ?>" class="text-reset">
-                                                    <?php echo $interior_row['title']; ?>
-                                                </a>
-                                            </h4>
-                                            <p class="mb-1"><?php echo $interior_row['short_desc']; ?></p>
-                                            <a href="project.php?id=<?php echo $interior_row['event_id']; ?>&<?php echo slagify($interior_row['title']); ?>" class="btn btn-primary">View Project</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            <?php } ?>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-6">
-                        <h3 class="text-center mb-4">Aluminium</h3>
-                        <div class="row g-4">
-                            <?php while($aluminium_row = $aluminium_projects->fetch_assoc()){ ?>
-                                <div class="col-lg-6 col-md-12">
-                                    <div class="card border-0 h-100 card-lift">
-                                        <a href="project.php?id=<?php echo $aluminium_row['event_id']; ?>&<?php echo slagify($aluminium_row['title']); ?>">
-                                            <img loading="lazy" src="uploads/<?php echo $aluminium_row['cover_image']; ?>" alt="project at <?php echo $aluminium_row['title']; ?>" class="img-fluid rounded-top-3" />
-                                        </a>
-                                        <div class="card-body">
-                                            <h4>
-                                                <a href="project.php?id=<?php echo $aluminium_row['event_id']; ?>&<?php echo slagify($aluminium_row['title']); ?>" class="text-reset">
-                                                    <?php echo $aluminium_row['title']; ?>
-                                                </a>
-                                            </h4>
-                                            <p class="mb-1"><?php echo $aluminium_row['short_desc']; ?></p>
-                                            <a href="project.php?id=<?php echo $aluminium_row['event_id']; ?>&<?php echo slagify($aluminium_row['title']); ?>" class="btn btn-primary">View Project</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            <?php } ?>
-                        </div>
-                    </div>
-
-                        <!-- <div class="col-lg-12 text-center">
-                            <div class="mt-xl-7 mt-3">
-                                <a class="btn btn-outline-primary" href="#!" id="loadMoreButton">
-                                    <span class="spinner-border spinner-border-sm d-none" role="status" aria-hidden="true" id="spinner"></span>
-                                    <span class="ms-2">Load More</span>
+                <?php while($interior_row = $interior_projects->fetch_assoc()){ ?>
+                    <!-- Project -->
+                    <div class="col-lg-4 col-md-6 col-12 project-item" data-category="<?php echo $interior_row['category']; ?>">
+                        <div class="card border-0 h-100 card-lift">
+                            <div class="project-image-container">
+                                <a href="project.php?id=<?php echo $interior_row['event_id']; ?>&<?php echo slagify($interior_row['title']); ?>">
+                                    <img src="uploads/<?php echo $interior_row['cover_image']; ?>" alt="project at <?php echo $interior_row['title']; ?>" class="img-fluid rounded-top-3" />
+                                    <span class="project-label text-capitalize"><?php echo $interior_row['category']; ?></span>
                                 </a>
                             </div>
-                        </div> -->
+                            <div class="card-body">
+                                <h4><a href="project.php?id=<?php echo $interior_row['event_id']; ?>&<?php echo slagify($interior_row['title']); ?>" class="text-reset"><?php echo $interior_row['title']; ?></a></h4>
+                                <p class="mb-1"><?php echo $interior_row['short_desc']; ?></p>
+                                <a href="project.php?id=<?php echo $interior_row['event_id']; ?>&<?php echo slagify($interior_row['title']); ?>" class="btn btn-primary">View Project</a>
+                            </div>
+                        </div>
                     </div>
+                    <?php } ?>
 
 
+                    <!-- Other Projects -->
                 </div>
-            </section>
-            <!--career study end-->
-        </main>
+            </div>
+        </section>
+    </main>
 
-        <!-- Footer -->
-        <?php include 'includes/footer.php'; ?>
+    <!-- Footer -->
+    <?php include 'includes/footer.php'; ?>
 
+    <!-- Scripts -->
+    <?php include 'includes/scripts.php'; ?>
 
-        <!-- Scripts -->
-        <?php include 'includes/scripts.php'; ?>
+    <!-- Filter JS -->
+    <script>
+        function filterProjects(category) {
+            const projectItems = document.querySelectorAll('.project-item');
 
-        <!-- Load More Spinner -->
-        <script>
-            document.getElementById('loadMoreButton').addEventListener('click', function() {
-                const spinner = document.getElementById('spinner');
-                spinner.classList.remove('d-none');
-                // Load more functionality
+            projectItems.forEach(item => {
+                if (category === 'all' || item.getAttribute('data-category') === category) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
             });
-        </script>
-    </body>
+
+            // Update btns
+            document.querySelectorAll('.btn').forEach(btn => btn.classList.remove('active'));
+            document.getElementById(category + 'Button').classList.add('active');
+        }
+    </script>
+
+</body>
 
 </html>
