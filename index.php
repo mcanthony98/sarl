@@ -114,7 +114,7 @@ $eres = $conn->query("SELECT * FROM event WHERE event_status = 1  ORDER BY event
                             <div class="d-flex flex-column gap-4">
                                 <h1 class="text-white-stable display-4 mb-0">High-End Fitout & Aluminium Solutions</h1>
                                 <p class="mb-0 text-white lead px-lg-10">
-                                    Innovative designs and precise craftsmanship, creating unparalleled spaces with SARL's expertise in aluminum and steel fitouts.
+                                    Innovative designs and precise craftsmanship, creating unparalleled spaces with SARL's expertise in high-end fitouts and bespoke aluminium solutions.
                                 </p>
                             </div>
                             <div class="d-md-flex d-grid align-items-center justify-content-md-center gap-4">
