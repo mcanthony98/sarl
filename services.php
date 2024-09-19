@@ -1,7 +1,7 @@
 <?php
 require "includes/connect.php";
 
-$servresall = $conn->query("SELECT * FROM service WHERE status=1");
+$servresalll = $conn->query("SELECT * FROM service WHERE status=1");
 ?>
 <!doctype html>
 <html lang="en">
@@ -42,7 +42,7 @@ $servresall = $conn->query("SELECT * FROM service WHERE status=1");
             <div class="container">
                 <div class="row g-7">
 
-                <?php while($servrow = $servresall->fetch_assoc()){?>
+                <?php while($servrow = $servresalll->fetch_assoc()){?>
                     <!-- Aluminium Fabrications -->
                     <div class="col-sm-6 col-md-6">
                         <div class="position-relative mb-7">
@@ -67,144 +67,6 @@ $servresall = $conn->query("SELECT * FROM service WHERE status=1");
                     </div>
                 <?php } ?>
 
-                    <!-- Gypsum & Acoustic Ceilings -->
-                    <div class="col-sm-6 col-md-6">
-                        <div class="position-relative mb-7">
-                            <a href="single-service.php">
-                                <img src="assets/images/service.jpg" style="height:300px; width:600px;" alt="Gypsum & Acoustic Ceilings" class="rounded-3 img-fluid" />
-                            </a>
-                            <div class="position-absolute top-md-100 start-md-0 top-100 start-50 translate-middle">
-                                <div class="p-3 icon-xl icon-shape rounded bg-primary border border-2 border-white ms-md-10">
-                                    <i class="bi bi-tools text-white-stable" style="font-size: 24px;"></i>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="px-lg-4">
-                            <a href="single-service.php">
-                                <h2 class="mb-3 h3">Gypsum & Acoustic Ceilings</h2>
-                            </a>
-                            <p class="mb-5">Enhance your interiors with our Gypsum and Acoustic Ceilings, designed to improve both visual appeal and acoustic performance, ideal for modern, stylish spaces.</p>
-                            <a href="single-service.php" class="btn btn-primary">
-                                Get This Service Today
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Drywall & Partitioning Systems -->
-                    <div class="col-sm-6 col-md-6">
-                        <div class="position-relative mb-7">
-                            <a href="single-service.php">
-                                <img src="assets/images/service.jpg" style="height:300px; width:600px;" alt="Drywall & Partitioning Systems" class="rounded-3 img-fluid" />
-                            </a>
-                            <div class="position-absolute top-md-100 start-md-0 top-100 start-50 translate-middle">
-                                <div class="p-3 icon-xl icon-shape rounded bg-primary border border-2 border-white ms-md-10">
-                                    <i class="bi bi-tools text-white-stable" style="font-size: 24px;"></i>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="px-lg-4">
-                            <a href="single-service.php">
-                                <h2 class="mb-3 h3">Drywall & Partitioning Systems</h2>
-                            </a>
-                            <p class="mb-5">Our versatile Drywall and Partitioning Systems create dynamic, functional spaces, offering both sturdy construction and stylish design for contemporary environments.</p>
-                            <a href="single-service.php" class="btn btn-primary">
-                                Get This Service Today
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Interior Fitouts -->
-                    <div class="col-sm-6 col-md-6">
-                        <div class="position-relative mb-7">
-                            <a href="single-service.php">
-                                <img src="assets/images/service.jpg" style="height:300px; width:600px;" alt="Interior Fitouts" class="rounded-3 img-fluid" />
-                            </a>
-                            <div class="position-absolute top-md-100 start-md-0 top-100 start-50 translate-middle">
-                                <div class="p-3 icon-xl icon-shape rounded bg-primary border border-2 border-white ms-md-10">
-                                    <i class="bi bi-tools text-white-stable" style="font-size: 24px;"></i>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="px-lg-4">
-                            <a href="single-service.php">
-                                <h2 class="mb-3 h3">Interior Fitouts</h2>
-                            </a>
-                            <p class="mb-5">Transform your interiors with bespoke fitout services that bring luxury and functionality together, meticulously crafted to exceed the highest standards of quality.</p>
-                            <a href="single-service.php" class="btn btn-primary">
-                                Get This Service Today
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Stainless & Mild Steel Fabrications -->
-                    <div class="col-sm-6 col-md-6">
-                        <div class="position-relative mb-7">
-                            <a href="single-service.php">
-                                <img src="assets/images/service.jpg" style="height:300px; width:600px;" alt="Stainless & Mild Steel Fabrications" class="rounded-3 img-fluid" />
-                            </a>
-                            <div class="position-absolute top-md-100 start-md-0 top-100 start-50 translate-middle">
-                                <div class="p-3 icon-xl icon-shape rounded bg-primary border border-2 border-white ms-md-10">
-                                    <i class="bi bi-tools text-white-stable" style="font-size: 24px;"></i>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="px-lg-4">
-                            <a href="single-service.php">
-                                <h2 class="mb-3 h3">Stainless & Mild Steel Fabrications</h2>
-                            </a>
-                            <p class="mb-5">Our Stainless and Mild Steel Fabrications deliver precision and strength, perfect for creating durable, aesthetically pleasing architectural and structural elements.</p>
-                            <a href="single-service.php" class="btn btn-primary">
-                                Get This Service Today
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Joinery Works -->
-                    <div class="col-sm-6 col-md-6">
-                        <div class="position-relative mb-7">
-                            <a href="single-service.php">
-                                <img src="assets/images/service.jpg" style="height:300px; width:600px;" alt="Joinery Works" class="rounded-3 img-fluid" />
-                            </a>
-                            <div class="position-absolute top-md-100 start-md-0 top-100 start-50 translate-middle">
-                                <div class="p-3 icon-xl icon-shape rounded bg-primary border border-2 border-white ms-md-10">
-                                    <i class="bi bi-tools text-white-stable" style="font-size: 24px;"></i>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="px-lg-4">
-                            <a href="single-service.php">
-                                <h2 class="mb-3 h3">Joinery Works</h2>
-                            </a>
-                            <p class="mb-5">Our custom Joinery Works combine traditional craftsmanship with modern design, adding elegance and functionality to any residential or commercial space.</p>
-                            <a href="single-service.php" class="btn btn-primary">
-                                Get This Service Today
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- High-End Custom Solutions -->
-                    <div class="col-sm-6 col-md-6">
-                        <div class="position-relative mb-7">
-                            <a href="single-service.php">
-                                <img src="assets/images/service.jpg" style="height:300px; width:600px;" alt="High-End Custom Solutions" class="rounded-3 img-fluid" />
-                            </a>
-
-                            <div class="position-absolute top-md-100 start-md-0 top-100 start-50 translate-middle">
-                                <div class="p-3 icon-xl icon-shape rounded bg-primary border border-2 border-white ms-md-10">
-                                    <i class="bi bi-tools text-white-stable" style="font-size: 24px;"></i>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="px-lg-4">
-                            <a href="single-service.php">
-                                <h2 class="mb-3 h3">High-End Custom Solutions</h2>
-                            </a>
-                            <p class="mb-5">For luxury projects, our High-End Custom Solutions offer tailor-made designs and precision execution, ensuring exceptional quality and uniqueness in every detail.</p>
-                            <a href="single-service.php" class="btn btn-primary">
-                                Get This Service Today
-                            </a>
-                        </div>
-                    </div>
 
                 </div>
             </div>
