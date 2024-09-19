@@ -70,7 +70,7 @@ $imgres = $conn->query("SELECT * FROM event_gallery WHERE event_id='$id'");
                     $counter++;    
                     ?>
                         
-                        <div class="col-md-4" style="height:150px;">
+                        <div class="col">
                             <img src="uploads/<?php echo $imgrow['image'];?>" class="img-fluid rounded-3 gallery-img"  alt="<?php echo $erow['title'];?> - <?php echo $counter;?>" data-bs-target="#imageModal" data-bs-toggle="modal" data-bs-index="<?php echo $counter;?>">
                         </div>
                     <?php } ?>
