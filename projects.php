@@ -5,8 +5,7 @@
     $date = date("Y-m-d");
     $eres = $conn->query("SELECT * FROM event WHERE event_status = 1  ORDER BY event_id DESC");
 
-    $interior_projects = $conn->query("SELECT * FROM event WHERE event_status = 1 AND category = 'Interior fit-outs' ORDER BY event_id DESC");
-    $aluminium_projects = $conn->query("SELECT * FROM event WHERE event_status = 1 AND category = 'Aluminium' ORDER BY event_id DESC");
+    $interior_projects = $conn->query("SELECT * FROM event WHERE event_status = 1  ORDER BY event_id DESC");
 ?>
 <!doctype html>
 <html lang="en">
