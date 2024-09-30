@@ -2,27 +2,17 @@
     // Introduced a connection to the database so that the name
     // of a selected service is mapped to the service ID.
     require 'includes/connect.php';
+    require "includes/mailer.php";
+    date_default_timezone_set("Africa/Nairobi");
+    $date = date("m/d/Y g:iA");
 
     // This checks whether there is a service selected and if there is,
     // then the service ID will be stored on the $service_id
-    $service_id = isset($_GET['service']) ? $_GET['service'] : null;
-    $selected_service = '';
+    $service_id = isset($_GET['service']) ? $_GET['service'] : " ";
 
     // Created an if condition to map the service name to the corresponding
     // service ID.
-    if ($service_id) {
-        $query = $conn -> prepare("SELECT name FROM service WHERE service_id = ?");
-        $query -> bind_param("i", $service_id);
-        $query -> execute();
-        $result = $query -> get_result();
-
-        if ($result -> num_rows > 0) {
-            $row = $result -> fetch_assoc();
-            $selected_service = $row["name"];
-        }
-
-        $query -> close();
-    }
+   
 
     // Brought in some PHP code from the process.php file due to security reason.
     // The code basically tracks every time the submit button is hit and it'll
@@ -40,12 +30,30 @@
         $phone = mysqli_real_escape_string($conn, $_POST["phone"]);
         $service_type = mysqli_real_escape_string($conn, $_POST["service_type"]);
         $message = mysqli_real_escape_string($conn, $_POST["message"]);
+        $self_email = "info@sarl.co.ke";
     
-        $insert = "INSERT INTO lead (name, email, company, phone, service_type, message, date_created) VALUES ('$name', '$email', '$company_name', '$phone', '$service_type', '$message', NOW())";
+        $insert = "INSERT INTO lead (name, email, company, phone, service_type, message, date_created) VALUES ('$name', '$email', '$company_name', '$phone', '$service_type', '$message', '$date')";
+
+        $emsubject = "New Inquiry from the Website";
+        $embody = "
+        <p>Hello,</p>
+        <p>You have a new Enquiry from the website (sarl.co.ke) <br/> Here is the message:</p>
+        <br/>
+        <p>
+        <b>Name:</b> ".$name." <br/>
+        <b>Email:</b> ".$email." <br/>
+        <b>Phone:</b> ".$phone." <br/>
+        <b>Company:</b> ".$company_name." <br/>
+        <b>Service:</b> ".$service_type." <br/>
+        <b>Additional info:</b> ".$message." <br/>
+        </p> 
+        ";
+        
+        maillinge($self_email, $emsubject, $embody);
         
         if ($conn->query($insert) === TRUE) {
             $_SESSION["success"] = "Your message has been sent successfully.";
-            header("location: contact.php");
+            header("location: thank-you-contact.php");
         } else {
             $_SESSION["error"] = "Error Occurred. Please Try Again. " . $conn->error;
             header("location: contact.php");
@@ -130,23 +138,16 @@
                                             <div class="col-md-12">
                                                 <label for="serviceTypeInput" class="form-label">Service Type</label>
                                                 <select class="form-select" id="serviceTypeInput" name="service_type" required>
+                                                <option value="">Choose a service</option>
 
-                                                    <!-- Included an if statement here so that when there isn't any service selected -->
-                                                    <!-- i.e. when someone clicks on the contact button, it will automatically sets -->
-                                                    <!-- Custom Inquiry as the default choice where a user can select from the option below. -->
-                                                    <option disabled value="" <?php if(!$selected_service) echo 'selected';?>>Custom Inquiry</option>
+                                                <?php
+                                                $footservresall = $conn->query("SELECT * FROM service WHERE status=1");
+                                                while($footservrow = $footservresall->fetch_assoc()){?>
+                                                    <option value="<?php echo $footservrow['name'];?>" <?php if($footservrow['service_id'] == $service_id) echo 'selected';?>><?php echo $footservrow['name'];?></option>
 
-                                                    <!-- Introduced the ternary operator in that when the condition provided is true, -->
-                                                    <!-- then that particular option becomes selected. When the condition is false, -->
-                                                    <!-- then it'll pass the first option and check on the second one, and it goes on  -->
-                                                    <!-- till it finds a condition that's true. -->
-                                                    <option value="Interior Fitouts" <?php echo ($selected_service == 'Interior Fitouts') ? 'selected' : ''; ?>>Interior Fitouts</option>
-                                                    <option value="Aluminium & UPVC Fabrications" <?php echo ($selected_service == 'Aluminium & UPVC Fabrications') ? 'selected' : ''; ?>>Aluminium Fabrications</option>
-                                                    <option value="Gypsum & Acoustic Ceilings" <?php echo ($selected_service == 'Gypsum & Acoustic Ceilings') ? 'selected' : ''; ?>>Gypsum & Acoustic Ceilings</option>
-                                                    <option value="Drywall & Partitioning Systems" <?php echo ($selected_service == 'Drywall & Partitioning Systems') ? 'selected' : ''; ?>>Drywall & Partitioning Systems</option>
-                                                    <option value="Stainless & Mild Steel Fabrications" <?php echo ($selected_service == 'Stainless & Mild Steel Fabrications') ? 'selected' : ''; ?>>Stainless & Mild Steel Fabrications</option>
-                                                    <option value="Joinery Works" <?php echo ($selected_service == 'Joinery Works') ? 'selected' : ''; ?>>Joinery Works</option>
-                                                    <option value="High-End Custom Solutions" <?php echo ($selected_service == 'High-End Custom Solutions') ? 'selected' : ''; ?>>High-End Custom Solutions</option>
+                                                <?php } ?>
+                                                <option value="Custom Inquiry" >Custom Inquiry</option>
+ 
                                                 </select>
                                                 <div class="invalid-feedback">Please select a service type.</div>
                                             </div>
@@ -181,7 +182,8 @@
                                         +254 20 557 546<br><br>
 
                                         <strong>Email:</strong><br>
-                                        <a href="mailto:info@sarl.co.ke" class="text-primary">info@sarl.co.ke</a>
+                                        <a href="mailto:info@sarl.co.ke" class="text-primary">info@sarl.co.ke</a><br/>
+                                        <a href="mailto:sarl@futurenet.co.ke" class="text-primary">sarl@futurenet.co.ke</a>
                                     </p>
                                 </div>
                             </div>

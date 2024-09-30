@@ -147,7 +147,7 @@ $eres = $conn->query("SELECT * FROM event WHERE event_status = 1  ORDER BY event
                             <div class="col-lg-6">
                                 <div>
                                     <h3 class="fs-4">Expertise</h3>
-                                    <p class="mb-0">Years of experience in fitout solutions, delivering exceptional quality and precision in every project.</p>
+                                    <p class="mb-0">Years of experience in High-end fitout and Bespoke Solutions, delivering exceptional quality and precision in every project.</p>
                                 </div>
                             </div>
                             <div class="col-lg-6">
@@ -250,7 +250,7 @@ $eres = $conn->query("SELECT * FROM event WHERE event_status = 1  ORDER BY event
                                 <i class="bi bi-house-door-fill text-primary" style="font-size: 40px;"></i>
                             </div>
                             <div>
-                                <h3>Aluminium Fitouts</h3>
+                                <h3>Aluminium & Glazing Works</h3>
                                 <p class="mb-0 text-primary-emphasis">High-quality, customized solutions your aluminum fabrications.</p>
                             </div>
                         </div>

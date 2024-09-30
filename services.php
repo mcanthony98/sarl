@@ -28,7 +28,7 @@ $servresalll = $conn->query("SELECT * FROM service WHERE status=1");
                     <div class="col-lg-8 offset-lg-2 col-md-12 col-12">
                         <div class="text-center">
                             <small class="text-uppercase ls-md fw-bold text-primary">Services</small>
-                            <h1 class="mt-4">High-End Renovation & Fitout Solutions</h1>
+                            <h1 class="mt-4">High-End Interior Fitouts & Innovative Aluminium Solutions</h1>
                             <p class="lead">SARL offers specialized services to meet the unique needs of our clients, ensuring exceptional quality and innovation in every project.</p>
                         </div>
                     </div>

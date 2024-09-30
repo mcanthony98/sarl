@@ -6,7 +6,7 @@ $footservresall = $conn->query("SELECT * FROM service WHERE status=1");
     <div class="container">
         <!-- Footer 4 column -->
         <div class="row">
-            <div class="col-xxl-5 col-lg-5 col-md-5">
+            <div class="col-xxl-4 col-lg-4 col-md-4">
                 <div class="mb-7 mb-xl-0">
                     <div class="mb-4">
                         <a href="index.php">
@@ -17,9 +17,9 @@ $footservresall = $conn->query("SELECT * FROM service WHERE status=1");
 
                 </div>
             </div>
-            <div class="offset-xxl-1 col-xxl-6 col-lg-6 offset-md-1 col-md-6">
+            <div class="col-xxl-7 col-lg-7 col-md-6">
                 <div class="row" id="ft-links">
-                    <div class="col-lg-3 col-12">
+                    <div class="col-lg-2 col-12">
                         <div class="position-relative">
                             <div class="mb-3 pb-2 d-flex justify-content-between border-bottom border-bottom-lg-0">
                                 <h5>Quick Links</h5>
@@ -65,7 +65,7 @@ $footservresall = $conn->query("SELECT * FROM service WHERE status=1");
                             </ul>
                         </div>
                     </div>
-                    <div class="col-lg-4 col-12">
+                    <div class="col-lg-5 col-12">
                         <div class="mb-3 pb-2 d-flex justify-content-between border-bottom border-bottom-lg-0 position-relative">
                             <h5>Contact Information</h5>
                             <a class="d-block d-lg-none stretched-link text-inherit" data-bs-toggle="collapse" href="#collapseContact" role="button" aria-expanded="false" aria-controls="collapseContact">
@@ -82,6 +82,7 @@ $footservresall = $conn->query("SELECT * FROM service WHERE status=1");
                                 </li>
                                 <li class="mb-2">
                                     <a href="mailto:info@sarl.co.ke" class="text-decoration-none text-reset">Email: info@sarl.co.ke</a>
+                                    <a href="mailto:sarl@futurenet.co.ke" class="text-decoration-none text-reset"><span class="invisible"></span> sarl@futurenet.co.ke</a>
                                 </li>
                                 <li class="mb-2">
                                     <p class="mb-0 text-reset">Road A, Off Enterprise Road, Industrial Area, Nairobi, Kenya</p>

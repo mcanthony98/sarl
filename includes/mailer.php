@@ -6,7 +6,7 @@ require 'vendor/autoload.php';
 
 function maillinge($recipient, $subject, $body){
   
-  $signature = '<p><span style="color:#FF3737;font-size:20px">FOOD FOR MINISTERS - Website Form</span></p>';
+  $signature = '<p><span style="color:#FF3737;font-size:20px">GANIAM TECH - Website Form</span></p>';
   $signature = "-";
   /*$hostname = 'smtp.cloudmta.net';
   $username = '7c3c506dea731b2f';
@@ -35,8 +35,8 @@ function maillinge($recipient, $subject, $body){
   
   
      //Set parameters:
-     $senderEmail = "admin@writtela.com"; //Sender's email, E.g. sender@gmail.com
-     $senderPass = "36987412Mm."; //Password of sender email account
+     $senderEmail = "noreply@ganiamtech.com"; //Sender's email, E.g. sender@gmail.com
+     $senderPass = "Ganiam@2024"; //Password of sender email account
      $recipient = $recipient; // Email of recipient. Where email is sent to.
      $subject = $subject; //Subject of the email
      $message = $body.$signature; //Email body/the message
@@ -60,11 +60,11 @@ function maillinge($recipient, $subject, $body){
          $mail->SMTPSecure = 'ssl';                           
          $mail->Port = 465;                                   
   
-         $mail->setFrom($senderEmail, 'Shanaya Group Ltd.');
+         $mail->setFrom($senderEmail, 'SARL');
          
          //Recipients
          $mail->addAddress($recipient);              
-         $mail->addReplyTo($senderEmail, 'Shanaya Group Ltd.');
+         $mail->addReplyTo($senderEmail, 'SARL');
          
          //Content
          $mail->isHTML(true);                                  
