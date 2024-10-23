@@ -170,4 +170,15 @@
         .offcanvas-nav-btn {
             transition: color 0.3s ease-in-out;
         }
+
+        .project-image-container {
+            height: 400px;
+            overflow: hidden;
+        }
+
+        .project-showcase-image {
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+        }
     </style>

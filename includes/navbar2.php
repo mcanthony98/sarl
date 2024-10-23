@@ -23,14 +23,8 @@
                         <li class="nav-item">
                             <a class="nav-link nav-text-color" href="about.php">About Us</a>
                         </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle nav-text-color" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Services</a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="services.php#steel">Stainless & Mild Steel</a></li>
-                                <li><a class="dropdown-item" href="services.php#joinery">Joinery Works</a></li>
-                                <li><a class="dropdown-item" href="services.php#interior">Interior Fitouts</a></li>
-                                <li><a class="dropdown-item" href="services.php#aluminum">Aluminium & Glazing Works</a></li>
-                            </ul>
+                        <li class="nav-item">
+                            <a class="nav-link nav-text-color" href="services.php">Services</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link nav-text-color" href="projects.php">Projects</a>

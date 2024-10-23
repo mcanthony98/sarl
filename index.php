@@ -143,16 +143,16 @@ $eres = $conn->query("SELECT * FROM event WHERE event_status = 1  ORDER BY event
                         <div id="carouselService1" class="carousel slide" data-bs-ride="carousel">
                             <div class="carousel-inner">
                                 <div class="carousel-item active">
-                                    <img src="assets/images/landings/it-company/service-1.jpg" alt="Stainless & Mild Steel 1" class="img-fluid rounded-3" style="width: 100%; height: auto;" />
+                                    <img src="assets/images/service/s1.jpg" alt="Stainless & Mild Steel 1" class="img-fluid rounded-3" style="width: 100%; height: auto;" />
                                 </div>
                                 <div class="carousel-item">
-                                    <img src="assets/images/landings/it-company/service-2.jpg" alt="Stainless & Mild Steel 2" class="img-fluid rounded-3" style="width: 100%; height: auto;" />
+                                    <img src="assets/images/service/s1.jpg" alt="Stainless & Mild Steel 2" class="img-fluid rounded-3" style="width: 100%; height: auto;" />
                                 </div>
                                 <div class="carousel-item">
-                                    <img src="assets/images/landings/it-company/service-3.jpg" alt="Stainless & Mild Steel 3" class="img-fluid rounded-3" style="width: 100%; height: auto;" />
+                                    <img src="assets/images/service/s1.jpg" alt="Stainless & Mild Steel 3" class="img-fluid rounded-3" style="width: 100%; height: auto;" />
                                 </div>
                                 <div class="carousel-item">
-                                    <img src="assets/images/landings/it-company/service-4.jpg" alt="Stainless & Mild Steel 4" class="img-fluid rounded-3" style="width: 100%; height: auto;" />
+                                    <img src="assets/images/service/s1.jpg" alt="Stainless & Mild Steel 4" class="img-fluid rounded-3" style="width: 100%; height: auto;" />
                                 </div>
                             </div>
                             <button class="carousel-control-prev" type="button" data-bs-target="#carouselService1" data-bs-slide="prev">
@@ -200,16 +200,16 @@ $eres = $conn->query("SELECT * FROM event WHERE event_status = 1  ORDER BY event
                         <div id="carouselService2" class="carousel slide" data-bs-ride="carousel">
                             <div class="carousel-inner">
                                 <div class="carousel-item active">
-                                    <img src="assets/images/landings/it-company/service-2.jpg" alt="Joinery Works 1" class="img-fluid rounded-3" style="width: 100%; height: auto;" />
+                                    <img src="assets/images/service/s3.jpg" alt="Joinery Works 1" class="img-fluid rounded-3" style="width: 100%; height: auto;" />
                                 </div>
                                 <div class="carousel-item">
-                                    <img src="assets/images/landings/it-company/service-3.jpg" alt="Joinery Works 2" class="img-fluid rounded-3" style="width: 100%; height: auto;" />
+                                    <img src="assets/images/service/s3.jpg" alt="Joinery Works 2" class="img-fluid rounded-3" style="width: 100%; height: auto;" />
                                 </div>
                                 <div class="carousel-item">
-                                    <img src="assets/images/landings/it-company/service-4.jpg" alt="Joinery Works 3" class="img-fluid rounded-3" style="width: 100%; height: auto;" />
+                                    <img src="assets/images/service/s3.jpg" alt="Joinery Works 3" class="img-fluid rounded-3" style="width: 100%; height: auto;" />
                                 </div>
                                 <div class="carousel-item">
-                                    <img src="assets/images/landings/it-company/service-1.jpg" alt="Joinery Works 4" class="img-fluid rounded-3" style="width: 100%; height: auto;" />
+                                    <img src="assets/images/service/s3.jpg" alt="Joinery Works 4" class="img-fluid rounded-3" style="width: 100%; height: auto;" />
                                 </div>
                             </div>
                             <button class="carousel-control-prev" type="button" data-bs-target="#carouselService2" data-bs-slide="prev">
@@ -231,16 +231,16 @@ $eres = $conn->query("SELECT * FROM event WHERE event_status = 1  ORDER BY event
                         <div id="carouselService3" class="carousel slide" data-bs-ride="carousel">
                             <div class="carousel-inner">
                                 <div class="carousel-item active">
-                                    <img src="assets/images/landings/it-company/service-3.jpg" alt="Interior Fitout 1" class="img-fluid rounded-3" style="width: 100%; height: auto;" />
+                                    <img src="assets/images/projects/p-6.jpg" alt="Interior Fitout 1" class="img-fluid rounded-3" style="width: 100%; height: auto;" />
                                 </div>
                                 <div class="carousel-item">
-                                    <img src="assets/images/landings/it-company/service-4.jpg" alt="Interior Fitout 2" class="img-fluid rounded-3" style="width: 100%; height: auto;" />
+                                    <img src="assets/images/projects/p-6.jpg" alt="Interior Fitout 2" class="img-fluid rounded-3" style="width: 100%; height: auto;" />
                                 </div>
                                 <div class="carousel-item">
-                                    <img src="assets/images/landings/it-company/service-1.jpg" alt="Interior Fitout 3" class="img-fluid rounded-3" style="width: 100%; height: auto;" />
+                                    <img src="assets/images/projects/p-6.jpg" alt="Interior Fitout 3" class="img-fluid rounded-3" style="width: 100%; height: auto;" />
                                 </div>
                                 <div class="carousel-item">
-                                    <img src="assets/images/landings/it-company/service-2.jpg" alt="Interior Fitout 4" class="img-fluid rounded-3" style="width: 100%; height: auto;" />
+                                    <img src="assets/images/projects/p-6.jpg" alt="Interior Fitout 4" class="img-fluid rounded-3" style="width: 100%; height: auto;" />
                                 </div>
                             </div>
                             <button class="carousel-control-prev" type="button" data-bs-target="#carouselService3" data-bs-slide="prev">
@@ -288,16 +288,16 @@ $eres = $conn->query("SELECT * FROM event WHERE event_status = 1  ORDER BY event
                         <div id="carouselService4" class="carousel slide" data-bs-ride="carousel">
                             <div class="carousel-inner">
                                 <div class="carousel-item active">
-                                    <img src="assets/images/landings/it-company/service-4.jpg" alt="Aluminium & Glazing 1" class="img-fluid rounded-3" style="width: 100%; height: auto;" />
+                                    <img src="assets/images/service/s4.jpg" alt="Aluminium & Glazing 1" class="img-fluid rounded-3" style="width: 100%; height: auto;" />
                                 </div>
                                 <div class="carousel-item">
-                                    <img src="assets/images/landings/it-company/service-1.jpg" alt="Aluminium & Glazing 2" class="img-fluid rounded-3" style="width: 100%; height: auto;" />
+                                    <img src="assets/images/service/s4.jpg" alt="Aluminium & Glazing 2" class="img-fluid rounded-3" style="width: 100%; height: auto;" />
                                 </div>
                                 <div class="carousel-item">
-                                    <img src="assets/images/landings/it-company/service-2.jpg" alt="Aluminium & Glazing 3" class="img-fluid rounded-3" style="width: 100%; height: auto;" />
+                                    <img src="assets/images/service/s4.jpg" alt="Aluminium & Glazing 3" class="img-fluid rounded-3" style="width: 100%; height: auto;" />
                                 </div>
                                 <div class="carousel-item">
-                                    <img src="assets/images/landings/it-company/service-3.jpg" alt="Aluminium & Glazing 4" class="img-fluid rounded-3" style="width: 100%; height: auto;" />
+                                    <img src="assets/images/service/s4.jpg" alt="Aluminium & Glazing 4" class="img-fluid rounded-3" style="width: 100%; height: auto;" />
                                 </div>
                             </div>
                             <button class="carousel-control-prev" type="button" data-bs-target="#carouselService4" data-bs-slide="prev">
@@ -315,6 +315,30 @@ $eres = $conn->query("SELECT * FROM event WHERE event_status = 1  ORDER BY event
             </div>
         </section>
         <!--Our Services end-->
+
+        <!-- Free Quotation CTA start -->
+        <section class="py-lg-8 py-5 bg-gray-900">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-10 offset-lg-1 col-md-12">
+                        <div class="row align-items-center">
+                            <div class="col-lg-8 col-md-7">
+                                <div class="text-center text-md-start mb-6 mb-md-0">
+                                    <h2 class="text-white-stable">Need to make an inquiry?</h2>
+                                    <p class="mb-0 text-dark-50">Contact us today to get a personalized quote for your project. Our team is ready to assist with expert services tailored to your needs.</p>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-5">
+                                <div class="text-center">
+                                    <a href="contact.php" class="btn btn-primary">Speak to an Expert Today</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Free Quotation CTA end -->
 
         <!--Company overview start-->
         <section class="py-xl-9 py-5" data-cue="fadeIn">
@@ -428,16 +452,8 @@ $eres = $conn->query("SELECT * FROM event WHERE event_status = 1  ORDER BY event
                                 <div class="tab-pane fade" id="pills-team" role="tabpanel" aria-labelledby="pills-team-tab" tabindex="0">
                                     <div class="row align-items-center gy-5">
                                         <div class="col-lg-7" data-cue="zoomIn">
-                                            <div class="d-flex gap-lg-4 gap-2 justify-content-center">
-                                                <div class="mt-5">
-                                                    <img src="assets/images/landings/it-company/team-long-img-1.jpg" alt="team" class="img-fluid rounded-3" />
-                                                </div>
-                                                <div>
-                                                    <img src="assets/images/landings/it-company/team-long-img-2.jpg" alt="team" class="img-fluid rounded-3" />
-                                                </div>
-                                                <div class="mt-5">
-                                                    <img src="assets/images/landings/it-company/team-long-img-3.jpg" alt="team" class="img-fluid rounded-3" />
-                                                </div>
+                                            <div class="project-image-container">
+                                                <img src="assets/images/hero-2.jpg" alt="SARL Projects Showcase" class="img-fluid rounded-3 w-100 h-100 project-showcase-image" />
                                             </div>
                                         </div>
                                         <div class="col-lg-5 pe-lg-6" data-cue="zoomIn">
