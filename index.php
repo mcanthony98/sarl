@@ -171,7 +171,7 @@ $eres = $conn->query("SELECT * FROM event WHERE event_status = 1  ORDER BY event
                             <h3 class="mt-4 mb-3">Stainless & Mild Steel</h3>
                             <p class="mb-0">Delivering durable and aesthetically pleasing steel fabrications for diverse applications, combining strength with sophisticated design.</p>
                         </div>
-                        <a href="services.php#steel" class="icon-link icon-link-hover">
+                        <a href="service.php?id=5&stainless-&-mild-steel-fabrications" class="icon-link icon-link-hover">
                             Learn More
                             <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
                                 <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"></path>
@@ -188,7 +188,7 @@ $eres = $conn->query("SELECT * FROM event WHERE event_status = 1  ORDER BY event
                             <h3 class="mt-4 mb-3">Joinery Works</h3>
                             <p class="mb-0">Premium joinery works delivering bespoke interiors with unmatched craftsmanship, creating unique and elegant spaces.</p>
                         </div>
-                        <a href="services.php#joinery" class="icon-link icon-link-hover">
+                        <a href="service.php?id=6&joinery-works" class="icon-link icon-link-hover">
                             Learn More
                             <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
                                 <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"></path>
@@ -259,7 +259,7 @@ $eres = $conn->query("SELECT * FROM event WHERE event_status = 1  ORDER BY event
                             <h3 class="mt-4 mb-3">Interior Fitouts</h3>
                             <p class="mb-0">Comprehensive interior solutions that transform spaces into masterpieces, from initial design concept to final execution.</p>
                         </div>
-                        <a href="services.php#interior" class="icon-link icon-link-hover">
+                        <a href="service.php?id=4&interior-fitouts" class="icon-link icon-link-hover">
                             Learn More
                             <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
                                 <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"></path>
@@ -276,7 +276,7 @@ $eres = $conn->query("SELECT * FROM event WHERE event_status = 1  ORDER BY event
                             <h3 class="mt-4 mb-3">Aluminium & Glazing Works</h3>
                             <p class="mb-0">High-quality, customized solutions for aluminium fabrications, combining modern aesthetics with durability and functionality.</p>
                         </div>
-                        <a href="services.php#aluminum" class="icon-link icon-link-hover">
+                        <a href="service.php?id=1&aluminium-&-glazing-works" class="icon-link icon-link-hover">
                             Learn More
                             <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
                                 <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"></path>
