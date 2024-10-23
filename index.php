@@ -15,88 +15,8 @@ $eres = $conn->query("SELECT * FROM event WHERE event_status = 1  ORDER BY event
     <!-- Head Content -->
     <?php include 'includes/head-content.php'; ?>
 
-    <!-- Hero Slider -->
-    <style>
-        .hero-section {
-            overflow: hidden;
-        }
-
-        .hero-slides-container {
-            z-index: 1;
-        }
-
-        .hero-slide {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            opacity: 0;
-            transition: opacity 1s ease-in-out;
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-        }
-
-        .hero-slide.active {
-            opacity: 1;
-        }
-
-        .overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
-            z-index: 2;
-        }
-
-        .container {
-            z-index: 3;
-        }
-
-        .hero-content {
-            padding: 2rem;
-        }
-
-        .text-white-50 {
-            color: rgba(255, 255, 255, 0.8) !important;
-        }
-
-        .gap-4 {
-            gap: 1.5rem;
-        }
-
-        .link-white {
-            color: white;
-            text-decoration: none;
-        }
-
-        .link-white:hover {
-            color: rgba(255, 255, 255, 0.8);
-        }
-
-        /* Desktop */
-        .nav-link.mobile-text-dark {
-            color: #fff !important;
-        }
-
-        /* Mobile Navbar Styling */
-        @media (max-width: 991px) {
-            .nav-link.mobile-text-dark {
-                color: #000 !important;
-            }
-
-            .nav-link.dropdown-toggle.mobile-text-dark {
-                color: #000 !important;
-            }
-
-            .offcanvas-nav {
-                background-color: #fff !important;
-            }
-        }
-    </style>
+    <!-- Custom Homepage CSS -->
+    <?php include 'includes/homepage-styling.php'; ?>
 
 </head>
 
@@ -216,19 +136,40 @@ $eres = $conn->query("SELECT * FROM event WHERE event_status = 1  ORDER BY event
                     </div>
                 </div>
 
+                <!-- Service 1: Stainless & Mild Steel -->
                 <div class="row d-flex align-items-center mb-md-9 mb-6">
                     <div class="col-lg-6 col-md-6 col-12">
-                        <figure class="mb-4 mb-md-0">
-                            <img src="assets/images/landings/it-company/service-1.jpg" alt="Stainless & Mild Steel Services" class="img-fluid rounded-3" style="width: 100%; height: auto;" />
-                        </figure>
+                        <!-- Carousel 1 -->
+                        <div id="carouselService1" class="carousel slide" data-bs-ride="carousel">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <img src="assets/images/landings/it-company/service-1.jpg" alt="Stainless & Mild Steel 1" class="img-fluid rounded-3" style="width: 100%; height: auto;" />
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="assets/images/landings/it-company/service-2.jpg" alt="Stainless & Mild Steel 2" class="img-fluid rounded-3" style="width: 100%; height: auto;" />
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="assets/images/landings/it-company/service-3.jpg" alt="Stainless & Mild Steel 3" class="img-fluid rounded-3" style="width: 100%; height: auto;" />
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="assets/images/landings/it-company/service-4.jpg" alt="Stainless & Mild Steel 4" class="img-fluid rounded-3" style="width: 100%; height: auto;" />
+                                </div>
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselService1" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#carouselService1" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
                     </div>
                     <div class="col-lg-5 offset-lg-1 col-md-6 col-12">
                         <span class="text-primary fw-semibold">01</span>
                         <div class="mb-4">
                             <h3 class="mt-4 mb-3">Stainless & Mild Steel</h3>
-                            <p class="mb-0">
-                                Delivering durable and aesthetically pleasing steel fabrications for diverse applications, combining strength with sophisticated design.
-                            </p>
+                            <p class="mb-0">Delivering durable and aesthetically pleasing steel fabrications for diverse applications, combining strength with sophisticated design.</p>
                         </div>
                         <a href="services.php#steel" class="icon-link icon-link-hover">
                             Learn More
@@ -239,14 +180,13 @@ $eres = $conn->query("SELECT * FROM event WHERE event_status = 1  ORDER BY event
                     </div>
                 </div>
 
+                <!-- Service 2: Joinery Works -->
                 <div class="row d-flex align-items-center mb-md-9 mb-6">
                     <div class="col-lg-5 col-md-6 col-12 order-2">
                         <span class="text-primary fw-semibold">02</span>
                         <div class="mb-4">
                             <h3 class="mt-4 mb-3">Joinery Works</h3>
-                            <p class="mb-0">
-                                Premium joinery works delivering bespoke interiors with unmatched craftsmanship, creating unique and elegant spaces.
-                            </p>
+                            <p class="mb-0">Premium joinery works delivering bespoke interiors with unmatched craftsmanship, creating unique and elegant spaces.</p>
                         </div>
                         <a href="services.php#joinery" class="icon-link icon-link-hover">
                             Learn More
@@ -256,25 +196,68 @@ $eres = $conn->query("SELECT * FROM event WHERE event_status = 1  ORDER BY event
                         </a>
                     </div>
                     <div class="col-lg-6 offset-lg-1 col-md-6 col-12 order-md-2">
-                        <figure class="mb-4">
-                            <img src="assets/images/landings/it-company/service-2.jpg" alt="Joinery Works Services" class="img-fluid rounded-3" style="width: 100%; height: auto;" />
-                        </figure>
+                        <!-- Carousel 2 -->
+                        <div id="carouselService2" class="carousel slide" data-bs-ride="carousel">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <img src="assets/images/landings/it-company/service-2.jpg" alt="Joinery Works 1" class="img-fluid rounded-3" style="width: 100%; height: auto;" />
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="assets/images/landings/it-company/service-3.jpg" alt="Joinery Works 2" class="img-fluid rounded-3" style="width: 100%; height: auto;" />
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="assets/images/landings/it-company/service-4.jpg" alt="Joinery Works 3" class="img-fluid rounded-3" style="width: 100%; height: auto;" />
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="assets/images/landings/it-company/service-1.jpg" alt="Joinery Works 4" class="img-fluid rounded-3" style="width: 100%; height: auto;" />
+                                </div>
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselService2" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#carouselService2" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
                     </div>
                 </div>
 
+                <!-- Service 3: Interior Fitouts -->
                 <div class="row d-flex align-items-center mb-md-9 mb-6">
                     <div class="col-lg-6 col-md-6 col-12">
-                        <figure class="mb-4 mb-md-0">
-                            <img src="assets/images/landings/it-company/service-3.jpg" alt="Interior Fitout Services" class="img-fluid rounded-3" style="width: 100%; height: auto;" />
-                        </figure>
+                        <!-- Carousel 3 -->
+                        <div id="carouselService3" class="carousel slide" data-bs-ride="carousel">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <img src="assets/images/landings/it-company/service-3.jpg" alt="Interior Fitout 1" class="img-fluid rounded-3" style="width: 100%; height: auto;" />
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="assets/images/landings/it-company/service-4.jpg" alt="Interior Fitout 2" class="img-fluid rounded-3" style="width: 100%; height: auto;" />
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="assets/images/landings/it-company/service-1.jpg" alt="Interior Fitout 3" class="img-fluid rounded-3" style="width: 100%; height: auto;" />
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="assets/images/landings/it-company/service-2.jpg" alt="Interior Fitout 4" class="img-fluid rounded-3" style="width: 100%; height: auto;" />
+                                </div>
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselService3" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#carouselService3" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
                     </div>
                     <div class="col-lg-5 offset-lg-1 col-md-6 col-12">
                         <span class="text-primary fw-semibold">03</span>
                         <div class="mb-4">
                             <h3 class="mt-4 mb-3">Interior Fitouts</h3>
-                            <p class="mb-0">
-                                Comprehensive interior solutions that transform spaces into masterpieces, from initial design concept to final execution.
-                            </p>
+                            <p class="mb-0">Comprehensive interior solutions that transform spaces into masterpieces, from initial design concept to final execution.</p>
                         </div>
                         <a href="services.php#interior" class="icon-link icon-link-hover">
                             Learn More
@@ -285,14 +268,13 @@ $eres = $conn->query("SELECT * FROM event WHERE event_status = 1  ORDER BY event
                     </div>
                 </div>
 
+                <!-- Service 4: Aluminium & Glazing Works -->
                 <div class="row d-flex align-items-center mb-md-9 mb-6">
                     <div class="col-lg-5 col-md-6 col-12 order-2">
                         <span class="text-primary fw-semibold">04</span>
                         <div class="mb-4">
                             <h3 class="mt-4 mb-3">Aluminium & Glazing Works</h3>
-                            <p class="mb-0">
-                                High-quality, customized solutions for aluminium fabrications, combining modern aesthetics with durability and functionality.
-                            </p>
+                            <p class="mb-0">High-quality, customized solutions for aluminium fabrications, combining modern aesthetics with durability and functionality.</p>
                         </div>
                         <a href="services.php#aluminum" class="icon-link icon-link-hover">
                             Learn More
@@ -302,18 +284,37 @@ $eres = $conn->query("SELECT * FROM event WHERE event_status = 1  ORDER BY event
                         </a>
                     </div>
                     <div class="col-lg-6 offset-lg-1 col-md-6 col-12 order-md-2">
-                        <figure class="mb-4">
-                            <img src="assets/images/landings/it-company/service-4.jpg" alt="Aluminium & Glazing Services" class="img-fluid rounded-3" style="width: 100%; height: auto;" />
-                        </figure>
+                        <!-- Carousel 4 -->
+                        <div id="carouselService4" class="carousel slide" data-bs-ride="carousel">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <img src="assets/images/landings/it-company/service-4.jpg" alt="Aluminium & Glazing 1" class="img-fluid rounded-3" style="width: 100%; height: auto;" />
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="assets/images/landings/it-company/service-1.jpg" alt="Aluminium & Glazing 2" class="img-fluid rounded-3" style="width: 100%; height: auto;" />
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="assets/images/landings/it-company/service-2.jpg" alt="Aluminium & Glazing 3" class="img-fluid rounded-3" style="width: 100%; height: auto;" />
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="assets/images/landings/it-company/service-3.jpg" alt="Aluminium & Glazing 4" class="img-fluid rounded-3" style="width: 100%; height: auto;" />
+                                </div>
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselService4" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#carouselService4" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
                     </div>
                 </div>
+
             </div>
         </section>
         <!--Our Services end-->
-
-
-
-
 
         <!--Company overview start-->
         <section class="py-xl-9 py-5" data-cue="fadeIn">
@@ -362,14 +363,20 @@ $eres = $conn->query("SELECT * FROM event WHERE event_status = 1  ORDER BY event
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-lg-7" data-cue="zoomIn">
-                                            <div class="position-relative">
-                                                <img src="assets/images/landings/it-company/it-company-about-img.jpg" alt="about" class="rounded-3 img-fluid" />
 
-                                                <!-- Play Button for Video Popup -->
-                                                <a href="assets/videos/sarl.mp4" class="play-btn glightbox position-absolute top-50 start-50 translate-middle icon-shape icon-xl rounded-circle text-primary" data-glightbox="type: video" data-width="900" data-height="500">
-                                                    <i class="bi bi-play-fill"></i>
-                                                </a>
+                                        <div class="col-lg-7" data-cue="zoomIn">
+                                            <div class="position-relative video-wrapper">
+                                                <div class="sarl-video-container rounded-3">
+                                                    <video
+                                                        class="sarl-video w-100 h-100 rounded-3"
+                                                        playsinline
+                                                        autoplay
+                                                        muted
+                                                        loop>
+                                                        <source src="assets/videos/sarl.mp4" type="video/mp4">
+                                                        Your browser does not support the video tag.
+                                                    </video>
+                                                </div>
                                             </div>
                                         </div>
 
@@ -380,8 +387,8 @@ $eres = $conn->query("SELECT * FROM event WHERE event_status = 1  ORDER BY event
                                         <div class="col-lg-4 col-md-6 col-12">
                                             <div class="d-flex flex-column gap-4 text-center text-lg-start mx-4 mx-lg-auto">
                                                 <div>
-                                                    <span class="bg-primary bg-opacity-10 rounded icon-shape icon-xl">
-                                                        <img src="assets/images/landings/it-company/innovation.svg" alt="innovation" />
+                                                    <span class="bg-primary bg-opacity-10 rounded icon-shape icon-xl d-inline-flex align-items-center justify-content-center">
+                                                        <i class="bi bi-people-fill text-primary" style="font-size: 2.5rem;"></i>
                                                     </span>
                                                 </div>
                                                 <div>
@@ -393,8 +400,8 @@ $eres = $conn->query("SELECT * FROM event WHERE event_status = 1  ORDER BY event
                                         <div class="col-lg-4 col-md-6 col-12">
                                             <div class="d-flex flex-column gap-4 text-center text-lg-start mx-4 mx-lg-auto">
                                                 <div>
-                                                    <span class="bg-primary bg-opacity-10 rounded icon-shape icon-xl">
-                                                        <img src="assets/images/landings/it-company/integrity.svg" alt="integrity" />
+                                                    <span class="bg-primary bg-opacity-10 rounded icon-shape icon-xl d-inline-flex align-items-center justify-content-center">
+                                                        <i class="bi bi-award-fill text-primary" style="font-size: 2.5rem;"></i>
                                                     </span>
                                                 </div>
                                                 <div>
@@ -406,8 +413,8 @@ $eres = $conn->query("SELECT * FROM event WHERE event_status = 1  ORDER BY event
                                         <div class="col-lg-4 col-md-6 col-12">
                                             <div class="d-flex flex-column gap-4 text-center text-lg-start mx-4 mx-lg-auto">
                                                 <div>
-                                                    <span class="bg-primary bg-opacity-10 rounded icon-shape icon-xl">
-                                                        <img src="assets/images/landings/it-company/hands-clapping.svg" alt="clapping" />
+                                                    <span class="bg-primary bg-opacity-10 rounded icon-shape icon-xl d-inline-flex align-items-center justify-content-center">
+                                                        <i class="bi bi-lightbulb-fill text-primary" style="font-size: 2.5rem;"></i>
                                                     </span>
                                                 </div>
                                                 <div>
@@ -456,6 +463,7 @@ $eres = $conn->query("SELECT * FROM event WHERE event_status = 1  ORDER BY event
         </section>
         <!--Company overview end-->
 
+
         <!--Projects start-->
         <section class="py-xl-9 py-5 bg-gray-900">
             <div class="container">
@@ -497,8 +505,17 @@ $eres = $conn->query("SELECT * FROM event WHERE event_status = 1  ORDER BY event
                         <div class="swiper-button-prev me-7"></div>
                         <div class="swiper-button-next ms-7"></div>
                     </div>
+
+                </div>
+                <div class="text-center mt-7">
+                    <a href="projects.php" class="btn btn-primary rounded-pill px-4 py-2">View Our Projects Collection</a>
                 </div>
             </div>
+        </section>
+        <!--Projects end-->
+
+        </div>
+        </div>
         </section>
         <!--Projects end-->
 
@@ -585,8 +602,9 @@ $eres = $conn->query("SELECT * FROM event WHERE event_status = 1  ORDER BY event
     <?php include 'includes/scripts.php'; ?>
 
 
-    <!-- Hero Slider JS -->
+    <!-- Hero Slider & Video JS -->
     <script>
+        // Carousel Script
         document.addEventListener('DOMContentLoaded', function() {
             const slides = document.querySelectorAll('.hero-slide');
             let currentSlide = 0;
@@ -598,6 +616,33 @@ $eres = $conn->query("SELECT * FROM event WHERE event_status = 1  ORDER BY event
             }
 
             setInterval(showNextSlide, 3000);
+        });
+
+        // Video Script
+        document.addEventListener('DOMContentLoaded', function() {
+            const video = document.getElementById('sarlVideo');
+
+            video.play().catch(function(error) {
+                console.log("Video autoplay failed:", error);
+            });
+
+            video.addEventListener('ended', function() {
+                video.play();
+            });
+        });
+
+
+        //Navbar Script
+        document.addEventListener('DOMContentLoaded', function() {
+            const navbar = document.querySelector('.navbar');
+
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 50) {
+                    navbar.classList.add('sticky-nav');
+                } else {
+                    navbar.classList.remove('sticky-nav');
+                }
+            });
         });
     </script>
 
