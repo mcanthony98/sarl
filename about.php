@@ -38,7 +38,7 @@
                             </p>
                         </div>
                     </div>
-                    <div class="col-lg-6 col-md-12" data-cue="flipInX" data-duration="1500">
+                    <div class="col-lg-6 col-md-12" data-cue="flipInX" data-duration="2000">
                         <figure>
                             <img src="assets/images/SARL.png" alt="About SARL" class="img-fluid rounded-3" />
                         </figure>
