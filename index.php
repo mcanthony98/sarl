@@ -43,7 +43,7 @@ $eres = $conn->query("SELECT * FROM event WHERE event_status = 1  ORDER BY event
             <div class="overlay"></div>
 
             <!-- Hero Content -->
-            <div class="container position-relative h-100">
+            <div class="container position-relative h-100" data-cues="slideInDown" data-duration="2000">
                 <div class="row h-100 align-items-center justify-content-center text-center">
                     <div class="col-lg-9 col-12">
                         <div class="hero-content">
@@ -126,19 +126,19 @@ $eres = $conn->query("SELECT * FROM event WHERE event_status = 1  ORDER BY event
 
 
         <!--Our Services start-->
-        <section class="my-xl-9 my-5">
+        <section class="mt-xl-9 mt-5 py-lg-8 py-5 bg-gray-800" >
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12 col-md-12 col-12">
-                        <div class="mb-xl-6 mb-5">
-                            <h2 class="mb-0">Our Services</h2>
+                        <div class="mb-xl-6 mb-5" data-cues="slideInLeft" data-duration="2000">
+                            <h2 class="mb-0 h1 text-white-stable">Our Services</h2>
                         </div>
                     </div>
                 </div>
 
                 <!-- Service 1: Stainless & Mild Steel -->
                 <div class="row d-flex align-items-center mb-md-9 mb-6">
-                    <div class="col-lg-6 col-md-6 col-12">
+                    <div class="col-lg-6 col-md-6 col-12" data-cues="slideInLeft" data-duration="1000">
                         <!-- Carousel 1 -->
                         <div id="carouselService1" class="carousel slide" data-bs-ride="carousel">
                             <div class="carousel-inner">
@@ -165,10 +165,10 @@ $eres = $conn->query("SELECT * FROM event WHERE event_status = 1  ORDER BY event
                             </button>
                         </div>
                     </div>
-                    <div class="col-lg-5 offset-lg-1 col-md-6 col-12">
+                    <div class="col-lg-5 offset-lg-1 col-md-6 col-12" data-cues="slideInRight" data-duration="2000">
                         <span class="text-primary fw-semibold">01</span>
                         <div class="mb-4">
-                            <h3 class="mt-4 mb-3">Stainless & Mild Steel</h3>
+                            <h3 class="mt-4 mb-3 text-white-stable">Stainless & Mild Steel</h3>
                             <p class="mb-0">Delivering durable and aesthetically pleasing steel fabrications for diverse applications, combining strength with sophisticated design.</p>
                         </div>
                         <a href="service.php?id=5&stainless-&-mild-steel-fabrications" class="icon-link icon-link-hover">
@@ -182,10 +182,10 @@ $eres = $conn->query("SELECT * FROM event WHERE event_status = 1  ORDER BY event
 
                 <!-- Service 2: Joinery Works -->
                 <div class="row d-flex align-items-center mb-md-9 mb-6">
-                    <div class="col-lg-5 col-md-6 col-12 order-2">
+                    <div class="col-lg-5 col-md-6 col-12 order-2" data-cues="slideInLeft" data-duration="2000">
                         <span class="text-primary fw-semibold">02</span>
                         <div class="mb-4">
-                            <h3 class="mt-4 mb-3">Joinery Works</h3>
+                            <h3 class="mt-4 mb-3 text-white-stable">Joinery Works</h3>
                             <p class="mb-0">Premium joinery works delivering bespoke interiors with unmatched craftsmanship, creating unique and elegant spaces.</p>
                         </div>
                         <a href="service.php?id=6&joinery-works" class="icon-link icon-link-hover">
@@ -195,7 +195,7 @@ $eres = $conn->query("SELECT * FROM event WHERE event_status = 1  ORDER BY event
                             </svg>
                         </a>
                     </div>
-                    <div class="col-lg-6 offset-lg-1 col-md-6 col-12 order-md-2">
+                    <div class="col-lg-6 offset-lg-1 col-md-6 col-12 order-md-2" data-cues="slideInRight" data-duration="1000">
                         <!-- Carousel 2 -->
                         <div id="carouselService2" class="carousel slide" data-bs-ride="carousel">
                             <div class="carousel-inner">
@@ -226,7 +226,7 @@ $eres = $conn->query("SELECT * FROM event WHERE event_status = 1  ORDER BY event
 
                 <!-- Service 3: Interior Fitouts -->
                 <div class="row d-flex align-items-center mb-md-9 mb-6">
-                    <div class="col-lg-6 col-md-6 col-12">
+                    <div class="col-lg-6 col-md-6 col-12" data-cues="slideInLeft" data-duration="1000">
                         <!-- Carousel 3 -->
                         <div id="carouselService3" class="carousel slide" data-bs-ride="carousel">
                             <div class="carousel-inner">
@@ -253,10 +253,10 @@ $eres = $conn->query("SELECT * FROM event WHERE event_status = 1  ORDER BY event
                             </button>
                         </div>
                     </div>
-                    <div class="col-lg-5 offset-lg-1 col-md-6 col-12">
+                    <div class="col-lg-5 offset-lg-1 col-md-6 col-12" data-cues="slideInRight" data-duration="2000">
                         <span class="text-primary fw-semibold">03</span>
                         <div class="mb-4">
-                            <h3 class="mt-4 mb-3">Interior Fitouts</h3>
+                            <h3 class="mt-4 mb-3 text-white-stable">Interior Fitouts</h3>
                             <p class="mb-0">Comprehensive interior solutions that transform spaces into masterpieces, from initial design concept to final execution.</p>
                         </div>
                         <a href="service.php?id=4&interior-fitouts" class="icon-link icon-link-hover">
@@ -270,10 +270,10 @@ $eres = $conn->query("SELECT * FROM event WHERE event_status = 1  ORDER BY event
 
                 <!-- Service 4: Aluminium & Glazing Works -->
                 <div class="row d-flex align-items-center mb-md-9 mb-6">
-                    <div class="col-lg-5 col-md-6 col-12 order-2">
+                    <div class="col-lg-5 col-md-6 col-12 order-2" data-cues="slideInLeft" data-duration="2000">
                         <span class="text-primary fw-semibold">04</span>
                         <div class="mb-4">
-                            <h3 class="mt-4 mb-3">Aluminium & Glazing Works</h3>
+                            <h3 class="mt-4 mb-3 text-white-stable">Aluminium & Glazing Works</h3>
                             <p class="mb-0">High-quality, customized solutions for aluminium fabrications, combining modern aesthetics with durability and functionality.</p>
                         </div>
                         <a href="service.php?id=1&aluminium-&-glazing-works" class="icon-link icon-link-hover">
@@ -283,7 +283,7 @@ $eres = $conn->query("SELECT * FROM event WHERE event_status = 1  ORDER BY event
                             </svg>
                         </a>
                     </div>
-                    <div class="col-lg-6 offset-lg-1 col-md-6 col-12 order-md-2">
+                    <div class="col-lg-6 offset-lg-1 col-md-6 col-12 order-md-2" data-cues="slideInRight" data-duration="1000">
                         <!-- Carousel 4 -->
                         <div id="carouselService4" class="carousel slide" data-bs-ride="carousel">
                             <div class="carousel-inner">
@@ -329,8 +329,8 @@ $eres = $conn->query("SELECT * FROM event WHERE event_status = 1  ORDER BY event
                                 </div>
                             </div>
                             <div class="col-lg-4 col-md-5">
-                                <div class="text-center">
-                                    <a href="contact.php" class="btn btn-primary">Speak to an Expert Today</a>
+                                <div class="text-center" data-cues="bounceInRight">
+                                    <a href="contact.php" class="btn btn-primary"  >Speak to an Expert Today</a>
                                 </div>
                             </div>
                         </div>
@@ -541,7 +541,7 @@ $eres = $conn->query("SELECT * FROM event WHERE event_status = 1  ORDER BY event
             <div class="container">
                 <div class="row align-items-center g-5">
                     <div class="col-lg-5 col-12">
-                        <div class="mb-6">
+                        <div class="mb-6" data-cues="slideInDown" data-duration="1000">
                             <small class="border rounded-pill border-primary-subtle text-primary text-uppercase px-3 py-2 fw-semibold">Craftsmanship</small>
                             <h2 class="mt-4">Excellence in Every Detail</h2>
                         </div>
@@ -581,7 +581,7 @@ $eres = $conn->query("SELECT * FROM event WHERE event_status = 1  ORDER BY event
                         <a href="careers.php" class="btn btn-outline-primary">Apply for a Job</a>
                     </div>
                     <div class="col-lg-7 col-12">
-                        <div class="position-relative mx-3">
+                        <div class="position-relative mx-3" data-cues="slideInRight" data-duration="1000">
                             <figure>
                                 <img src="assets/images/service.jpg" alt="SARL Support" class="rounded-3 img-fluid px-lg-1" />
                         </div>
@@ -592,7 +592,7 @@ $eres = $conn->query("SELECT * FROM event WHERE event_status = 1  ORDER BY event
         <!--Why Us end-->
 
         <!-- CTA start -->
-        <div class="container py-5" data-bs-theme="dark">
+        <div class="container py-5" data-bs-theme="dark" data-cues="fadeIn" data-duration="2000">
             <div class="row px-lg-6 py-lg-6 p-4 align-items-center bg-primary rounded-3 g-lg-0">
                 <div class="col-xl-5 col-md-7">
                     <h2 class="text-white-stick">Get in Touch for Your Next Project</h2>
@@ -600,8 +600,9 @@ $eres = $conn->query("SELECT * FROM event WHERE event_status = 1  ORDER BY event
                 </div>
                 <div class="offset-xl-2 col-xl-5 col-md-5">
                     <div class="text-lg-center">
-                        <p class="text-white-stick">Contact us today to discuss your requirements and receive a tailored solution.</p>
+                        
                         <a href="contact.php" class="btn btn-dark">Contact Us Now</a>
+                        <p class="text-white-stick">Get a tailored solution for your space.</p>
                     </div>
                 </div>
             </div>

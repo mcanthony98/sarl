@@ -66,6 +66,7 @@
                     <button class="btn btn-outline-primary mx-2 active" id="allProjectsButton" onclick="filterProjects('all')">All Projects</button>
                     <button class="btn btn-outline-primary mx-2" id="interiorButton" onclick="filterProjects('Interior fit-outs')">Interior Fitouts</button>
                     <button class="btn btn-outline-primary mx-2" id="aluminiumButton" onclick="filterProjects('Aluminium')">Aluminium</button>
+                    <button class="btn btn-outline-primary mx-2" id="residentialButton" onclick="filterProjects('Residential')">Residential</button>
                 </div>
 
                 <!-- Projects -->

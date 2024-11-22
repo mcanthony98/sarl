@@ -23,7 +23,7 @@
         <!--Page Content-->
 
         <!--Who we are start-->
-        <section class="mb-4 py-xl-9 py-5">
+        <section class="mb-4 py-xl-5 py-5" data-cue="fadeIn">
             <div class="container pb-5">
                 <div class="row align-items-center g-4">
                     <div class="col-lg-6 col-md-12">
@@ -38,9 +38,9 @@
                             </p>
                         </div>
                     </div>
-                    <div class="col-lg-6 col-md-12">
+                    <div class="col-lg-6 col-md-12" data-cue="flipInX">
                         <figure>
-                            <img src="assets/images/about-hero.jpg" alt="About SARL" class="img-fluid rounded-3" />
+                            <img src="assets/images/SARL.png" alt="About SARL" class="img-fluid rounded-3" />
                         </figure>
                     </div>
                 </div>
