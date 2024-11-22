@@ -91,7 +91,7 @@
                             </p>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-md-6" data-cue="fadeIn" data-duration="1000">
+                    <div class="col-lg-3 col-md-6" data-cue="fadeIn" data-duration="700">
                         <div class="mb-5 text-justified">
                             <i class="bi bi-award text-primary" style="font-size: 2rem;"></i>
                             <h4 class="mt-3">Our Team</h4>
@@ -100,7 +100,7 @@
                             </p>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-md-6" data-cue="fadeIn" data-duration="1500">
+                    <div class="col-lg-3 col-md-6" data-cue="fadeIn" data-duration="900">
                         <div class="mb-5 text-justified">
                             <i class="bi bi-gear text-primary" style="font-size: 2rem;"></i>
                             <h4 class="mt-3">Our Suppliers</h4>
@@ -109,7 +109,7 @@
                             </p>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-md-6" data-cue="fadeIn" data-duration="2000">
+                    <div class="col-lg-3 col-md-6" data-cue="fadeIn" data-duration="1100">
                         <div class="mb-5 text-justified">
                             <i class="bi bi-people-fill text-primary" style="font-size: 2rem;"></i>
                             <h4 class="mt-3">Our Associates</h4>
