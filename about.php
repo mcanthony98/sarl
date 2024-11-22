@@ -47,8 +47,8 @@
             </div>
 
             <div class="container pb-5">
-                <div class="row align-items-center text-justified g-4">
-                    <div class="col-lg-6 col-md-12">
+                <div class="row align-items-center text-justified g-4" >
+                    <div class="col-lg-6 col-md-12" data-cue="slideInLeft">
                         <div class="mb-4">
                             <h1 class="mb-3">Our Mission</h1>
                             <p class="lead mb-4">Providing Unforgettable Experiences</p>
@@ -57,7 +57,7 @@
                             </p>
                         </div>
                     </div>
-                    <div class="col-lg-6 col-md-12">
+                    <div class="col-lg-6 col-md-12" data-cue="slideInRight">
                         <div class="mb-4">
                             <h1 class="mb-3">Our Vision</h1>
                             <p class="lead mb-4">Leading the Way in Interior Fit-Outs</p>
@@ -76,13 +76,13 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-6 offset-lg-3 col-md-8 offset-md-2">
-                        <div class="text-center mb-7">
+                        <div class="text-center mb-7" data-cue="slideInDown">
                             <h2 class="mb-0">Our Core Values</h2>
                         </div>
                     </div>
                 </div>
                 <div class="row g-lg-7 gy-5">
-                    <div class="col-lg-3 col-md-6">
+                    <div class="col-lg-3 col-md-6" data-cue="fadeIn" data-duration="500">
                         <div class="mb-5 text-justified">
                             <i class="bi bi-people text-primary" style="font-size: 2rem;"></i>
                             <h4 class="mt-3">Our Clients</h4>
@@ -91,7 +91,7 @@
                             </p>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-md-6">
+                    <div class="col-lg-3 col-md-6" data-cue="fadeIn" data-duration="1000">
                         <div class="mb-5 text-justified">
                             <i class="bi bi-award text-primary" style="font-size: 2rem;"></i>
                             <h4 class="mt-3">Our Team</h4>
@@ -100,7 +100,7 @@
                             </p>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-md-6">
+                    <div class="col-lg-3 col-md-6" data-cue="fadeIn" data-duration="1500">
                         <div class="mb-5 text-justified">
                             <i class="bi bi-gear text-primary" style="font-size: 2rem;"></i>
                             <h4 class="mt-3">Our Suppliers</h4>
@@ -109,7 +109,7 @@
                             </p>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-md-6">
+                    <div class="col-lg-3 col-md-6" data-cue="fadeIn" data-duration="2000">
                         <div class="mb-5 text-justified">
                             <i class="bi bi-people-fill text-primary" style="font-size: 2rem;"></i>
                             <h4 class="mt-3">Our Associates</h4>
@@ -129,21 +129,21 @@
             <div class="container">
                 <div class="row g-5">
                     <div class="col-md-4 col-6">
-                        <div class="text-center">
+                        <div class="text-center" data-cue="slideInUp" data-duration="500">
                             <h2 class="text-white-stable">35+</h2>
                             <h5 class="text-white-stable mb-0">Years of Experience</h5>
                         </div>
                     </div>
                     <div class="col-md-4 col-6">
-                        <div class="text-center">
+                        <div class="text-center"  data-cue="slideInUp" data-duration="500">
                             <h2 class="text-white-stable">400+</h2>
-                            <h5 class="text-white-stable mb-0">Projects Shipped</h5>
+                            <h5 class="text-white-stable mb-0">Projects Done</h5>
                         </div>
                     </div>
                     <div class="col-md-4 col-6">
-                        <div class="text-center">
+                        <div class="text-center"  data-cue="slideInUp" data-duration="500">
                             <h2 class="text-white-stable">80+</h5>
-                                <h5 class="text-white-stable mb-0">Team Members</h5>
+                                <h5 class="text-white-stable mb-0">Skilled Experts</h5>
                         </div>
                     </div>
                 </div>
@@ -152,7 +152,7 @@
         <!--Team member end-->
 
         <!--Behind the block start-->
-        <section class="mb-lg-9 mb-5 mt-2">
+        <section class="mb-lg-9 mb-5 mt-2"  data-cue="slideInUp" data-duration="1500">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12 col-md-12">
