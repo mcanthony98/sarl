@@ -26,7 +26,7 @@
         <section class="mb-4 py-xl-5 py-5" data-cue="fadeIn">
             <div class="container pb-5">
                 <div class="row align-items-center g-4">
-                    <div class="col-lg-6 col-md-12">
+                    <div class="col-lg-6 col-md-12" data-cue="fadeIn" data-duration="1500">
                         <div class="me-xl-8">
                             <h1 class="mb-3">Introduction</h1>
                             <p class="lead mb-4">Innovation in Every Detail</p>
@@ -38,7 +38,7 @@
                             </p>
                         </div>
                     </div>
-                    <div class="col-lg-6 col-md-12" data-cue="flipInX">
+                    <div class="col-lg-6 col-md-12" data-cue="flipInX" data-duration="1500">
                         <figure>
                             <img src="assets/images/SARL.png" alt="About SARL" class="img-fluid rounded-3" />
                         </figure>
