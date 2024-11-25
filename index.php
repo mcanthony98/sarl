@@ -32,10 +32,9 @@ $eres = $conn->query("SELECT * FROM event WHERE event_status = 1  ORDER BY event
         <section class="hero-section position-relative" style="height: 100vh;">
             <!-- Hero Slides Container -->
             <div class="hero-slides-container" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
-                <div class="hero-slide active" style="background-image: url('assets/images/service.jpg');"></div>
-                <div class="hero-slide" style="background-image: url('assets/images/project.jpg');"></div>
-                <div class="hero-slide" style="background-image: url('assets/images/hero-1.jpg');"></div>
-                <div class="hero-slide" style="background-image: url('assets/images/hero-2.jpg');"></div>
+                <div class="hero-slide active" style="background-image: url('assets/images/hero1.jpeg');"></div>
+                <div class="hero-slide" style="background-image: url('assets/images/hero2.jpg');"></div>
+                <div class="hero-slide" style="background-image: url('assets/images/hero3.jpg');"></div>
                 <div class="hero-slide" style="background-image: url('assets/images/hero-3.jpg');"></div>
             </div>
 
@@ -143,16 +142,10 @@ $eres = $conn->query("SELECT * FROM event WHERE event_status = 1  ORDER BY event
                         <div id="carouselService1" class="carousel slide" data-bs-ride="carousel">
                             <div class="carousel-inner">
                                 <div class="carousel-item active">
-                                    <img src="assets/images/service/s1.jpg" alt="Stainless & Mild Steel 1" class="img-fluid rounded-3" style="width: 100%; height: auto;" />
+                                    <img src="assets/images/stainless1.jpg" alt="Stainless & Mild Steel 1" class="img-fluid rounded-3" style="width: 100%; height: auto;" />
                                 </div>
                                 <div class="carousel-item">
                                     <img src="assets/images/service/s1.jpg" alt="Stainless & Mild Steel 2" class="img-fluid rounded-3" style="width: 100%; height: auto;" />
-                                </div>
-                                <div class="carousel-item">
-                                    <img src="assets/images/service/s1.jpg" alt="Stainless & Mild Steel 3" class="img-fluid rounded-3" style="width: 100%; height: auto;" />
-                                </div>
-                                <div class="carousel-item">
-                                    <img src="assets/images/service/s1.jpg" alt="Stainless & Mild Steel 4" class="img-fluid rounded-3" style="width: 100%; height: auto;" />
                                 </div>
                             </div>
                             <button class="carousel-control-prev" type="button" data-bs-target="#carouselService1" data-bs-slide="prev">
@@ -200,16 +193,10 @@ $eres = $conn->query("SELECT * FROM event WHERE event_status = 1  ORDER BY event
                         <div id="carouselService2" class="carousel slide" data-bs-ride="carousel">
                             <div class="carousel-inner">
                                 <div class="carousel-item active">
-                                    <img src="assets/images/service/s3.jpg" alt="Joinery Works 1" class="img-fluid rounded-3" style="width: 100%; height: auto;" />
+                                    <img src="assets/images/joinery1.jpg" alt="Joinery Works 1" class="img-fluid rounded-3" style="width: 100%; height: auto;" />
                                 </div>
                                 <div class="carousel-item">
-                                    <img src="assets/images/service/s3.jpg" alt="Joinery Works 2" class="img-fluid rounded-3" style="width: 100%; height: auto;" />
-                                </div>
-                                <div class="carousel-item">
-                                    <img src="assets/images/service/s3.jpg" alt="Joinery Works 3" class="img-fluid rounded-3" style="width: 100%; height: auto;" />
-                                </div>
-                                <div class="carousel-item">
-                                    <img src="assets/images/service/s3.jpg" alt="Joinery Works 4" class="img-fluid rounded-3" style="width: 100%; height: auto;" />
+                                    <img src="assets/images/joinery2.jpeg" alt="Joinery Works 2" class="img-fluid rounded-3" style="width: 100%; height: auto;" />
                                 </div>
                             </div>
                             <button class="carousel-control-prev" type="button" data-bs-target="#carouselService2" data-bs-slide="prev">
@@ -231,16 +218,10 @@ $eres = $conn->query("SELECT * FROM event WHERE event_status = 1  ORDER BY event
                         <div id="carouselService3" class="carousel slide" data-bs-ride="carousel">
                             <div class="carousel-inner">
                                 <div class="carousel-item active">
-                                    <img src="assets/images/projects/p-6.jpg" alt="Interior Fitout 1" class="img-fluid rounded-3" style="width: 100%; height: auto;" />
+                                    <img src="assets/images/interior1.jpg" alt="Interior Fitout 1" class="img-fluid rounded-3" style="width: 100%; height: auto;" />
                                 </div>
                                 <div class="carousel-item">
                                     <img src="assets/images/projects/p-6.jpg" alt="Interior Fitout 2" class="img-fluid rounded-3" style="width: 100%; height: auto;" />
-                                </div>
-                                <div class="carousel-item">
-                                    <img src="assets/images/projects/p-6.jpg" alt="Interior Fitout 3" class="img-fluid rounded-3" style="width: 100%; height: auto;" />
-                                </div>
-                                <div class="carousel-item">
-                                    <img src="assets/images/projects/p-6.jpg" alt="Interior Fitout 4" class="img-fluid rounded-3" style="width: 100%; height: auto;" />
                                 </div>
                             </div>
                             <button class="carousel-control-prev" type="button" data-bs-target="#carouselService3" data-bs-slide="prev">
@@ -288,16 +269,10 @@ $eres = $conn->query("SELECT * FROM event WHERE event_status = 1  ORDER BY event
                         <div id="carouselService4" class="carousel slide" data-bs-ride="carousel">
                             <div class="carousel-inner">
                                 <div class="carousel-item active">
-                                    <img src="assets/images/service/s4.jpg" alt="Aluminium & Glazing 1" class="img-fluid rounded-3" style="width: 100%; height: auto;" />
+                                    <img src="assets/images/glazing1.jpg" alt="Aluminium & Glazing 1" class="img-fluid rounded-3" style="width: 100%; height: auto;" />
                                 </div>
                                 <div class="carousel-item">
-                                    <img src="assets/images/service/s4.jpg" alt="Aluminium & Glazing 2" class="img-fluid rounded-3" style="width: 100%; height: auto;" />
-                                </div>
-                                <div class="carousel-item">
-                                    <img src="assets/images/service/s4.jpg" alt="Aluminium & Glazing 3" class="img-fluid rounded-3" style="width: 100%; height: auto;" />
-                                </div>
-                                <div class="carousel-item">
-                                    <img src="assets/images/service/s4.jpg" alt="Aluminium & Glazing 4" class="img-fluid rounded-3" style="width: 100%; height: auto;" />
+                                    <img src="assets/images/glazing2.jpg" alt="Aluminium & Glazing 2" class="img-fluid rounded-3" style="width: 100%; height: auto;" />
                                 </div>
                             </div>
                             <button class="carousel-control-prev" type="button" data-bs-target="#carouselService4" data-bs-slide="prev">
@@ -397,7 +372,7 @@ $eres = $conn->query("SELECT * FROM event WHERE event_status = 1  ORDER BY event
                                                         autoplay
                                                         muted
                                                         loop>
-                                                        <source src="assets/videos/sarl.mp4" type="video/mp4">
+                                                        <source src="assets/videos/sarl-vid.mp4" type="video/mp4">
                                                         Your browser does not support the video tag.
                                                     </video>
                                                 </div>
