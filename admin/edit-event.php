@@ -153,7 +153,7 @@
 												<div class="form-group py-0">
 													<div class="btn btn-success btn-file">
 														<i class="fas fa-plus"></i> Add New Image
-														<input type="file" name="photos" onchange="this.form.submit();" id="exampleInputFile">
+														<input type="file" name="photos[]" multiple="multiple" onchange="this.form.submit();" id="exampleInputFile">
 													</div>
 												</div>
 											</form>

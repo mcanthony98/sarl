@@ -320,33 +320,38 @@ elseif(isset($_POST["edit-event-doc"])){
 elseif(isset($_POST["add-gallery"])){
     $id = mysqli_real_escape_string($conn, $_POST["add-gallery"]);
 
-    $image = $_FILES['photos']['tmp_name'];
-    $imgContent = addslashes(file_get_contents($image));
-    
-            
+        // Iterate through each uploaded file
+    foreach ($_FILES['photos']['tmp_name'] as $key => $tmp_name) {
+        // Skip if no file was uploaded
+        if (empty($_FILES['photos']['name'][$key])) {
+            continue;
+        }
+        
+        $image = $_FILES['photos']['tmp_name'][$key];
+        $imgContent = addslashes(file_get_contents($image));
+        
+                
 
-    $file_name = $_FILES["photos"]["name"];
-    $_FILES["photos"]["type"];
-    $tmp_file = $_FILES["photos"]["tmp_name"];
-    
-    $destination = "../uploads/" . $file_name;
-    
-    move_uploaded_file($tmp_file, $destination);
-    $new = $filedate.$file_name;
-    $new_name = rename('../uploads/'.$file_name , '../uploads/'.$new);
+        $file_name = $_FILES["photos"]["name"][$key];
+        $_FILES["photos"]["type"][$key];
+        $tmp_file = $_FILES["photos"]["tmp_name"][$key];
+        
+        $destination = "../uploads/" . $file_name;
+        
+        move_uploaded_file($tmp_file, $destination);
+        $new = $filedate.$file_name;
+        $new_name = rename('../uploads/'.$file_name , '../uploads/'.$new);
 
 
-    $insert = "INSERT INTO `event_gallery`(`event_id`, `image`, `date_created`) VALUES ('$id','$new','$date')";
-    
-    if ($conn->query($insert)===TRUE){
+        $insert = "INSERT INTO `event_gallery`(`event_id`, `image`, `date_created`) VALUES ('$id','$new','$date')";
+        $conn->query($insert);
+
+    }
           
           $_SESSION["success"] = "Image Added Sucessfully.";
           header("location: edit-event.php?id=$id#gallery");
           
-      }else{
-          $_SESSION["error"] = "Error Occured. Please Try Again". $conn->error;
-          header("location: edit-event.php?id=$id#gallery");
-      }
+     
 }
 
 elseif(isset($_GET["del-gallery"])){
