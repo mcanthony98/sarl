@@ -17,29 +17,7 @@
     <?php include 'includes/head-content.php'; ?>
 
 
-    <style>
-        /* Project Label */
-        .project-label {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            margin: 10px;
-            background-color: rgba(0, 115, 127, 0.8);
-            color: white;
-            padding: 5px 10px;
-            border-radius: 5px;
-        }
-
-        /* Img Container */
-        .project-image-container {
-            position: relative;
-        }
-
-        .project-image-container img {
-            width: 100%;
-            border-radius: 0.25rem 0.25rem 0 0;
-        }
-    </style>
+    
 </head>
 
 <body>
@@ -78,7 +56,7 @@
                         <div class="card border-0 h-100 card-lift">
                             <div class="project-image-container">
                                 <a href="project.php?id=<?php echo $interior_row['event_id']; ?>&<?php echo slagify($interior_row['title']); ?>">
-                                    <img src="uploads/<?php echo $interior_row['cover_image']; ?>" alt="project at <?php echo $interior_row['title']; ?>" class="img-fluid rounded-top-3" />
+                                    <img src="uploads/<?php echo $interior_row['cover_image']; ?>" alt="project at <?php echo $interior_row['title']; ?>" class="img-fluid rounded-top-3 equal-height-image" />
                                     <span class="project-label text-capitalize"><?php echo $interior_row['category']; ?></span>
                                 </a>
                             </div>

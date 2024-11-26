@@ -27,6 +27,40 @@
 
     <!-- Theme CSS -->
     <link rel="stylesheet" href="assets/css/theme.min.css">
+
+    <style>
+        /* Project Label */
+        .project-label {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            margin: 10px;
+            background-color: rgba(0, 115, 127, 0.8);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+
+        /* Img Container */
+        .project-image-container {
+            height: 250px; /* Matches the image height */
+            overflow: hidden; /* Ensures overflow is hidden if the image is larger */
+            position: relative; /* Helps with alignment */
+        }
+
+        .project-image-container img {
+            width: 100%;
+            border-radius: 0.25rem 0.25rem 0 0;
+        }
+        .equal-height-image {
+            height: 250px; /* Set the desired height */
+            width: 100%; /* Ensure it fills the width of the container */
+            object-fit: cover; /* Makes the image zoom in and not stretch */
+            object-position: center; /* Centers the image */
+            border-radius: 5px; /* Maintain rounded corners */
+        }
+
+    </style>
    
 
 <?php

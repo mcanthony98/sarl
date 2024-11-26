@@ -3,7 +3,7 @@ session_start();
 require "includes/connect.php";
 date_default_timezone_set("Africa/Nairobi");
 $date = date("Y-m-d");
-$eres = $conn->query("SELECT * FROM event WHERE event_status = 1  ORDER BY event_id DESC LIMIT 7");
+$eres = $conn->query("SELECT * FROM event WHERE event_status = 1  ORDER BY year DESC LIMIT 7");
 ?>
 <!doctype html>
 <html lang="en">
@@ -474,7 +474,9 @@ $eres = $conn->query("SELECT * FROM event WHERE event_status = 1  ORDER BY event
                             <!-- Slide 1 -->
                             <div class="swiper-slide" data-cue="zoomIn">
                                 <div class="card border-0 h-100 card-lift">
-                                    <a href="project.php?id=<?php echo $erow['event_id']; ?>&<?php echo slagify($erow['title']); ?>"><img loading="lazy" src="uploads/<?php echo $erow['cover_image']; ?>" alt="project at <?php echo $erow['title']; ?>" class="img-fluid rounded-top-3" /></a>
+                                    <div class="project-image-contaner">
+                                    <a href="project.php?id=<?php echo $erow['event_id']; ?>&<?php echo slagify($erow['title']); ?>"><img loading="lazy" src="uploads/<?php echo $erow['cover_image']; ?>" alt="project at <?php echo $erow['title']; ?>" class="img-fluid rounded-top-3 equal-height-image" /></a>
+                        </div>
                                     <div class="card-body">
                                         <div class="d-flex flex-column gap-2">
                                             <h4><a href="project.php?id=<?php echo $erow['event_id']; ?>&<?php echo slagify($erow['title']); ?>" class="text-reset"><?php echo $erow['title']; ?></a></h4>
