@@ -84,7 +84,7 @@ $imgres = $conn->query("SELECT * FROM event_gallery WHERE event_id='$id'");
     </main>
 
     <!-- Footer -->
-    <?php include 'includes/footer.php'; ?>
+    <?php //include 'includes/footer.php'; ?>
 
     <!-- Image Modal -->
     <div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
