@@ -78,14 +78,22 @@
 											<textarea id="summernote2" class="form-control" name="desc" rows="5" required><?php echo $row['description'];?></textarea>
 										</div>
 
-										<div class="form-group">
-											<label for="category">Category</label>
-											
-											<select class="form-control" id="category" name="category" required>
-												<option value="">Select Category</option>
-												<option value="Aluminium" <?php if($category == 'Aluminium') echo 'selected'; ?>>Aluminium</option>
-												<option value="Interior fit-outs" <?php if($category == 'Interior fit-outs') echo 'selected'; ?>>Interior Fit-outs</option>
-											</select>
+										
+
+										<div class="row">
+											<div class="form-group col-sm-6">
+												<label for="category">Category</label>
+												<select class="form-control" id="category" name="category" required>
+													<option value="">Select Category</option>
+													<option value="Aluminium" <?php if($category == 'Aluminium') echo 'selected'; ?>>Aluminium</option>
+													<option value="Interior fit-outs" <?php if($category == 'Interior fit-outs') echo 'selected'; ?>>Interior Fit-outs</option>
+													<option value="Residential" <?php if($category == 'Residential') echo 'selected'; ?>>Residential</option>
+												</select>
+											</div>
+											<div class="form-group col-sm-6">
+												<label for="inputName">Year</label>
+												<input type="number" id="inputName" name="year" value="<?php echo $row['year'];?>" class="form-control" required>
+											</div>
 										</div>
 
 										<div class="row">

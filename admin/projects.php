@@ -56,7 +56,7 @@ $res=$conn->query("SELECT * FROM event e ORDER BY e.event_id DESC");
                         <thead>
                             <tr>
                                 <th>Project</th>
-                                <th>Description</th>
+                                <th>Category</th>
                                 <th>Status</th>
                                 <th>Action</th>
                             </tr>
@@ -74,7 +74,7 @@ $res=$conn->query("SELECT * FROM event e ORDER BY e.event_id DESC");
                                       </div>
                                   </td>
                                
-                                  <td><?php echo $row["short_desc"];?></td>
+                                  <td><?php echo $row["category"];?></td>
                                 
                                 <td><?php echo eventStatus($row["event_status"]);?></td>
 

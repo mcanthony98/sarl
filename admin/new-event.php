@@ -68,13 +68,20 @@
 										</div>
 
 
-										<div class="form-group">
-											<label for="category">Category</label>
-											<select class="form-control" id="category" name="category" required>
-												<option value="">Select Category</option>
-												<option value="Aluminium">Aluminium</option>
-												<option value="Interior fit-outs">Interior Fit-outs</option>
-											</select>
+										<div class="row">
+											<div class="form-group col-sm-6">
+												<label for="category">Category</label>
+												<select class="form-control" id="category" name="category" required>
+													<option value="">Select Category</option>
+													<option value="Aluminium">Aluminium</option>
+													<option value="Interior fit-outs">Interior Fit-outs</option>
+													<option value="Residential">Residential</option>
+												</select>
+											</div>
+											<div class="form-group col-sm-6">
+												<label for="inputName">Year</label>
+												<input type="number" id="inputName" name="year" class="form-control" required>
+											</div>
 										</div>
 
 										<div class="form-group col-12">

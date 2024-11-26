@@ -168,8 +168,8 @@
                             <img src="assets/images/user.png" alt="Jitu Chauhna" class="rounded-3 img-fluid mx-auto" />
                         </figure>
                         <div class="mb-4">
-                            <h4 class="mb-1"><a href="single-project.php" class="text-reset">Person</a></h4>
-                            <span class="fs-6">Co-Founder & CEO</span>
+                            <h4 class="mb-1"><a href="single-project.php" class="text-reset">Kamaljeet Singh Sihra</a></h4>
+                            <span class="fs-6">Chief Executive Officer (CEO)</span>
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-6 col-12 text-center">
@@ -177,8 +177,8 @@
                             <img src="assets/images/user.png" alt="Sandip Chauhan" class="rounded-3 img-fluid mx-auto" />
                         </figure>
                         <div class="mb-4">
-                            <h4 class="mb-1"><a href="single-project.php" class="text-reset">Person</a></h4>
-                            <span class="fs-6">COO</span>
+                            <h4 class="mb-1"><a href="single-project.php" class="text-reset">kulvinder Singh Sihra</a></h4>
+                            <span class="fs-6">Chief Operations Officer (COO)</span>
                         </div>
                     </div>
                 </div>

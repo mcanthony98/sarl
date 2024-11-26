@@ -208,6 +208,7 @@ elseif(isset($_POST["new-event"])){
     $sdesc = mysqli_real_escape_string($conn, $_POST["sdesc"]);
     $desc = mysqli_real_escape_string($conn, $_POST["desc"]);
     $category = $_POST['category'];
+    $year = $_POST['year'];
     $image = $_FILES['photos']['tmp_name'];
     $imgContent = addslashes(file_get_contents($image));
     
@@ -221,7 +222,7 @@ elseif(isset($_POST["new-event"])){
     $new = $filedate.$file_name;
     $new_name = rename('../uploads/'.$file_name , '../uploads/'.$new);
 
-    $insert = "INSERT INTO `event`(`title`, `short_desc`, `description`, `category`, `cover_image`, `event_status`, `date_added`, `date_modified`) VALUES ('$name', '$sdesc', '$desc', '$category', '$new','1','$date','$date')";
+    $insert = "INSERT INTO `event`(`title`, `short_desc`, `description`, `category`, `year`, `cover_image`, `event_status`, `date_added`, `date_modified`) VALUES ('$name', '$sdesc', '$desc', '$category', '$year', '$new','1','$date','$date')";
     
     if ($conn->query($insert)===TRUE){
         $pk = $conn->insert_id;
@@ -240,10 +241,11 @@ elseif(isset($_POST["edit-event"])){
     $sdesc = mysqli_real_escape_string($conn, $_POST["sdesc"]);
     $desc = mysqli_real_escape_string($conn, $_POST["desc"]);
     $category = $_POST['category'];
+    $year = $_POST['year'];
     
     $status = mysqli_real_escape_string($conn, $_POST["status"]);
     
-    $insert = "UPDATE `event` SET `title`='$name',`short_desc`='$sdesc',`description`='$desc', `category`='$category', `location`='$loc',`services`='$serv',`slots`='$slots',`start_datetime`='$st',`end_datetime`='$et', `event_status`='$status', `date_modified`='$date' WHERE event_id='$id'";
+    $insert = "UPDATE `event` SET `title`='$name',`short_desc`='$sdesc',`description`='$desc', `category`='$category', `year`='$year',  `location`='$loc',`services`='$serv',`slots`='$slots',`start_datetime`='$st',`end_datetime`='$et', `event_status`='$status', `date_modified`='$date' WHERE event_id='$id'";
     
     if ($conn->query($insert)===TRUE){
         $_SESSION["success"] = "Project Updated Sucessfully.";
