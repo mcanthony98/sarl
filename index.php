@@ -372,7 +372,7 @@ $eres = $conn->query("SELECT * FROM event WHERE event_status = 1  ORDER BY event
                                                         autoplay
                                                         muted
                                                         loop>
-                                                        <source src="assets/videos/sarl-vid.mp4" type="video/mp4">
+                                                        <source src="assets/videos/sarl-vid2.mp4" type="video/mp4">
                                                         Your browser does not support the video tag.
                                                     </video>
                                                 </div>

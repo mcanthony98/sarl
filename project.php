@@ -57,10 +57,10 @@ $imgres = $conn->query("SELECT * FROM event_gallery WHERE event_id='$id'");
         <!--Portfolio Gallery start-->
         <section>
             <div class="container">
-                <div class="row g-4">
+                <div class="row g-1" id="masonry-grid">
 
-                    <div class="col-md-4">
-                        <img src="uploads/<?php echo $erow['cover_image'];?>" class="img-fluid rounded-3 gallery-img" alt="<?php echo $erow['title'];?>" data-bs-target="#imageModal" data-bs-toggle="modal" data-bs-index="0">
+                    <div class="col-sm-6 col-md-4 col-lg-3">
+                        <img src="uploads/<?php echo $erow['cover_image'];?>" class="img-fluid rounded-0 gallery-img" alt="<?php echo $erow['title'];?>" data-bs-target="#imageModal" data-bs-toggle="modal" data-bs-index="0">
                     </div>
 
                     
@@ -70,8 +70,8 @@ $imgres = $conn->query("SELECT * FROM event_gallery WHERE event_id='$id'");
                     $counter++;    
                     ?>
                         
-                        <div class="col-md-4">
-                            <img src="uploads/<?php echo $imgrow['image'];?>" class="img-fluid rounded-3 gallery-img"  alt="<?php echo $erow['title'];?> - <?php echo $counter;?>" data-bs-target="#imageModal" data-bs-toggle="modal" data-bs-index="<?php echo $counter;?>">
+                        <div class="col-sm-6 col-md-4 col-lg-3">
+                            <img src="uploads/<?php echo $imgrow['image'];?>" class="img-fluid rounded-0 gallery-img"  alt="<?php echo $erow['title'];?> - <?php echo $counter;?>" data-bs-target="#imageModal" data-bs-toggle="modal" data-bs-index="<?php echo $counter;?>">
                         </div>
                     <?php } ?>
 
@@ -87,13 +87,13 @@ $imgres = $conn->query("SELECT * FROM event_gallery WHERE event_id='$id'");
 
     <!-- Image Modal -->
     <div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-dialog modal-dialog-centered modal-xl">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="imageModalLabel">Image Title</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="modal-body text-center">
+                <div class="modal-body text-center p-0">
                     <img id="modalImage" src="" class="img-fluid" alt="Project Image">
                 </div>
                 <div class="modal-footer justify-content-between">
@@ -107,6 +107,7 @@ $imgres = $conn->query("SELECT * FROM event_gallery WHERE event_id='$id'");
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/masonry/4.2.2/masonry.pkgd.min.js"></script>
 
     <!-- Image Modal JS -->
     <script>
@@ -139,6 +140,17 @@ $imgres = $conn->query("SELECT * FROM event_gallery WHERE event_id='$id'");
                 updateModal(currentIndex);
             });
         });
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const grid = document.querySelector('#masonry-grid');
+            new Masonry(grid, {
+                itemSelector: '.col-sm-6',
+                columnWidth: '.col-sm-6',
+                percentPosition: true,
+            });
+            });
+
     </script>
 </body>
 
