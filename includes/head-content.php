@@ -27,6 +27,19 @@
 
     <!-- Theme CSS -->
     <link rel="stylesheet" href="assets/css/theme.min.css">
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/masonry/4.2.2/masonry.pkgd.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const grid = document.querySelector('#masonry-grid');
+            new Masonry(grid, {
+                itemSelector: '.col-sm-6',
+                columnWidth: '.col-sm-6',
+                percentPosition: true,
+            });
+            });
+
+    </script>
 
     <style>
         /* Project Label */

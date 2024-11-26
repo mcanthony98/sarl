@@ -108,7 +108,6 @@ $imgres = $conn->query("SELECT * FROM event_gallery WHERE event_id='$id'");
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/masonry/4.2.2/masonry.pkgd.min.js"></script>
 
     <!-- Image Modal JS -->
     <script>
@@ -142,17 +141,7 @@ $imgres = $conn->query("SELECT * FROM event_gallery WHERE event_id='$id'");
             });
         });
     </script>
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const grid = document.querySelector('#masonry-grid');
-            new Masonry(grid, {
-                itemSelector: '.col-sm-6',
-                columnWidth: '.col-sm-6',
-                percentPosition: true,
-            });
-            });
-
-    </script>
+    
 </body>
 
 </html>
