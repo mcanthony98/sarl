@@ -61,7 +61,7 @@ $imgres = $conn->query("SELECT * FROM event_gallery WHERE event_id='$id'");
                 <div class="row g-1" id="masonry-grid">
 
                     <div class="col-sm-6 col-md-4 col-lg-3">
-                        <img src="uploads/<?php echo $erow['cover_image'];?>" class="img-fluid rounded-0 gallery-img" alt="<?php echo $erow['title'];?>" data-bs-target="#imageModal" data-bs-toggle="modal" data-bs-index="0">
+                        <img src="uploads/<?php echo $erow['cover_image'];?>" class="img-fluid rounded-0 gllery-img" alt="<?php echo $erow['title'];?>" data-bs-target="#imageModal" data-bs-toggle="modal" data-bs-index="0">
                     </div>
 
                     
@@ -142,6 +142,7 @@ $imgres = $conn->query("SELECT * FROM event_gallery WHERE event_id='$id'");
         });
     </script>
     
+    <?php include "includes/scripts.php";?>
 </body>
 
 </html>

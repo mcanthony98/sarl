@@ -22,3 +22,16 @@
     <script src="assets/libs/glightbox/dist/js/glightbox.min.js"></script>
     <script src="assets/js/vendors/glight.js"></script>
     <script src="assets/js/vendors/tab-to-dropdown.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/masonry/4.2.2/masonry.pkgd.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const grid = document.querySelector('#masonry-grid');
+            new Masonry(grid, {
+                itemSelector: '.col-sm-6',
+                columnWidth: '.col-sm-6',
+                percentPosition: true,
+            });
+            });
+
+    </script>
