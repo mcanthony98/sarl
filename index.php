@@ -51,7 +51,7 @@ $eres = $conn->query("SELECT * FROM event WHERE event_status = 1  ORDER BY year 
                     <div class="col-lg-9 col-12">
                         <div class="hero-content rounded" style="background-color: rgba(0, 0, 0, 0.2);">
                             <h1 class="text-white display-4 mb-4">High-End Fitout & Aluminium Solutions</h1>
-                            <p class="text-white-50 lead mb-5">
+                            <p class="text-white-50 lead mb-5 d-none d-sm-block">
                                 Innovative designs and precise craftsmanship, creating unparalleled spaces with SARL's expertise in high-end fitouts and bespoke aluminium solutions.
                             </p>
                             <div class="d-md-flex d-grid align-items-center justify-content-center gap-4">
