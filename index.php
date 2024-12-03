@@ -29,7 +29,7 @@ $eres = $conn->query("SELECT * FROM event WHERE event_status = 1  ORDER BY year 
         <!--Page Content-->
 
         <!--Hero start-->
-        <section class="hero-section position-relative" style="height: 100vh;">
+        <section class="hero-section position-relative" style="height: 95vh;">
             <!-- Hero Slides Container -->
             <div class="hero-slides-container" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
                 <div class="hero-slide active" style="background-image: url('assets/images/hero1.jpeg');"></div>
