@@ -24,14 +24,17 @@
     <script src="assets/js/vendors/tab-to-dropdown.js"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/masonry/4.2.2/masonry.pkgd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js"></script>
+
     <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const grid = document.querySelector('#masonry-grid');
+    document.addEventListener("DOMContentLoaded", function () {
+        const grid = document.querySelector('#masonry-grid');
+        imagesLoaded(grid, function () {
             new Masonry(grid, {
                 itemSelector: '.col-sm-6',
                 columnWidth: '.col-sm-6',
                 percentPosition: true,
             });
-            });
-
-    </script>
+        });
+    });
+</script>
