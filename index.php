@@ -33,19 +33,23 @@ $eres = $conn->query("SELECT * FROM event WHERE event_status = 1  ORDER BY year 
             <!-- Hero Slides Container -->
             <div class="hero-slides-container" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
                 <div class="hero-slide active" style="background-image: url('assets/images/hero1.jpeg');"></div>
-                <div class="hero-slide" style="background-image: url('assets/images/hero2.jpg');"></div>
-                <div class="hero-slide" style="background-image: url('assets/images/hero3.jpg');"></div>
-                <div class="hero-slide" style="background-image: url('assets/images/hero-3.jpg');"></div>
+                <div class="hero-slide" style="background-image: url('assets/images/hero2.jpeg');"></div>
+                <div class="hero-slide" style="background-image: url('assets/images/hero3.jpeg');"></div>
+                <div class="hero-slide" style="background-image: url('assets/images/hero4.jpeg');"></div>
+                <div class="hero-slide" style="background-image: url('assets/images/hero5.jpeg');"></div>
+                <div class="hero-slide" style="background-image: url('assets/images/hero6.jpeg');"></div>
+                <div class="hero-slide" style="background-image: url('assets/images/hero7.jpeg');"></div>
+                <div class="hero-slide" style="background-image: url('assets/images/hero8.jpeg');"></div>
             </div>
 
             <!-- Overlay -->
-            <div class="overlay"></div>
+            <div class="overlayd"></div>
 
             <!-- Hero Content -->
             <div class="container position-relative h-100" data-cues="slideInDown" data-duration="2000">
                 <div class="row h-100 align-items-center justify-content-center text-center">
                     <div class="col-lg-9 col-12">
-                        <div class="hero-content">
+                        <div class="hero-content rounded" style="background-color: rgba(0, 0, 0, 0.2);">
                             <h1 class="text-white display-4 mb-4">High-End Fitout & Aluminium Solutions</h1>
                             <p class="text-white-50 lead mb-5">
                                 Innovative designs and precise craftsmanship, creating unparalleled spaces with SARL's expertise in high-end fitouts and bespoke aluminium solutions.
@@ -135,7 +139,83 @@ $eres = $conn->query("SELECT * FROM event WHERE event_status = 1  ORDER BY year 
                     </div>
                 </div>
 
-                <!-- Service 1: Stainless & Mild Steel -->
+                 <!-- Service 1: Interior Fitouts -->
+                 <div class="row d-flex align-items-center mb-md-9 mb-6">
+                    <div class="col-lg-6 col-md-6 col-12" data-cues="slideInLeft" data-duration="1000">
+                        <!-- Carousel 3 -->
+                        <div id="carouselService3" class="carousel slide" data-bs-ride="carousel">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <img src="assets/images/interior1.jpg" alt="Interior Fitout 1" class="img-fluid rounded-3" style="width: 100%; height: auto;" />
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="assets/images/projects/p-6.jpg" alt="Interior Fitout 2" class="img-fluid rounded-3" style="width: 100%; height: auto;" />
+                                </div>
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselService3" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#carouselService3" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="col-lg-5 offset-lg-1 col-md-6 col-12" data-cues="slideInRight" data-duration="2000">
+                        <span class="text-primary fw-semibold">01</span>
+                        <div class="mb-4">
+                            <h3 class="mt-4 mb-3 text-white-stable">Interior Fitouts</h3>
+                            <p class="mb-0">Comprehensive interior solutions that transform spaces into masterpieces, from initial design concept to final execution.</p>
+                        </div>
+                        <a href="service.php?id=4&interior-fitouts" class="icon-link icon-link-hover">
+                            Learn More
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Service 2: Aluminium & Glazing Works -->
+                <div class="row d-flex align-items-center mb-md-9 mb-6">
+                    <div class="col-lg-5 col-md-6 col-12 order-2" data-cues="slideInLeft" data-duration="2000">
+                        <span class="text-primary fw-semibold">02</span>
+                        <div class="mb-4">
+                            <h3 class="mt-4 mb-3 text-white-stable">Aluminium & Glazing Works</h3>
+                            <p class="mb-0">High-quality, customized solutions for aluminium fabrications, combining modern aesthetics with durability and functionality.</p>
+                        </div>
+                        <a href="service.php?id=1&aluminium-&-glazing-works" class="icon-link icon-link-hover">
+                            Learn More
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"></path>
+                            </svg>
+                        </a>
+                    </div>
+                    <div class="col-lg-6 offset-lg-1 col-md-6 col-12 order-md-2" data-cues="slideInRight" data-duration="1000">
+                        <!-- Carousel 4 -->
+                        <div id="carouselService4" class="carousel slide" data-bs-ride="carousel">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <img src="assets/images/addresshero.jpg" alt="Aluminium & Glazing 1" class="img-fluid rounded-3" style="width: 100%; height: auto;" />
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="assets/images/glazing2.jpg" alt="Aluminium & Glazing 2" class="img-fluid rounded-3" style="width: 100%; height: auto;" />
+                                </div>
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselService4" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#carouselService4" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service 3: Stainless & Mild Steel -->
                 <div class="row d-flex align-items-center mb-md-9 mb-6">
                     <div class="col-lg-6 col-md-6 col-12" data-cues="slideInLeft" data-duration="1000">
                         <!-- Carousel 1 -->
@@ -159,7 +239,7 @@ $eres = $conn->query("SELECT * FROM event WHERE event_status = 1  ORDER BY year 
                         </div>
                     </div>
                     <div class="col-lg-5 offset-lg-1 col-md-6 col-12" data-cues="slideInRight" data-duration="2000">
-                        <span class="text-primary fw-semibold">01</span>
+                        <span class="text-primary fw-semibold">03</span>
                         <div class="mb-4">
                             <h3 class="mt-4 mb-3 text-white-stable">Stainless & Mild Steel</h3>
                             <p class="mb-0">Delivering durable and aesthetically pleasing steel fabrications for diverse applications, combining strength with sophisticated design.</p>
@@ -173,10 +253,10 @@ $eres = $conn->query("SELECT * FROM event WHERE event_status = 1  ORDER BY year 
                     </div>
                 </div>
 
-                <!-- Service 2: Joinery Works -->
+                <!-- Service 4: Joinery Works -->
                 <div class="row d-flex align-items-center mb-md-9 mb-6">
                     <div class="col-lg-5 col-md-6 col-12 order-2" data-cues="slideInLeft" data-duration="2000">
-                        <span class="text-primary fw-semibold">02</span>
+                        <span class="text-primary fw-semibold">04</span>
                         <div class="mb-4">
                             <h3 class="mt-4 mb-3 text-white-stable">Joinery Works</h3>
                             <p class="mb-0">Premium joinery works delivering bespoke interiors with unmatched craftsmanship, creating unique and elegant spaces.</p>
@@ -211,81 +291,7 @@ $eres = $conn->query("SELECT * FROM event WHERE event_status = 1  ORDER BY year 
                     </div>
                 </div>
 
-                <!-- Service 3: Interior Fitouts -->
-                <div class="row d-flex align-items-center mb-md-9 mb-6">
-                    <div class="col-lg-6 col-md-6 col-12" data-cues="slideInLeft" data-duration="1000">
-                        <!-- Carousel 3 -->
-                        <div id="carouselService3" class="carousel slide" data-bs-ride="carousel">
-                            <div class="carousel-inner">
-                                <div class="carousel-item active">
-                                    <img src="assets/images/interior1.jpg" alt="Interior Fitout 1" class="img-fluid rounded-3" style="width: 100%; height: auto;" />
-                                </div>
-                                <div class="carousel-item">
-                                    <img src="assets/images/projects/p-6.jpg" alt="Interior Fitout 2" class="img-fluid rounded-3" style="width: 100%; height: auto;" />
-                                </div>
-                            </div>
-                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselService3" data-bs-slide="prev">
-                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                <span class="visually-hidden">Previous</span>
-                            </button>
-                            <button class="carousel-control-next" type="button" data-bs-target="#carouselService3" data-bs-slide="next">
-                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                <span class="visually-hidden">Next</span>
-                            </button>
-                        </div>
-                    </div>
-                    <div class="col-lg-5 offset-lg-1 col-md-6 col-12" data-cues="slideInRight" data-duration="2000">
-                        <span class="text-primary fw-semibold">03</span>
-                        <div class="mb-4">
-                            <h3 class="mt-4 mb-3 text-white-stable">Interior Fitouts</h3>
-                            <p class="mb-0">Comprehensive interior solutions that transform spaces into masterpieces, from initial design concept to final execution.</p>
-                        </div>
-                        <a href="service.php?id=4&interior-fitouts" class="icon-link icon-link-hover">
-                            Learn More
-                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
-                                <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"></path>
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Service 4: Aluminium & Glazing Works -->
-                <div class="row d-flex align-items-center mb-md-9 mb-6">
-                    <div class="col-lg-5 col-md-6 col-12 order-2" data-cues="slideInLeft" data-duration="2000">
-                        <span class="text-primary fw-semibold">04</span>
-                        <div class="mb-4">
-                            <h3 class="mt-4 mb-3 text-white-stable">Aluminium & Glazing Works</h3>
-                            <p class="mb-0">High-quality, customized solutions for aluminium fabrications, combining modern aesthetics with durability and functionality.</p>
-                        </div>
-                        <a href="service.php?id=1&aluminium-&-glazing-works" class="icon-link icon-link-hover">
-                            Learn More
-                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
-                                <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"></path>
-                            </svg>
-                        </a>
-                    </div>
-                    <div class="col-lg-6 offset-lg-1 col-md-6 col-12 order-md-2" data-cues="slideInRight" data-duration="1000">
-                        <!-- Carousel 4 -->
-                        <div id="carouselService4" class="carousel slide" data-bs-ride="carousel">
-                            <div class="carousel-inner">
-                                <div class="carousel-item active">
-                                    <img src="assets/images/glazing1.jpg" alt="Aluminium & Glazing 1" class="img-fluid rounded-3" style="width: 100%; height: auto;" />
-                                </div>
-                                <div class="carousel-item">
-                                    <img src="assets/images/glazing2.jpg" alt="Aluminium & Glazing 2" class="img-fluid rounded-3" style="width: 100%; height: auto;" />
-                                </div>
-                            </div>
-                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselService4" data-bs-slide="prev">
-                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                <span class="visually-hidden">Previous</span>
-                            </button>
-                            <button class="carousel-control-next" type="button" data-bs-target="#carouselService4" data-bs-slide="next">
-                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                <span class="visually-hidden">Next</span>
-                            </button>
-                        </div>
-                    </div>
-                </div>
+               
 
             </div>
         </section>
@@ -372,7 +378,7 @@ $eres = $conn->query("SELECT * FROM event WHERE event_status = 1  ORDER BY year 
                                                         autoplay
                                                         muted
                                                         loop>
-                                                        <source src="assets/videos/sarl-vid2.mp4" type="video/mp4">
+                                                        <source src="assets/videos/SARL Video.mp4" type="video/mp4">
                                                         Your browser does not support the video tag.
                                                     </video>
                                                 </div>
