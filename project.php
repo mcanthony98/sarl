@@ -72,7 +72,7 @@ $imgres = $conn->query("SELECT * FROM event_gallery WHERE event_id='$id'");
                     ?>
                         
                         <div class="col-sm-6 col-md-4 col-lg-3">
-                            <img src="uploads/<?php echo $imgrow['image'];?>" class="img-fluid rounded-0 gallery-img"  alt="<?php echo $erow['title'];?> - <?php echo $counter;?>" data-bs-target="#imageModal" data-bs-toggle="modal" data-bs-index="<?php echo $counter;?>">
+                            <img src="uploads/<?php echo $imgrow['image'];?>" class="img-fluid rounded-0 gllery-img"  alt="<?php echo $erow['title'];?> - <?php echo $counter;?>" data-bs-target="#imageModal" data-bs-toggle="modal" data-bs-index="<?php echo $counter;?>">
                         </div>
                     <?php } ?>
 
