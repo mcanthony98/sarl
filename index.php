@@ -18,6 +18,28 @@ $eres = $conn->query("SELECT * FROM event WHERE event_status = 1  ORDER BY year 
     <!-- Custom Homepage CSS -->
     <?php include 'includes/homepage-styling.php'; ?>
 
+    <style>
+         .carousel-image {
+        height: 250px; /* Ensures the images are at least 250px tall */
+        object-fit: cover; /* Keeps the aspect ratio while filling the container */
+        width: 100%; /* Ensures the images fill the carousel's width */
+    }
+        .hero-slide {
+            background-size: cover; /* Ensures the image covers the entire area */
+            background-position: center; /* Keeps the focus on the center of the image */
+            background-repeat: no-repeat; /* Prevents the image from repeating */
+            width: 100%;
+            height: 100%;
+        }
+    
+        @media (max-width: 768px) {
+            .hero-slide {
+                background-position: center top; /* Adjust position for smaller screens */
+            }
+        }
+    </style>
+    
+
 </head>
 
 <body>
@@ -28,14 +50,16 @@ $eres = $conn->query("SELECT * FROM event WHERE event_status = 1  ORDER BY year 
     <main>
         <!--Page Content-->
 
+       
+
         <!--Hero start-->
         <section class="hero-section position-relative" style="height: 95vh;">
             <!-- Hero Slides Container -->
             <div class="hero-slides-container" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
-                <div class="hero-slide active" style="background-image: url('assets/images/hero1.jpeg');"></div>
-                <div class="hero-slide" style="background-image: url('assets/images/hero2.jpeg');"></div>
-                <div class="hero-slide" style="background-image: url('assets/images/hero3.jpeg');"></div>
-                <div class="hero-slide" style="background-image: url('assets/images/hero4.jpeg');"></div>
+                <div class="hero-slide active" style="background-image: url('assets/images/hero7.jpg');"></div>
+                <div class="hero-slide" style="background-image: url('assets/images/hero8.jpg');"></div>
+                <div class="hero-slide" style="background-image: url('assets/images/hero9.jpg');"></div>
+                <div class="hero-slide" style="background-image: url('assets/images/hero10.jpg');"></div>
                 <div class="hero-slide" style="background-image: url('assets/images/hero5.jpeg');"></div>
                 <div class="hero-slide" style="background-image: url('assets/images/hero6.jpeg');"></div>
                 <div class="hero-slide" style="background-image: url('assets/images/hero7.jpeg');"></div>
@@ -146,10 +170,10 @@ $eres = $conn->query("SELECT * FROM event WHERE event_status = 1  ORDER BY year 
                         <div id="carouselService3" class="carousel slide" data-bs-ride="carousel">
                             <div class="carousel-inner">
                                 <div class="carousel-item active">
-                                    <img src="assets/images/interior1.jpg" alt="Interior Fitout 1" class="img-fluid rounded-3" style="width: 100%; height: auto;" />
+                                    <img src="assets/images/interior1.jpg" alt="Interior Fitout 1" class="img-fluid rounded-3 carousel-image"  />
                                 </div>
                                 <div class="carousel-item">
-                                    <img src="assets/images/projects/p-6.jpg" alt="Interior Fitout 2" class="img-fluid rounded-3" style="width: 100%; height: auto;" />
+                                    <img src="assets/images/projects/p-6.jpg" alt="Interior Fitout 2" class="img-fluid rounded-3 carousel-image"  />
                                 </div>
                             </div>
                             <button class="carousel-control-prev" type="button" data-bs-target="#carouselService3" data-bs-slide="prev">
@@ -197,10 +221,10 @@ $eres = $conn->query("SELECT * FROM event WHERE event_status = 1  ORDER BY year 
                         <div id="carouselService4" class="carousel slide" data-bs-ride="carousel">
                             <div class="carousel-inner">
                                 <div class="carousel-item active">
-                                    <img src="assets/images/addresshero.jpg" alt="Aluminium & Glazing 1" class="img-fluid rounded-3" style="width: 100%; height: auto;" />
+                                    <img src="assets/images/addresshero.jpg" alt="Aluminium & Glazing 1" class="img-fluid rounded-3 carousel-image" />
                                 </div>
                                 <div class="carousel-item">
-                                    <img src="assets/images/glazing2.jpg" alt="Aluminium & Glazing 2" class="img-fluid rounded-3" style="width: 100%; height: auto;" />
+                                    <img src="assets/images/glazing2.jpg" alt="Aluminium & Glazing 2" class="img-fluid rounded-3 carousel-image" />
                                 </div>
                             </div>
                             <button class="carousel-control-prev" type="button" data-bs-target="#carouselService4" data-bs-slide="prev">
@@ -222,10 +246,10 @@ $eres = $conn->query("SELECT * FROM event WHERE event_status = 1  ORDER BY year 
                         <div id="carouselService1" class="carousel slide" data-bs-ride="carousel">
                             <div class="carousel-inner">
                                 <div class="carousel-item active">
-                                    <img src="assets/images/stainless1.jpg" alt="Stainless & Mild Steel 1" class="img-fluid rounded-3" style="width: 100%; height: auto;" />
+                                    <img src="assets/images/stainless1.jpg" alt="Stainless & Mild Steel 1" class="img-fluid rounded-3 carousel-image"  />
                                 </div>
                                 <div class="carousel-item">
-                                    <img src="assets/images/service/s1.jpg" alt="Stainless & Mild Steel 2" class="img-fluid rounded-3" style="width: 100%; height: auto;" />
+                                    <img src="assets/images/service/s1.jpg" alt="Stainless & Mild Steel 2" class="img-fluid rounded-3 carousel-image"  />
                                 </div>
                             </div>
                             <button class="carousel-control-prev" type="button" data-bs-target="#carouselService1" data-bs-slide="prev">
@@ -273,10 +297,10 @@ $eres = $conn->query("SELECT * FROM event WHERE event_status = 1  ORDER BY year 
                         <div id="carouselService2" class="carousel slide" data-bs-ride="carousel">
                             <div class="carousel-inner">
                                 <div class="carousel-item active">
-                                    <img src="assets/images/joinery1.jpg" alt="Joinery Works 1" class="img-fluid rounded-3" style="width: 100%; height: auto;" />
+                                    <img src="assets/images/joinery1.jpg" alt="Joinery Works 1" class="img-fluid rounded-3 carousel-image" />
                                 </div>
                                 <div class="carousel-item">
-                                    <img src="assets/images/joinery2.jpeg" alt="Joinery Works 2" class="img-fluid rounded-3" style="width: 100%; height: auto;" />
+                                    <img src="assets/images/joinery2.jpeg" alt="Joinery Works 2" class="img-fluid rounded-3 carousel-image"  />
                                 </div>
                             </div>
                             <button class="carousel-control-prev" type="button" data-bs-target="#carouselService2" data-bs-slide="prev">
@@ -378,7 +402,7 @@ $eres = $conn->query("SELECT * FROM event WHERE event_status = 1  ORDER BY year 
                                                         autoplay
                                                         muted
                                                         loop>
-                                                        <source src="assets/videos/SARL Video.mp4" type="video/mp4">
+                                                        <source src="assets/videos/sarl-vid4.mp4" type="video/mp4">
                                                         Your browser does not support the video tag.
                                                     </video>
                                                 </div>
