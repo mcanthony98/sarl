@@ -58,21 +58,22 @@ $imgres = $conn->query("SELECT * FROM event_gallery WHERE event_id='$id'");
         <!--Portfolio Gallery start-->
         <section>
             <div class="container">
-                <div class="row g-1" id="masonry-grid">
+                <div class="row gx-2 gy-4 mx-auto" id="masonry-grid">
 
-                    <div class="col-sm-6 col-md-4 col-lg-3">
-                        <img src="uploads/<?php echo $erow['cover_image'];?>" class="img-fluid rounded-0 gallery-img" alt="<?php echo $erow['title'];?>" data-bs-target="#imageModal" data-bs-toggle="modal" data-bs-index="0">
+                    <div class="col-12 mx-auto">
+                        <img src="uploads/<?php echo $erow['cover_image'];?>" class="img-fluid rounded-2 gallery-img w-100"  alt="<?php echo $erow['title'];?>" data-bs-target="#imageModal" data-bs-toggle="modal" data-bs-index="0">
                     </div>
 
                     
                     <?php 
                     $counter = 0;
                     while($imgrow = $imgres->fetch_assoc()){
-                    $counter++;    
+                    $counter++;
+                    $class = ($counter % 5 == 0) ? 'col-12' : 'col-md-6 col-lg-6';    
                     ?>
                         
-                        <div class="col-sm-6 col-md-4 col-lg-3">
-                            <img src="uploads/<?php echo $imgrow['image'];?>" class="img-fluid rounded-0 gallery-img"  alt="<?php echo $erow['title'];?> - <?php echo $counter;?>" data-bs-target="#imageModal" data-bs-toggle="modal" data-bs-index="<?php echo $counter;?>">
+                        <div class="mx-auto <?php echo $class; ?>">
+                            <img src="uploads/<?php echo $imgrow['image'];?>" class="img-fluid rounded-1 gallery-img w-100"  style="max-height:600px;" alt="<?php echo $erow['title'];?> - <?php echo $counter;?>" data-bs-target="#imageModal" data-bs-toggle="modal" data-bs-index="<?php echo $counter;?>">
                         </div>
                     <?php } ?>
 

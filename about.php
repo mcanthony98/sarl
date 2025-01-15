@@ -114,7 +114,7 @@
                             <i class="bi bi-people-fill text-primary" style="font-size: 2rem;"></i>
                             <h4 class="mt-3">Our Associates</h4>
                             <p class="mb-0">
-                                We collaborate with the best sub-contractors who, like us, provide excellent service and adhere to deadlines.
+                                We collaborate with the best services sub-contractors who, like us, provide excellent service and adhere to deadlines.
                             </p>
                         </div>
                     </div>
@@ -136,14 +136,14 @@
                     </div>
                     <div class="col-md-4 col-6">
                         <div class="text-center"  data-cue="slideInUp" data-duration="500">
-                            <h2 class="text-white-stable">400+</h2>
+                            <h2 class="text-white-stable">300+</h2>
                             <h5 class="text-white-stable mb-0">Projects Done</h5>
                         </div>
                     </div>
                     <div class="col-md-4 col-6">
                         <div class="text-center"  data-cue="slideInUp" data-duration="500">
-                            <h2 class="text-white-stable">80+</h5>
-                                <h5 class="text-white-stable mb-0">Skilled Experts</h5>
+                            <h2 class="text-white-stable">150+</h5>
+                                <h5 class="text-white-stable mb-0">Satisfied Clients</h5>
                         </div>
                     </div>
                 </div>

@@ -72,7 +72,7 @@ include "../includes/connect.php";
               </div>
 
               <div class="form-group">
-                    <label for="exampleInputFile">Choose image (Preferred ratio: 1:1)</label>
+                    <label for="exampleInputFile">Choose image (Preferred ratio: 16:9)</label>
                     <div class="input-group">
                       <div class="custom-file">
                         <input type="file" class="custom-file-input" name="photos" id="exampleInputFile">

@@ -122,13 +122,13 @@ $eres = $conn->query("SELECT * FROM event WHERE event_status = 1  ORDER BY year 
                             <div class="col-4 border-end">
                                 <div class="ps-md-4">
                                     <h3 class="fs-5">Completed Projects</h3>
-                                    <span class="fs-2 fw-bold text-primary">400+</span>
+                                    <span class="fs-2 fw-bold text-primary">300+</span>
                                 </div>
                             </div>
 
                             <div class="col-4 border-end">
                                 <div class="ps-md-4">
-                                    <h3 class="fs-5">Clients</h3>
+                                    <h3 class="fs-5">Satisfied <br>Clients</h3>
                                     <span class="fs-2 fw-bold text-primary">150+</span>
                                 </div>
                             </div>

@@ -110,7 +110,7 @@ $row = $res->fetch_assoc();
                             <img src="../uploads/<?php echo $row['image'];?>" style="max-width: 400px">
                         </div>
                         <div class="form-group">
-                            <label for="exampleInputFile">Choose image (Preferred ratio: 1:1)</label>
+                            <label for="exampleInputFile">Choose image (Preferred ratio: 16:9)</label>
                             <div class="input-group">
                                 <div class="custom-file">
                                     <input type="file" class="custom-file-input" name="photos" onchange="this.form.submit();" id="exampleInputFile">

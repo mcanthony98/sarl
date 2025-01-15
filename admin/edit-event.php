@@ -171,14 +171,17 @@
 									<div class="card-body">
 										<div class="row">
 											<?php 
-												while($imgrow = $imgres->fetch_assoc()) {
+												$counter = 0;
+												while($imgrow = $imgres->fetch_assoc()){
+												$counter++;
+												$class = ($counter % 5 == 0) ? 'col-12' : 'col-md-6 col-lg-6'; 
 											?> 
 											
-													<div class="col-sm-4 px-1 mb-4 bg-light shadow">
-														<img src="../uploads/<?php echo $imgrow['image'];?>" class="img-fluid">
+													<div class="<?php echo $class; ?> px-1 mb-4 bg-light shadow">
+														<img src="../uploads/<?php echo $imgrow['image'];?>" class="img-fluid w-100">
 														
 														<div class="py-2 text-center">
-															<a class="btn btn-sm btn-default" href="processes.php?eid=<?php echo $pkid;?>&del-gallery=<?php echo $imgrow['event_gallery_id'];?>"><i class="fas fa-times"></i> Remove</a>
+															<a class="btn btn-sm btn-outline-danger" href="processes.php?eid=<?php echo $pkid;?>&del-gallery=<?php echo $imgrow['event_gallery_id'];?>"><i class="fas fa-trash"></i> Remove</a>
 														</div>
 													</div>
 					
