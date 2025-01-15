@@ -167,7 +167,7 @@
                                 <div class="mb-7">
                                     <h4>Contact Information</h4>
                                     <p>
-                                        96 Alizeti Crescent, Road A, Off Enterprise Road,<br>
+                                        96 Alizeti Crescent, Road A, <br>Off Enterprise Road,
                                         Industrial Area<br>
                                         PO Box 40785 00100 GPO, Nairobi<br><br>
 
