@@ -167,20 +167,18 @@
                                 <div class="mb-7">
                                     <h4>Contact Information</h4>
                                     <p>
-                                        Road A, Off Enterprise Road,<br>
+                                        96 Alizeti Crescent, Road A, Off Enterprise Road,<br>
                                         Industrial Area<br>
                                         PO Box 40785 00100 GPO, Nairobi<br><br>
 
                                         <strong>Call:</strong><br>
-                                        +254 20 650 287 / 651 835<br>
-                                        +254 558 584 / 653 02 19 / 801 49 19<br><br>
+                                        +254 20 650 287<br>
+                                        <br><br>
 
                                         <strong>Mobile:</strong><br>
-                                        +254 722 / 735 510 413<br><br>
+                                        +254 771 340 900<br><br>
 
-                                        <strong>Fax:</strong><br>
-                                        +254 20 557 546<br><br>
-
+                                        
                                         <strong>Email:</strong><br>
                                         <a href="mailto:info@sarl.co.ke" class="text-primary">info@sarl.co.ke</a><br/>
                                         <a href="mailto:sarl@futurenet.co.ke" class="text-primary">sarl@futurenet.co.ke</a>
