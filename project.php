@@ -8,7 +8,7 @@ $eres = $conn->query("SELECT * FROM event WHERE event_id = '$id'");
 $erow = $eres->fetch_assoc();
 
 
-$imgres = $conn->query("SELECT * FROM event_gallery WHERE event_id='$id'");
+$imgres = $conn->query("SELECT * FROM event_gallery WHERE event_id='$id' LIMIT 15");
 ?>
 <!doctype html>
 <html lang="en">
