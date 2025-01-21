@@ -120,16 +120,8 @@
     // Summernote
     $('#summernote2').summernote({
         placeholder: 'Enter description here...',
-        minHeight: 200,
-        toolbar: [
-          ['style', ['style']],
-          ['font', ['bold', 'underline', 'clear']],
-          ['color', ['color']],
-          ['para', ['ul', 'ol', 'paragraph']],
-          ['table', ['table']],
-          ['insert', ['link']],
-          ['view', ['fullscreen']]
-        ]
+        minHeight: 200
+        
       });
   });
 </script>
