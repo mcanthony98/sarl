@@ -64,6 +64,24 @@
             border-radius: 5px; /* Maintain rounded corners */
         }
 
+        .marquee {
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+    width: 100%;
+}
+
+.track {
+    display: flex;
+    animation: marquee 20s linear infinite !important ; /* Reduce duration for faster speed */
+}
+
+@keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-100%); } /* Adjust based on content width */
+}
+
+
     </style>
    
 
