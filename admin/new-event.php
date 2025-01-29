@@ -59,12 +59,12 @@
 
 										<div class="form-group">
 											<label >Short Description (Subtitle/Tagline/Theme)</label>
-											<textarea class="form-control" name="sdesc" rows="3" required></textarea>
+											<textarea class="form-control" name="sdesc" rows="3" ></textarea>
 										</div>
 
 										<div class="form-group">
 											<label for="summernote2">Description</label>
-											<textarea id="summernote2" class="form-control" name="desc" rows="5" required></textarea>
+											<textarea id="summernote2" class="form-control" name="desc" rows="5"></textarea>
 										</div>
 
 

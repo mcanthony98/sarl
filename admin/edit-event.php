@@ -75,7 +75,7 @@
 
 										<div class="form-group">
 											<label for="summernote2">Description</label>
-											<textarea id="summernote2" class="form-control" name="desc" rows="5" required><?php echo $row['description'];?></textarea>
+											<textarea id="summernote2" class="form-control" name="desc" rows="5" ><?php echo $row['description'];?></textarea>
 										</div>
 
 										

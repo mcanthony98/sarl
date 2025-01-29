@@ -71,6 +71,8 @@
         </section>
         <!--Who we are end-->
 
+
+
         <!--Our Core Values start-->
         <section class="mt-1 mb-4">
             <div class="container">
@@ -123,7 +125,6 @@
         </section>
         <!--Our Core Values end-->
 
-
         <!--Team member start-->
         <section class="py-lg-9 py-5 bg-primary">
             <div class="container">
@@ -150,6 +151,69 @@
             </div>
         </section>
         <!--Team member end-->
+
+          <!--our Partners-->
+  <section class="my-lg-9 my-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="mb-xl-7 mb-5">
+                    <h2 class="mb-3">Our Partners</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row g-6">
+            <div class="col-lg-4 col-md-6 col-12 ">
+                <figure class="text-center border border-lg shadow">
+                    <img src="assets/images/sarl-clients/39.png"
+                        alt="logo" style="max-width: 200px;" />
+                </figure>
+            </div>
+            <div class="col-lg-4 col-md-6 col-12">
+                <figure class="text-center border border-lg shadow">
+                    <img src="assets/images/sarl-clients/40.png"
+                        alt="logo" style="max-width: 200px;"  />
+                </figure>
+            </div>
+            <div class="col-lg-4 col-md-12 col-12">
+                <figure class="text-center border border-lg shadow">
+                    <img src="assets/images/sarl-clients/41.png"
+                        alt="logo" style="max-width: 200px;"  />
+                </figure>
+            </div>
+        </div>
+    </div>
+</section>
+<!--our partners-->
+<!--Clients-->
+<section class="py-lg-9 py-6 bg-white">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="mb-xl-7 mb-5">
+                    <h2 class="mb-3">Our Clients</h2>
+                </div>
+            </div>
+        </div>
+
+        <div class="marquee" style="height: 100px">
+            <div class="track" style="height: 100px">
+                <?php for($i=1;$i<39;$i++){?>
+                <span
+                    class="shadow-md mx-3 mb-2 p-3">
+                    <img src="assets/images/sarl-clients/<?php echo $i;?>.png"
+                        alt="logo" style="max-width: 100px;" />
+                </span>
+                <?php }?>
+            </div>
+        </div>
+
+    </div>
+</section>
+<!--Clients-->
+
+
+       
 
         <!--Behind the block start-->
         <section class="mb-lg-9 mb-5 mt-2"  data-cue="slideInUp" data-duration="1500">

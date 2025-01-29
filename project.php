@@ -92,7 +92,7 @@ $imgres = $conn->query("SELECT * FROM event_gallery WHERE event_id='$id' LIMIT 1
                             <img src="uploads/<?php echo $imgrow['image'];?>" class="img-fluid rounded-1 gallery-img w-100"  style="max-height:600px;" alt="<?php echo $erow['title'];?> - <?php echo $counter;?>" data-bs-target="#imageModal" data-bs-toggle="modal" data-bs-index="<?php echo $counter;?>">
                         </div>
                     <?php
-                    if($counter == 2 && $erow['description'] != "<p> </p>"){
+                    if($counter == 2 && strlen($erow['description']) > 20){
                     ?>
                         <div class="row d-flex align-items-center mt-md-9 mt-6">
                             <div class="col-lg-6 col-md-6 col-12">
