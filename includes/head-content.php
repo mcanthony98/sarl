@@ -64,22 +64,48 @@
             border-radius: 5px; /* Maintain rounded corners */
         }
 
-        .marquee {
+/* Marquee Container */
+.marquee {
+    width: 100%;
     overflow: hidden;
     white-space: nowrap;
     position: relative;
-    width: 100%;
+    background: transparent;
 }
 
+/* Track (Moving Content) */
 .track {
     display: flex;
-    animation: marquee 20s linear infinite !important ; /* Reduce duration for faster speed */
+    gap: 10px; /* Adjust spacing between images */
+    width: max-content;
+    animation: scroll 25s linear infinite !important; /* Default animation */
 }
 
-@keyframes marquee {
+/* Keyframes for Infinite Loop Effect */
+@keyframes scroll {
     from { transform: translateX(0); }
-    to { transform: translateX(-100%); } /* Adjust based on content width */
+    to { transform: translateX(-50%); } /* Move left by half of the duplicated content */
 }
+
+/* Image Styling */
+.track img {
+    max-width: 100px; /* Adjust size */
+    height: auto;
+    display: block;
+}
+
+/* Faster Speed for Mobile */
+@media (max-width: 768px) {
+    .track {
+        animation-duration: 45s; /* Increase speed for mobile */
+    }
+}
+
+/* Pause Animation on Hover */
+.track:hover {
+    animation-play-state: paused;
+}
+
 
 
     </style>

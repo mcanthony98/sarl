@@ -197,11 +197,11 @@
             </div>
         </div>
 
-        <div class="marquee" style="height: 100px">
-            <div class="track" style="height: 100px">
+        <div class="marquee" style="height: 150px">
+            <div class="track" style="height: 150px">
                 <?php for($i=1;$i<39;$i++){?>
                 <span
-                    class="shadow-md mx-3 mb-2 p-3">
+                    class="border rounded-3 mx-1 mb-0 p-3">
                     <img src="assets/images/sarl-clients/<?php echo $i;?>.png"
                         alt="logo" style="max-width: 100px;" />
                 </span>
