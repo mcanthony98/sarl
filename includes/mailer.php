@@ -35,8 +35,8 @@ function maillinge($recipient, $subject, $body){
   
   
      //Set parameters:
-     $senderEmail = "noreply@ganiamtech.com"; //Sender's email, E.g. sender@gmail.com
-     $senderPass = "Ganiam@2024"; //Password of sender email account
+     $senderEmail = "info@ganiamtech.com"; //Sender's email, E.g. sender@gmail.com
+     $senderPass = "$2030Billionare"; //Password of sender email account
      $recipient = $recipient; // Email of recipient. Where email is sent to.
      $subject = $subject; //Subject of the email
      $message = $body.$signature; //Email body/the message
