@@ -74,7 +74,7 @@ $eres = $conn->query("SELECT * FROM event WHERE event_status = 1  ORDER BY year 
                 <div class="row h-100 align-items-center justify-content-center text-center">
                     <div class="col-lg-9 col-12">
                         <div class="hero-content rounded" style="background-color: rgba(0, 0, 0, 0.2);">
-                            <h1 class="text-white display-4 mb-4">High-End Fitout & Aluminium Solutions</h1>
+                            <h1 class="text-white display-4 mb-4">High-End Fitouts & Aluminium Solutions</h1>
                             <p class="text-white-50 lead mb-5 d-none d-sm-block">
                                 Innovative designs and precise craftsmanship, creating unparalleled spaces with SARL's expertise in high-end fitouts and bespoke aluminium solutions.
                             </p>
@@ -108,7 +108,7 @@ $eres = $conn->query("SELECT * FROM event WHERE event_status = 1  ORDER BY year 
                             <div class="col-lg-6">
                                 <div>
                                     <h3 class="fs-4">Expertise</h3>
-                                    <p class="mb-0">Years of experience in High-end fitout and Bespoke Solutions, delivering exceptional quality and precision in every project.</p>
+                                    <p class="mb-0">Years of experience in High-end fitouts and Bespoke Solutions, delivering exceptional quality and precision in every project.</p>
                                 </div>
                             </div>
                             <div class="col-lg-6">
