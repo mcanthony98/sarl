@@ -144,7 +144,7 @@
                     </div>
                     <div class="col-md-4 col-6">
                         <div class="text-center"  data-cue="slideInUp" data-duration="500">
-                            <h2 class="text-white-stable">150+</h5>
+                            <h2 class="text-white-stable">250+</h5>
                                 <h5 class="text-white-stable mb-0">Satisfied Clients</h5>
                         </div>
                     </div>

@@ -129,7 +129,7 @@ $eres = $conn->query("SELECT * FROM event WHERE event_status = 1  ORDER BY year 
                             <div class="col-4 border-end">
                                 <div class="ps-md-4">
                                     <h3 class="fs-5">Satisfied <br>Clients</h3>
-                                    <span class="fs-2 fw-bold text-primary">150+</span>
+                                    <span class="fs-2 fw-bold text-primary">250+</span>
                                 </div>
                             </div>
 
@@ -466,7 +466,7 @@ $eres = $conn->query("SELECT * FROM event WHERE event_status = 1  ORDER BY year 
                                                 <div class="d-flex flex-column gap-2">
                                                     <h3 class="mb-0">Unparalleled Project Experience</h3>
                                                     <p class="mb-0">
-                                                        With over 400 successful projects and 35+ years of excellence, SARL has established itself as the go-to partner for luxury fitouts and bespoke solutions. Our portfolio spans prestigious commercial spaces, high-end residential projects, and landmark developments across East Africa.
+                                                        With over 300 successful projects and 35+ years of excellence, SARL has established itself as the go-to partner for luxury fitouts and bespoke solutions. Our portfolio spans prestigious commercial spaces, high-end residential projects, and landmark developments across East Africa.
                                                     </p>
                                                 </div>
                                                 <div>
