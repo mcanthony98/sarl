@@ -128,7 +128,7 @@ $eres = $conn->query("SELECT * FROM event WHERE event_status = 1  ORDER BY year 
 
                             <div class="col-4 border-end">
                                 <div class="ps-md-4">
-                                    <h3 class="fs-5">Satisfied <br>Clients</h3>
+                                    <h3 class="fs-5">Clients</h3>
                                     <span class="fs-2 fw-bold text-primary">250+</span>
                                 </div>
                             </div>
@@ -221,7 +221,7 @@ $eres = $conn->query("SELECT * FROM event WHERE event_status = 1  ORDER BY year 
                         <div id="carouselService4" class="carousel slide" data-bs-ride="carousel">
                             <div class="carousel-inner">
                                 <div class="carousel-item active">
-                                    <img src="assets/images/addresshero.jpg" alt="Aluminium & Glazing 1" class="img-fluid rounded-3 carousel-image" />
+                                    <img src="assets/images/address.jpg" alt="Aluminium & Glazing 1" class="img-fluid rounded-3 carousel-image" />
                                 </div>
                                 <div class="carousel-item">
                                     <img src="assets/images/glazing2.jpg" alt="Aluminium & Glazing 2" class="img-fluid rounded-3 carousel-image" />
