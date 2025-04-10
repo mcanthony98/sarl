@@ -84,7 +84,7 @@
 /* Keyframes for Infinite Loop Effect */
 @keyframes scroll {
     from { transform: translateX(0); }
-    to { transform: translateX(-50%); } /* Move left by half of the duplicated content */
+    to { transform: translateX(-80%); } /* Move left by half of the duplicated content */
 }
 
 /* Image Styling */
