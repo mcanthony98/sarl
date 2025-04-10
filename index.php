@@ -590,7 +590,14 @@ $eres = $conn->query("SELECT * FROM event WHERE event_status = 1  ORDER BY year 
 
         <div class="marquee" style="height: 150px">
             <div class="track" style="height: 150px">
-                <?php for($i=1;$i<39;$i++){?>
+                <?php for($i=1;$i<25;$i++){?>
+                <span
+                    class="border rounded-3 mx-1 mb-0 p-3">
+                    <img src="assets/images/sarl-clients/<?php echo $i;?>.png"
+                        alt="logo" style="max-width: 100px;" />
+                </span>
+                <?php }?>
+                <?php for($i=25;$i<39;$i++){?>
                 <span
                     class="border rounded-3 mx-1 mb-0 p-3">
                     <img src="assets/images/sarl-clients/<?php echo $i;?>.png"

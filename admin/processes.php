@@ -146,6 +146,21 @@ elseif (isset($_POST["edit-job"])) {
     }
 }
 
+
+elseif (isset($_GET['delete-event'])) {
+    $ev_id = mysqli_real_escape_string($conn, $_GET['delete-event']);
+
+    $delete = "DELETE FROM event WHERE event_id = '$ev_id'";
+    
+    if ($conn->query($delete) === TRUE) {
+        $_SESSION["success"] = "Project deleted successfully.";
+        header("Location: projects.php");
+    } else {
+        $_SESSION["error"] = "Error occurred. Please try again. " . $conn->error;
+        header("Location: projects.php");
+    }
+}
+
 elseif (isset($_GET['delete-job'])) {
     $job_id = mysqli_real_escape_string($conn, $_GET['delete-job']);
 
