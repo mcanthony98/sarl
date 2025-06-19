@@ -57,7 +57,6 @@ $eres = $conn->query("SELECT * FROM event WHERE event_status = 1  ORDER BY year 
             <!-- Hero Slides Container -->
             <div class="hero-slides-container" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
                 <div class="hero-slide active" style="background-image: url('assets/images/hero7.jpg');"></div>
-                <div class="hero-slide" style="background-image: url('assets/images/hero12.jpg');"></div>
                 <div class="hero-slide" style="background-image: url('assets/images/hero13.jpg');"></div>
                 <div class="hero-slide" style="background-image: url('assets/images/hero8.jpg');"></div>
                 <div class="hero-slide" style="background-image: url('assets/images/hero9.jpg');"></div>
@@ -65,7 +64,6 @@ $eres = $conn->query("SELECT * FROM event WHERE event_status = 1  ORDER BY year 
                 <div class="hero-slide" style="background-image: url('assets/images/hero5.jpeg');"></div>
                 <div class="hero-slide" style="background-image: url('assets/images/hero6.jpeg');"></div>
                 <div class="hero-slide" style="background-image: url('assets/images/hero7.jpeg');"></div>
-                <div class="hero-slide" style="background-image: url('assets/images/hero8.jpeg');"></div>
             </div>
 
             <!-- Overlay -->
