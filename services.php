@@ -18,7 +18,7 @@ $servresalll = $conn->query("SELECT * FROM service WHERE status=1");
     <meta property="og:description" content="Explore SARL’s expert services: interior fitouts, aluminium and glazing, steel fabrications, and joinery works across Nairobi and Kenya.">
     <meta property="og:url" content="https://<?php echo $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']; ?>">
     <meta property="og:type" content="website">
-    <meta property="og:image" content="https://sarl.co.ke/assets/images/logo/sarl-about-logo.jpg"> <
+    <meta property="og:image" content="https://sarl.co.ke/assets/images/logo/sarl-about-logo.jpg">
     <meta property="og:site_name" content="SARL Kenya">
 
     <!-- Twitter Card Meta -->
