@@ -11,7 +11,26 @@
 <html lang="en">
 
 <head>
-    <title>Projects | SARL</title>
+    <title>Completed Projects | Interior Fitouts, Aluminium & Steel Works | SARL Kenya</title>
+
+    <meta name="description" content="Explore SARL’s portfolio of completed interior fitouts, aluminium glazing, steel fabrication, and joinery projects in Nairobi and across Kenya. See why top clients trust us.">
+    <meta name="keywords" content="SARL projects Kenya, completed interior fitouts Nairobi, aluminium works portfolio Kenya, steel fabrication projects Nairobi, joinery work samples Kenya">
+    
+    <!-- Open Graph Meta (for Facebook, LinkedIn, etc.) -->
+    <meta property="og:title" content="SARL Completed Projects | Nairobi Interior Fitouts & Aluminium Works">
+    <meta property="og:description" content="Browse SARL's completed projects including aluminium glazing, steel fabrication, interior fitouts, and custom joinery across Kenya.">
+    <meta property="og:url" content="https://<?php echo $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']; ?>">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://sarl.co.ke/assets/images/logo/sarl-about-logo.jpg"> 
+    <meta property="og:site_name" content="SARL Kenya">
+
+
+    <!-- Twitter Card Meta -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Explore SARL Projects | Interior, Glazing, Steel & Joinery Work">
+    <meta name="twitter:description" content="View SARL’s featured projects across Nairobi. Top-tier aluminium, steel, joinery, and fitout works for commercial and residential clients.">
+    <meta name="twitter:image" content="https://sarl.co.ke/assets/images/logo/sarl-about-logo.jpg"> 
+
 
     <!-- Head Content -->
     <?php include 'includes/head-content.php'; ?>

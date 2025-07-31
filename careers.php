@@ -17,6 +17,8 @@
 <head>
 
     <title>Careers | SARL</title>
+    
+    <meta name="description" content="Check out Jobs available at SARL Kenya">
 
     <!-- Head Content -->
     <?php include 'includes/head-content.php'; ?>

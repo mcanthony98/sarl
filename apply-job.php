@@ -85,6 +85,8 @@
 <head>
 
     <title>Apply for a Job | SARL</title>
+    
+    <meta name="description" content="Apply for your next job at SARL">
 
     <!-- Head Content -->
     <?php include 'includes/head-content.php'; ?>

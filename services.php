@@ -8,7 +8,25 @@ $servresalll = $conn->query("SELECT * FROM service WHERE status=1");
 
 <head>
 
-    <title>Services | SARL</title>
+    <!-- SEO Meta -->
+    <title>Our Services | Interior Fitouts, Aluminium & Steel Fabrication in Kenya | SARL</title>
+    <meta name="description" content="Discover SARL's full range of services in Kenya: high-end interior fitouts, aluminium and glazing works, stainless & mild steel fabrications, and custom joinery. Trusted by residential, commercial, and office clients across Nairobi.">
+    <meta name="keywords" content="interior fitouts Kenya, aluminium works Nairobi, steel fabrications Kenya, joinery works Nairobi, office fitout services, glazing contractors Kenya">
+    
+    <!-- Open Graph Meta -->
+    <meta property="og:title" content="Our Services | SARL Kenya – Interior Fitouts & Aluminium Experts">
+    <meta property="og:description" content="Explore SARL’s expert services: interior fitouts, aluminium and glazing, steel fabrications, and joinery works across Nairobi and Kenya.">
+    <meta property="og:url" content="https://<?php echo $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']; ?>">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://sarl.co.ke/assets/images/logo/sarl-about-logo.jpg"> <
+    <meta property="og:site_name" content="SARL Kenya">
+
+    <!-- Twitter Card Meta -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="SARL Services | Interior Fitouts, Aluminium & Steel Works in Kenya">
+    <meta name="twitter:description" content="Browse all SARL services including interior design, aluminium and glazing, steel fabrication, and joinery works for homes and offices in Nairobi.">
+    <meta name="twitter:image" content="https://sarl.co.ke/assets/images/logo/sarl-about-logo.jpg"> 
+
 
     <!-- Head Content -->
     <?php include 'includes/head-content.php'; ?>

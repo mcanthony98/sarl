@@ -15,7 +15,9 @@ $imgres = $conn->query("SELECT * FROM event_gallery WHERE event_id='$id' LIMIT 1
 
 
 <head>
-    <title><?php echo $erow['title'];?> | SARL</title>
+    <title><?php echo $erow['title'];?> <?php echo $erow['category'];?> Project | SARL</title>
+    
+    <meta name="description" content="Check out our completed <?php echo $erow['category'];?> project at <?php echo $erow['title'];?>">
     <!-- Head Content -->
     <?php include 'includes/head-content.php'; ?>
 

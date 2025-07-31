@@ -10,7 +10,26 @@ $eres = $conn->query("SELECT * FROM event WHERE event_status = 1  ORDER BY year 
 
 <head>
 
-    <title>Home | SARL</title>
+    <title>High-End Interior Fitouts & Bespoke Aluminium Solutions | SARL Kenya</title>
+
+    <meta name="description" content="SARL (Specialized Aluminium Renovators Limited) offers premium interior fitouts, aluminium & glazing, steel fabrications, and joinery works in Nairobi and across Kenya. Established in 1992, we deliver exceptional quality for commercial, office, and residential projects.">
+    <meta name="keywords" content="interior fitouts Nairobi, aluminium glazing Kenya, steel fabrication services, joinery works Kenya, high-end interior design Kenya, office partition">
+    
+    <!-- Open Graph Meta (for Facebook, LinkedIn, etc.) -->
+    <meta property="og:title" content="High-End Interior Fitouts & Bespoke Aluminium Solutions | SARL Kenya">
+    <meta property="og:description" content="Explore SARL's expert services in high-end interior fitouts, custom aluminium & glazing works, steel fabrications, and joinery solutions across Kenya.">
+    <meta property="og:url" content="https://<?php echo $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']; ?>">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://sarl.co.ke/assets/images/logo/sarl-about-logo.jpg"> 
+    <meta property="og:site_name" content="SARL Kenya">
+
+    <!-- Twitter Card Meta -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="High-End Interior Fitouts & Aluminium Works | SARL Kenya">
+    <meta name="twitter:description" content="Premium interior and aluminium fitout solutions for commercial, residential, and office spaces in Nairobi, Kenya.">
+    <meta name="twitter:image" content="https://sarl.co.ke/assets/images/logo/sarl-about-logo.jpg"> 
+
+   
 
     <!-- Head Content -->
     <?php include 'includes/head-content.php'; ?>

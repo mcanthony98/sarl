@@ -10,8 +10,25 @@ $row = $profres->fetch_assoc();
 
 <head>
 
-    <title><?php echo $row['name'];?> | SARL</title>
-    <meta name="description" content="<?php echo $row['short_desc'];?>">
+    <title><?php echo $row['seo_title'];?></title>
+    <meta name="description" content="<?php echo $row['seo_desc'];?>">
+    <meta name="keywords" content="<?php echo $row['seo_keywords'];?>">
+
+     <!-- Open Graph -->
+    <meta property="og:title" content="<?php echo $row['og_title'];?>">
+    <meta property="og:description" content="<?php echo $row['og_description'];?>">
+    <meta property="og:image" content="https://sarl.co.ke/uploads/<?php echo $row['image'];?>">
+    <meta property="og:url" content="https://<?php echo $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']; ?>">
+    <meta property="og:type" content="website">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="<?php echo $row['twitter_title'];?>">
+    <meta name="twitter:description" content="<?php echo $row['twitter_description'];?>">
+    <meta name="twitter:image" content="https://sarl.co.ke/uploads/<?php echo $row['image'];?>">
+
+
+ 
 
     <!-- Head Content -->
     <?php include 'includes/head-content.php'; ?>

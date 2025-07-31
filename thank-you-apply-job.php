@@ -3,6 +3,7 @@
 
 <head>
     <title>Thank You | SARL</title>
+    <meta name="description" content="Thank you for your interest in SARL.">
     <!-- Head Content -->
     <?php include 'includes/head-content.php'; ?>
 </head>

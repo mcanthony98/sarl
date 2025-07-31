@@ -66,7 +66,27 @@
 
 <head>
 
-    <title>Contact Us | SARL</title>
+    <title>Contact SARL | Interior Fitouts, Aluminium & Steel Fabricators in Nairobi Kenya</title>
+
+    <meta name="description" content="Get in touch with SARL, Nairobi’s trusted experts in interior fitouts, aluminium & glazing works, steel fabrication, and joinery solutions. We serve residential and commercial projects across Kenya.">
+    <meta name="keywords" content="Contact SARL Nairobi, interior fitouts Kenya, aluminium glazing experts, steel fabricators Kenya, joinery services Nairobi, SARL Kenya contacts">
+    
+    <!-- Open Graph Meta (for Facebook, LinkedIn, etc.) -->
+    <meta property="og:title" content="Contact SARL | Nairobi Interior Fitouts & Aluminium Experts">
+    <meta property="og:description" content="Reach out to SARL for high-end interior, glazing, steel and joinery solutions. Serving Nairobi and projects across Kenya.">
+    <meta property="og:url" content="https://<?php echo $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']; ?>">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://sarl.co.ke/assets/images/logo/sarl-about-logo.jpg"> 
+    <meta property="og:site_name" content="SARL Kenya">
+
+
+
+    <!-- Twitter Card Meta -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Contact SARL Kenya | Experts in Fitouts, Aluminium & Steel Fabrication">
+    <meta name="twitter:description" content="Talk to SARL today about your residential or commercial project in Kenya. Trusted since 1992 in interior fitouts and metal works.">
+    <meta name="twitter:image" content="https://sarl.co.ke/assets/images/logo/sarl-about-logo.jpg"> 
+
 
     <!-- Head Content -->
     <?php include 'includes/head-content.php'; ?>

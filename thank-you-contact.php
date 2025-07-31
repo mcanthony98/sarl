@@ -3,6 +3,8 @@
 
 <head>
     <title>Thank You | Contact Us</title>
+    
+    <meta name="description" content="Thank you for reaching out.">
     <!-- Head Content -->
     <?php include 'includes/head-content.php'; ?>
 </head>

@@ -29,6 +29,12 @@
 
     <!-- Theme CSS -->
     <link rel="stylesheet" href="assets/css/theme.min.css">
+
+    <!-- Canonical URL (PHP-generated) -->
+    <link rel="canonical" href="https://<?php echo $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']; ?>" />
+
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="SARL Kenya">
     
     
 

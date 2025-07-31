@@ -9,7 +9,26 @@
 
 <head>
 
-    <title>About Us | SARL</title>
+    <title>About SARL | Nairobi’s Experts in Interior Fitouts, Aluminium & Steel Fabrication</title>
+
+    <meta name="description" content="Learn about Specialized Aluminium Renovators Limited (SARL), Nairobi’s trusted name in high-end interior fitouts, aluminium & glazing, steel fabrication, and bespoke joinery since 1992.">
+    <meta name="keywords" content="About SARL, interior fitout experts Nairobi, aluminium and glazing company Kenya, steel fabricators Nairobi, joinery company Kenya, SARL history, SARL profile">
+    
+    <!-- Open Graph Meta (for Facebook, LinkedIn, etc.) -->
+    <meta property="og:title" content="About SARL | Trusted Fitout & Fabrication Experts in Kenya">
+    <meta property="og:description" content="Established in 1992, SARL delivers bespoke aluminium, steel, and joinery works for commercial and residential projects across Kenya.">
+    <meta property="og:url" content="https://<?php echo $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']; ?>">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://sarl.co.ke/assets/images/logo/sarl-about-logo.jpg"> 
+    <meta property="og:site_name" content="SARL Kenya">
+
+
+    <!-- Twitter Card Meta -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="About SARL | Leading Interior & Metal Fabrication Company in Nairobi">
+    <meta name="twitter:description" content="For over 30 years, SARL has specialized in high-end fitouts, aluminium glazing, steel fabrication, and custom joinery across Kenya.">
+    <meta name="twitter:image" content="https://sarl.co.ke/assets/images/logo/sarl-about-logo.jpg"> 
+
 
     <!-- Head Content -->
     <?php include 'includes/head-content.php'; ?>
