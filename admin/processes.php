@@ -10,7 +10,7 @@ if(isset($_POST["login"])){
     $email = mysqli_real_escape_string($conn, $_POST["email"]);
     $pw = mysqli_real_escape_string($conn, $_POST["password"]);
 
-    if($email == " info@sarl.co.ke" && $pw == "SARL@2024"){
+    if($email == "info@sarl.co.ke" && $pw == "SARL@2024"){
         $_SESSION['chid'] = "1";
         $_SESSION['chname'] = "SARL Admin";
         header("location:  dashboard.php");
