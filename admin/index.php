@@ -43,6 +43,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 </div>
                 <form class="form-horizontal" method="POST" action="processes.php">
                     <div class="card-body">
+                       <?php if(isset($_SESSION['error'])){?>
+                      <p class="py-1 text-center text-danger"><?php echo $_SESSION['error'];?></p>
+                      <?php unset($_SESSION['error']); }?>
                       <div class="form-group row">
                         <label for="inputEmail3" class="col-xl-2 col-form-label">Email</label>
                         <div class="col-xl-10">
