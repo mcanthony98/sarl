@@ -7,9 +7,19 @@ $date = date("Y-m-d H:i:s");
 $filedate = date("Y_m_d_H_i_s");
 
 if(isset($_POST["login"])){
-    $_SESSION['chid'] = "1";
-    $_SESSION['chname'] = "SARL Admin";
-    header("location:  dashboard.php");
+    $email = mysqli_real_escape_string($conn, $_POST["email"]);
+    $pw = mysqli_real_escape_string($conn, $_POST["password"]);
+
+    if($email == " info@sarl.co.ke" && $pw == "SARL@2024"){
+        $_SESSION['chid'] = "1";
+        $_SESSION['chname'] = "SARL Admin";
+        header("location:  dashboard.php");
+    }else{
+        $_SESSION['error'] = "Invalid Credentials!";
+        header("location:  index.php");
+    }
+    exit;
+    
 }
 elseif(isset($_POST["new-service"])){
     $name = mysqli_real_escape_string($conn, $_POST["name"]);
