@@ -1,9 +1,9 @@
 <?php
 
-define('DB_SERVER', 'srv491.hstgr.io');
-define('DB_USERNAME', 'u640333703_sarl');
+define('DB_SERVER', 'localhost');
+define('DB_USERNAME', 'sarlcoke_sarlgtweb');
 define('DB_PASSWORD', '!5v2DZbvn+WG');
-define('DB_DATABASE', 'u640333703_sarl');
+define('DB_DATABASE', 'sarlcoke_sarlgtweb');
 
 
 mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
