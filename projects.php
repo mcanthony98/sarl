@@ -8,6 +8,7 @@
     $interior_projects = $conn->query("SELECT * FROM event WHERE event_status = 1  ORDER BY year DESC");
 ?>
 <!doctype html>
+
 <html lang="en">
 
 <head>
