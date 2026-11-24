@@ -64,8 +64,8 @@ $row = $profres->fetch_assoc();
                                     <img src="assets/images/logo/sarl-about-logo.jpg" style="height: 40px;" alt="SARL Logo" />
                                 </div>
                                 <div class="ms-3">
-                                    <h1 class="mb-0 h2"><?php echo $row['name'];?></h1>
-                                    <span class="small"><?php echo $row['short_desc'];?></span>
+                                    <h1 class="mb-0 h2"><?php echo htmlspecialchars($row['name'], ENT_QUOTES, 'UTF-8');?></h1>
+                                    <span class="small"><?php echo htmlspecialchars($row['short_desc'], ENT_QUOTES, 'UTF-8');?></span>
                                 </div>
 
                             </div>
@@ -81,7 +81,7 @@ $row = $profres->fetch_assoc();
                         <div id="projectCarousel" class="carousel slide mb-lg-5 mb-md-3 mb-3" data-bs-ride="carousel">
                             <div class="carousel-inner">
                                 <div class="carousel-item active">
-                                    <img loading="lazy" src="uploads/<?php echo $row['image'];?>" alt="<?php echo $row['name'];?>" class="d-block w-100 rounded-3" style="height: 400px; object-fit: cover;">
+                                    <img loading="lazy" src="uploads/<?php echo rawurlencode($row['image']);?>" alt="<?php echo htmlspecialchars($row['name'], ENT_QUOTES, 'UTF-8');?>" class="d-block w-100 rounded-3" style="height: 400px; object-fit: cover;">
                                 </div>
                             </div>
                         </div>

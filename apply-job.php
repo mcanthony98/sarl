@@ -1,5 +1,6 @@
 <?php
     require 'includes/connect.php';
+    require 'includes/upload-guard.php';
 
     $job_id = isset($_GET['id']) ? $_GET['id'] : null;
     $selected_job_title = '';
@@ -54,12 +55,21 @@
         $phone = $_POST['phone'];
         $linkedin = $_POST['linkedin'];
         $date = date('Y-m-d H:i:s');
+        // This form is public, so the CV upload is the one place an outsider can
+        // write a file to the server. Only document types are accepted and the
+        // stored name is generated here, never taken from the browser - a file
+        // called shell.php can no longer be dropped into uploads/.
+        $stored_cv = isset($_FILES['resume']) ? sarl_store_upload(
+            $_FILES['resume']['tmp_name'],
+            $_FILES['resume']['name'],
+            uniqid('', true) . '-',
+            $_FILES['resume']['error'],
+            'cvs',
+            sarl_allowed_document_extensions()
+        ) : '';
+        if ($stored_cv !== '') {
+            $cv_file_path = 'uploads/' . $stored_cv;
 
-        $upload_dir = 'uploads/cvs/';
-        $cv_file_name = basename($_FILES['resume']['name']);
-        $cv_file_path = $upload_dir . uniqid('', true) . "-" . $cv_file_name;
-    
-        if (move_uploaded_file($_FILES['resume']['tmp_name'], $cv_file_path)) {
             $sql = "INSERT INTO applications (name, email, phone_number, job_title, location, linkedin, cv_file_path, date_created) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
             $stmt = $conn->prepare($sql);
             $stmt->bind_param('ssssssss', $name, $email, $phone, $job_title, $job_location, $linkedin, $cv_file_path, $date);
@@ -74,7 +84,7 @@
     
             $stmt->close();
         } else {
-            echo "Error uploading CV file.";
+            echo "Could not accept that CV. Please upload a PDF, DOC, DOCX, RTF or ODT file.";
         }
     }
 ?>

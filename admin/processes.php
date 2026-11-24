@@ -1,10 +1,20 @@
 <?php 
 session_start();
 require "../includes/connect.php";
+require "../includes/upload-guard.php";
 //include "../includes/mailer.php";
 date_default_timezone_set("Africa/Nairobi");
 $date = date("Y-m-d H:i:s");
 $filedate = date("Y_m_d_H_i_s");
+
+// Every action below this point writes to the database or the filesystem, so it
+// must belong to a signed-in admin. Only the login form and logout are allowed
+// through without a session. Without this gate the whole file - including its
+// file uploads - was reachable by anyone who could POST to /admin/processes.php.
+if (!isset($_SESSION["chid"]) && !isset($_POST["login"]) && !isset($_GET["logout"])) {
+    header("location: index.php");
+    exit;
+}
 
 if(isset($_POST["login"])){
     $email = mysqli_real_escape_string($conn, $_POST["email"]);
@@ -29,20 +39,13 @@ elseif(isset($_POST["new-service"])){
     $name = ucwords($name);
     $slag = strtolower($slag);
 
-    $image = $_FILES['photos']['tmp_name'];
-    $imgContent = addslashes(file_get_contents($image));
-    
-			
-
-    $file_name = $_FILES["photos"]["name"];
-    $_FILES["photos"]["type"];
-    $tmp_file = $_FILES["photos"]["tmp_name"];
-    
-    $destination = "../uploads/" . $file_name;
-    
-    move_uploaded_file($tmp_file, $destination);
-    $new = $filedate.$file_name;
-    $new_name = rename('../uploads/'.$file_name , '../uploads/'.$new);
+    // Validated and renamed server-side; see includes/upload-guard.php.
+    $new = sarl_store_upload(
+        $_FILES["photos"]["tmp_name"],
+        $_FILES["photos"]["name"],
+        $filedate,
+        $_FILES["photos"]["error"]
+    );
 
 
     $insert = "INSERT INTO service (name, slag, short_desc, long_desc, image, date_created) VALUES ('$name',  '$slag', '$sdesc', '$ldesc', '$new', '$date')";
@@ -90,21 +93,21 @@ elseif(isset($_POST["edit-service"])){
 elseif(isset($_POST["edit-srv-img"])){
         $id = mysqli_real_escape_string($conn, $_POST["edit-srv-img"]);
 
-        $image = $_FILES['photos']['tmp_name'];
-        $imgContent = addslashes(file_get_contents($image));
-        
-                
+        // Validated and renamed server-side; see includes/upload-guard.php.
+        $new = sarl_store_upload(
+            $_FILES["photos"]["tmp_name"],
+            $_FILES["photos"]["name"],
+            $filedate,
+            $_FILES["photos"]["error"]
+        );
 
-        $file_name = $_FILES["photos"]["name"];
-        $_FILES["photos"]["type"];
-        $tmp_file = $_FILES["photos"]["tmp_name"];
-        
-        $destination = "../uploads/" . $file_name;
-        
-        move_uploaded_file($tmp_file, $destination);
-        $new = $filedate.$file_name;
-        $new_name = rename('../uploads/'.$file_name , '../uploads/'.$new);
 
+        // A rejected or missing upload must not blank the stored file.
+        if ($new === '') {
+            $_SESSION["error"] = "Upload failed. Please choose a JPG, PNG, GIF, WEBP, AVIF or document file.";
+            header("location: edit-service.php?id=$id");
+            exit;
+        }
 
         $insert = "UPDATE `service` SET `image`='$new' WHERE service_id='$id'";
         
@@ -234,18 +237,13 @@ elseif(isset($_POST["new-event"])){
     $desc = mysqli_real_escape_string($conn, $_POST["desc"]);
     $category = $_POST['category'];
     $year = $_POST['year'];
-    $image = $_FILES['photos']['tmp_name'];
-    $imgContent = addslashes(file_get_contents($image));
-    
-    $file_name = $_FILES["photos"]["name"];
-    $_FILES["photos"]["type"];
-    $tmp_file = $_FILES["photos"]["tmp_name"];
-    
-    $destination = "../uploads/" . $file_name;
-    
-    move_uploaded_file($tmp_file, $destination);
-    $new = $filedate.$file_name;
-    $new_name = rename('../uploads/'.$file_name , '../uploads/'.$new);
+    // Validated and renamed server-side; see includes/upload-guard.php.
+    $new = sarl_store_upload(
+        $_FILES["photos"]["tmp_name"],
+        $_FILES["photos"]["name"],
+        $filedate,
+        $_FILES["photos"]["error"]
+    );
 
     $insert = "INSERT INTO `event`(`title`, `short_desc`, `description`, `category`, `year`, `cover_image`, `event_status`, `date_added`, `date_modified`) VALUES ('$name', '$sdesc', '$desc', '$category', '$year', '$new','1','$date','$date')";
     
@@ -284,21 +282,21 @@ elseif(isset($_POST["edit-event"])){
 elseif(isset($_POST["edit-event-img"])){
         $id = mysqli_real_escape_string($conn, $_POST["edit-event-img"]);
 
-        $image = $_FILES['photos']['tmp_name'];
-        $imgContent = addslashes(file_get_contents($image));
-        
-                
+        // Validated and renamed server-side; see includes/upload-guard.php.
+        $new = sarl_store_upload(
+            $_FILES["photos"]["tmp_name"],
+            $_FILES["photos"]["name"],
+            $filedate,
+            $_FILES["photos"]["error"]
+        );
 
-        $file_name = $_FILES["photos"]["name"];
-        $_FILES["photos"]["type"];
-        $tmp_file = $_FILES["photos"]["tmp_name"];
-        
-        $destination = "../uploads/" . $file_name;
-        
-        move_uploaded_file($tmp_file, $destination);
-        $new = $filedate.$file_name;
-        $new_name = rename('../uploads/'.$file_name , '../uploads/'.$new);
 
+        // A rejected or missing upload must not blank the stored file.
+        if ($new === '') {
+            $_SESSION["error"] = "Upload failed. Please choose a JPG, PNG, GIF, WEBP, AVIF or document file.";
+            header("location: edit-event.php?id=$id#img");
+            exit;
+        }
 
         $insert = "UPDATE `event` SET `cover_image`='$new' WHERE event_id='$id'";
         
@@ -315,21 +313,21 @@ elseif(isset($_POST["edit-event-img"])){
 elseif(isset($_POST["edit-event-doc"])){
     $id = mysqli_real_escape_string($conn, $_POST["edit-event-doc"]);
 
-    $image = $_FILES['photos']['tmp_name'];
-    $imgContent = addslashes(file_get_contents($image));
-    
-            
+    // Validated and renamed server-side; see includes/upload-guard.php.
+    $new = sarl_store_upload(
+        $_FILES["photos"]["tmp_name"],
+        $_FILES["photos"]["name"],
+        $filedate,
+        $_FILES["photos"]["error"]
+    );
 
-    $file_name = $_FILES["photos"]["name"];
-    $_FILES["photos"]["type"];
-    $tmp_file = $_FILES["photos"]["tmp_name"];
-    
-    $destination = "../uploads/" . $file_name;
-    
-    move_uploaded_file($tmp_file, $destination);
-    $new = $filedate.$file_name;
-    $new_name = rename('../uploads/'.$file_name , '../uploads/'.$new);
 
+    // A rejected or missing upload must not blank the stored file.
+    if ($new === '') {
+        $_SESSION["error"] = "Upload failed. Please choose a JPG, PNG, GIF, WEBP, AVIF or document file.";
+        header("location: edit-event.php?id=$id#doc");
+        exit;
+    }
 
     $insert = "UPDATE `event` SET `report`='$new' WHERE event_id='$id'";
     
@@ -354,21 +352,19 @@ elseif(isset($_POST["add-gallery"])){
             continue;
         }
         
-        $image = $_FILES['photos']['tmp_name'][$key];
-        $imgContent = addslashes(file_get_contents($image));
-        
-                
+        // Validated and renamed server-side; see includes/upload-guard.php.
+        $new = sarl_store_upload(
+            $_FILES["photos"]["tmp_name"][$key],
+            $_FILES["photos"]["name"][$key],
+            $filedate,
+            $_FILES["photos"]["error"][$key]
+        );
 
-        $file_name = $_FILES["photos"]["name"][$key];
-        $_FILES["photos"]["type"][$key];
-        $tmp_file = $_FILES["photos"]["tmp_name"][$key];
-        
-        $destination = "../uploads/" . $file_name;
-        
-        move_uploaded_file($tmp_file, $destination);
-        $new = $filedate.$file_name;
-        $new_name = rename('../uploads/'.$file_name , '../uploads/'.$new);
 
+        // Skip anything the upload guard rejected rather than storing an empty name.
+        if ($new === '') {
+            continue;
+        }
 
         $insert = "INSERT INTO `event_gallery`(`event_id`, `image`, `date_created`) VALUES ('$id','$new','$date')";
         $conn->query($insert);
@@ -638,19 +634,13 @@ elseif(isset($_POST["add-blog"])){
     $slag = str_replace(' ', '-', $tit);
     $tit = ucwords($tit);
     $slag = strtolower($slag);
-    $image = $_FILES['photos']['tmp_name'];
-    $imgContent = addslashes(file_get_contents($image));
-    
-    
-    $file_name = $_FILES["photos"]["name"];
-    $_FILES["photos"]["type"];
-    $tmp_file = $_FILES["photos"]["tmp_name"];
-    
-    $destination = "../uploads/" . $file_name;
-    
-    move_uploaded_file($tmp_file, $destination);
-    $new = $filedate.$file_name;
-    $new_name = rename('../uploads/'.$file_name , '../uploads/'.$new);
+    // Validated and renamed server-side; see includes/upload-guard.php.
+    $new = sarl_store_upload(
+        $_FILES["photos"]["tmp_name"],
+        $_FILES["photos"]["name"],
+        $filedate,
+        $_FILES["photos"]["error"]
+    );
 		
     
     $cat_insert = "INSERT INTO blog(blog_title, blog_slag, blog_description, blog_content, blog_image, blog_category, blog_category_color, date_created) VALUES ('$tit',  '$slag', '$desc', '$content', '$new', '$cat', '$cat_color', '$date')";
@@ -694,20 +684,21 @@ elseif(isset($_POST["edit-blog"])){
 }elseif(isset($_POST["edit-blog-img"])){
     $cat_id = mysqli_real_escape_string($conn, $_POST["edit-blog-img"]);
 
-    $image = $_FILES['photos']['tmp_name'];
-    $imgContent = addslashes(file_get_contents($image));
+    // Validated and renamed server-side; see includes/upload-guard.php.
+    $new = sarl_store_upload(
+        $_FILES["photos"]["tmp_name"],
+        $_FILES["photos"]["name"],
+        $filedate,
+        $_FILES["photos"]["error"]
+    );
     
-    
-    $file_name = $_FILES["photos"]["name"];
-    $_FILES["photos"]["type"];
-    $tmp_file = $_FILES["photos"]["tmp_name"];
-    
-    $destination = "../uploads/" . $file_name;
-    
-    move_uploaded_file($tmp_file, $destination);
-    $new = $filedate.$file_name;
-    $new_name = rename('../uploads/'.$file_name , '../uploads/'.$new);
-    
+    // A rejected or missing upload must not blank the stored file.
+    if ($new === '') {
+        $_SESSION["error"] = "Upload failed. Please choose a JPG, PNG, GIF, WEBP, AVIF or document file.";
+        header("location: edit-blog.php?id=$cat_id");
+        exit;
+    }
+
     $updqry = "UPDATE blog SET blog_image ='$new'  WHERE blog_id  = '$cat_id'";
     
     if ($conn->query($updqry)===TRUE){

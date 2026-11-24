@@ -163,7 +163,7 @@
                                                 <?php
                                                 $footservresall = $conn->query("SELECT * FROM service WHERE status=1");
                                                 while($footservrow = $footservresall->fetch_assoc()){?>
-                                                    <option value="<?php echo $footservrow['name'];?>" <?php if($footservrow['service_id'] == $service_id) echo 'selected';?>><?php echo $footservrow['name'];?></option>
+                                                    <option value="<?php echo htmlspecialchars($footservrow['name'], ENT_QUOTES, 'UTF-8');?>" <?php if($footservrow['service_id'] == $service_id) echo 'selected';?>><?php echo htmlspecialchars($footservrow['name'], ENT_QUOTES, 'UTF-8');?></option>
 
                                                 <?php } ?>
                                                 <option value="Custom Inquiry" >Custom Inquiry</option>

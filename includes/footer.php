@@ -59,7 +59,7 @@ $footservresall = $conn->query("SELECT * FROM service WHERE status=1");
                             <ul class="list-unstyled mb-0 py-3 py-lg-0">
                             <?php while($footservrow = $footservresall->fetch_assoc()){?>
                                 <li class="mb-2">
-                                    <a href="service.php?id=<?php echo $footservrow['service_id'];?>&<?php echo $footservrow['slag'];?>" class="text-decoration-none text-reset"><?php echo $footservrow['name'];?></a>
+                                    <a href="service.php?id=<?php echo urlencode($footservrow['service_id']);?>&<?php echo urlencode($footservrow['slag']);?>" class="text-decoration-none text-reset"><?php echo htmlspecialchars($footservrow['name'], ENT_QUOTES, 'UTF-8');?></a>
                                 </li>
                                 <?php } ?>
                             </ul>
