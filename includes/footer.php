@@ -1,17 +1,17 @@
 <?php
+include_once __DIR__ . '/brand-logo.php';
 $footservresall = $conn->query("SELECT * FROM service WHERE status=1");
 ?>
 <!-- Footer -->
-<footer class="pt-7">
+<footer class="sarl-footer pt-8">
+    <span class="sarl-orbits" aria-hidden="true"></span>
     <div class="container">
         <!-- Footer 4 column -->
         <div class="row">
             <div class="col-xxl-4 col-lg-4 col-md-4">
                 <div class="mb-7 mb-xl-0">
                     <div class="mb-4">
-                        <a href="index.php">
-                            <img src="assets/images/logo/sarl-logo.jpg" style="height: 60px;" alt="SARL Logo" class="text-inverse" />
-                        </a>
+                        <a href="index.php" class="sarl-brand d-inline-block" aria-label="SARL home"><?php sarl_logo(); ?></a>
                     </div>
                     <p class="mb-5">Specialized Aluminium Renovators Ltd (SARL) has been a trusted name in High Quality Aluminum fabrications, interior solutions, and bespoke fitouts across Kenya since 1992. Our commitment to excellence and innovation drives everything we do.</p>
 
@@ -93,11 +93,11 @@ $footservresall = $conn->query("SELECT * FROM service WHERE status=1");
                 </div>
             </div>
         </div>
-        <div class="container mt-7 mb-3">
+        <div class="sarl-footer__bar mt-7 py-4">
             <div class="row align-items-center">
                 <div class="col-md-9">
                     <div class="small mb-3 mb-md-0">
-                        &copy; 2024 Specialized Aluminium Renovators Ltd. All Rights Reserved.
+                        &copy; <?php echo date('Y'); ?> Specialized Aluminium Renovators Ltd. All Rights Reserved.
                         | Built by <a href="https://ganiamtech.com" target="_blank" class="text-primary">Ganiam Tech</a>
                     </div>
                 </div>

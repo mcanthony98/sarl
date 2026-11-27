@@ -4,6 +4,22 @@ require "includes/connect.php";
 date_default_timezone_set("Africa/Nairobi");
 $date = date("Y-m-d");
 $eres = $conn->query("SELECT * FROM event WHERE event_status = 1  ORDER BY year DESC LIMIT 7");
+
+// Case studies for the homepage showcase (content in includes/case-studies.php)
+require "includes/case-studies.php";
+$home_cases = [];
+$cs_ids = implode(',', array_map('intval', array_keys($CASE_STUDIES)));
+$csres = $conn->query("SELECT event_id, title, category, year, cover_image FROM event WHERE event_status = 1 AND event_id IN ($cs_ids)");
+$cs_rows = [];
+while ($r = $csres->fetch_assoc()) {
+    $cs_rows[(int) $r['event_id']] = $r;
+}
+foreach ($CASE_STUDIES as $cs_id => $cs) {
+    if (isset($cs_rows[$cs_id])) {
+        $home_cases[] = ['id' => $cs_id, 'cs' => $cs, 'row' => $cs_rows[$cs_id]];
+    }
+}
+$home_cases = array_slice($home_cases, 0, 5);
 ?>
 <!doctype html>
 <html lang="en">
@@ -85,15 +101,13 @@ $eres = $conn->query("SELECT * FROM event WHERE event_status = 1  ORDER BY year 
                 <div class="hero-slide" style="background-image: url('assets/images/hero7.jpeg');"></div>
             </div>
 
-            <!-- Overlay -->
-            <div class="overlayd"></div>
-
             <!-- Hero Content -->
-            <div class="container position-relative h-100" data-cues="slideInDown" data-duration="2000">
+            <div class="container position-relative h-100 sarl-hero-in">
                 <div class="row h-100 align-items-center justify-content-center text-center">
                     <div class="col-lg-9 col-12">
-                        <div class="hero-content rounded" style="background-color: rgba(0, 0, 0, 0.2);">
-                            <h1 class="text-white display-4 mb-4">High-End Fitouts & Aluminium Solutions</h1>
+                        <div class="hero-content rounded">
+                            <div class="sarl-hero-kicker"><span></span>Since 1992 &middot; Nairobi, Kenya</div>
+                            <h1 class="text-white display-3 fw-bold mb-4">High-End Fitouts & Aluminium Solutions</h1>
                             <p class="text-white-50 lead mb-5 d-none d-sm-block">
                                 Innovative designs and precise craftsmanship, creating unparalleled spaces with SARL's expertise in high-end fitouts and bespoke aluminium solutions.
                             </p>
@@ -108,16 +122,29 @@ $eres = $conn->query("SELECT * FROM event WHERE event_status = 1  ORDER BY year 
                     </div>
                 </div>
             </div>
+
+            <div class="sarl-hero-dots" aria-hidden="true"></div>
+            <a href="#why-sarl" class="sarl-scroll-cue d-none d-md-flex">Scroll</a>
         </section>
+
+        <!-- Services ticker -->
+        <div class="sarl-ticker" aria-hidden="true">
+            <div class="sarl-ticker__track">
+                <?php for ($t = 0; $t < 4; $t++) { ?>
+                <span>Interior Fitouts</span><span>Aluminium &amp; Glazing Works</span><span>Stainless &amp; Mild Steel</span><span>Joinery Works</span>
+                <?php } ?>
+            </div>
+        </div>
 
 
         <!-- about section -->
-        <section class="py-xl-8 py-lg-7 py-2" data-cue="fadeIn">
+        <section class="py-xl-9 py-lg-8 py-6" id="why-sarl" data-cue="fadeIn">
             <div class="container">
                 <div class="row align-items-center gy-6">
                     <div class="col-xl-6 col-lg-7" data-cue="slideInLeft">
                         <div class="pe-lg-8 me-lg-8 mb-4">
-                            <h2 class="mb-0 me-lg-8">
+                            <span class="sarl-eyebrow mb-3">Why SARL</span>
+                            <h2 class="mb-0 me-lg-8 mt-3">
                                 Why Choose
                                 <span class="text-primary fw-semibold">SARL</span>
                                 for Your Next Project?
@@ -137,32 +164,34 @@ $eres = $conn->query("SELECT * FROM event WHERE event_status = 1  ORDER BY year 
                                 </div>
                             </div>
                         </div>
-                        <div class="row" data-cue="zoomIn">
-                            <div class="col-4 border-end">
-                                <div class="ps-md-4">
-                                    <h3 class="fs-5">Completed Projects</h3>
-                                    <span class="fs-2 fw-bold text-primary">300+</span>
-                                </div>
-                            </div>
-
-                            <div class="col-4 border-end">
-                                <div class="ps-md-4">
-                                    <h3 class="fs-5">Clients</h3>
-                                    <span class="fs-2 fw-bold text-primary">250+</span>
+                        <div class="row g-3" data-cue="zoomIn">
+                            <div class="col-4">
+                                <div class="sarl-stat">
+                                    <span class="sarl-stat__num" data-count-to="300" data-suffix="+">300+</span>
+                                    <h3 class="sarl-stat__label mb-0">Completed Projects</h3>
                                 </div>
                             </div>
 
                             <div class="col-4">
-                                <div class="ps-md-4">
-                                    <h3 class="fs-5">Years of Experience</h3>
-                                    <span class="fs-2 fw-bold text-primary">35+</span>
+                                <div class="sarl-stat">
+                                    <span class="sarl-stat__num" data-count-to="250" data-suffix="+">250+</span>
+                                    <h3 class="sarl-stat__label mb-0">Clients</h3>
+                                </div>
+                            </div>
+
+                            <div class="col-4">
+                                <div class="sarl-stat">
+                                    <span class="sarl-stat__num" data-count-to="35" data-suffix="+">35+</span>
+                                    <h3 class="sarl-stat__label mb-0">Years of Experience</h3>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="col-xl-6 col-lg-5" data-cue="slideInRight">
-                        <div>
-                            <img src="assets/images/SARL.png" alt="About SARL" class="img-fluid rounded-3" />
+                        <div class="sarl-logo-panel">
+                            <img src="assets/images/hero-2.jpg" alt="" class="sarl-logo-panel__bg" loading="lazy" />
+                            <span class="sarl-orbits" aria-hidden="true"></span>
+                            <a href="about.php" class="sarl-brand" aria-label="About SARL"><?php sarl_logo(); ?></a>
                         </div>
                     </div>
                 </div>
@@ -172,12 +201,14 @@ $eres = $conn->query("SELECT * FROM event WHERE event_status = 1  ORDER BY year 
 
 
         <!--Our Services start-->
-        <section class="mt-xl-9 mt-5 py-lg-8 py-5 bg-gray-800" >
+        <section class="py-lg-9 py-6 bg-gray-800 sarl-services position-relative overflow-hidden">
+            <span class="sarl-orbits" aria-hidden="true"></span>
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12 col-md-12 col-12">
                         <div class="mb-xl-6 mb-5" data-cues="slideInLeft" data-duration="2000">
-                            <h2 class="mb-0 h1 text-white-stable">Our Services</h2>
+                            <span class="sarl-eyebrow">What we do</span>
+                            <h2 class="mb-0 mt-3 h1 text-white-stable">Our Services</h2>
                         </div>
                     </div>
                 </div>
@@ -206,12 +237,12 @@ $eres = $conn->query("SELECT * FROM event WHERE event_status = 1  ORDER BY year 
                         </div>
                     </div>
                     <div class="col-lg-5 offset-lg-1 col-md-6 col-12" data-cues="slideInRight" data-duration="2000">
-                        <span class="text-primary fw-semibold">01</span>
+                        <span class="sarl-num">01</span>
                         <div class="mb-4">
                             <h3 class="mt-4 mb-3 text-white-stable">Interior Fitouts</h3>
                             <p class="mb-0">Comprehensive interior solutions that transform spaces into masterpieces, from initial design concept to final execution.</p>
                         </div>
-                        <a href="service.php?id=4&interior-fitouts" class="icon-link icon-link-hover">
+                        <a href="service.php?id=2&interior-fitouts" class="icon-link icon-link-hover">
                             Learn More
                             <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
                                 <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"></path>
@@ -223,12 +254,12 @@ $eres = $conn->query("SELECT * FROM event WHERE event_status = 1  ORDER BY year 
                 <!-- Service 2: Aluminium & Glazing Works -->
                 <div class="row d-flex align-items-center mb-md-9 mb-6">
                     <div class="col-lg-5 col-md-6 col-12 order-2" data-cues="slideInLeft" data-duration="2000">
-                        <span class="text-primary fw-semibold">02</span>
+                        <span class="sarl-num">02</span>
                         <div class="mb-4">
                             <h3 class="mt-4 mb-3 text-white-stable">Aluminium & Glazing Works</h3>
                             <p class="mb-0">High-quality, customized solutions for aluminium fabrications, combining modern aesthetics with durability and functionality.</p>
                         </div>
-                        <a href="service.php?id=1&aluminium-&-glazing-works" class="icon-link icon-link-hover">
+                        <a href="service.php?id=3&aluminium-&-glazing-works" class="icon-link icon-link-hover">
                             Learn More
                             <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
                                 <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"></path>
@@ -282,7 +313,7 @@ $eres = $conn->query("SELECT * FROM event WHERE event_status = 1  ORDER BY year 
                         </div>
                     </div>
                     <div class="col-lg-5 offset-lg-1 col-md-6 col-12" data-cues="slideInRight" data-duration="2000">
-                        <span class="text-primary fw-semibold">03</span>
+                        <span class="sarl-num">03</span>
                         <div class="mb-4">
                             <h3 class="mt-4 mb-3 text-white-stable">Stainless & Mild Steel</h3>
                             <p class="mb-0">Delivering durable and aesthetically pleasing steel fabrications for diverse applications, combining strength with sophisticated design.</p>
@@ -299,7 +330,7 @@ $eres = $conn->query("SELECT * FROM event WHERE event_status = 1  ORDER BY year 
                 <!-- Service 4: Joinery Works -->
                 <div class="row d-flex align-items-center mb-md-9 mb-6">
                     <div class="col-lg-5 col-md-6 col-12 order-2" data-cues="slideInLeft" data-duration="2000">
-                        <span class="text-primary fw-semibold">04</span>
+                        <span class="sarl-num">04</span>
                         <div class="mb-4">
                             <h3 class="mt-4 mb-3 text-white-stable">Joinery Works</h3>
                             <p class="mb-0">Premium joinery works delivering bespoke interiors with unmatched craftsmanship, creating unique and elegant spaces.</p>
@@ -504,130 +535,96 @@ $eres = $conn->query("SELECT * FROM event WHERE event_status = 1  ORDER BY year 
         <!--Company overview end-->
 
 
-        <!--Projects start-->
-        <section class="py-xl-9 py-5 bg-gray-900">
+        <!--Case studies start-->
+        <section class="py-xl-9 py-6 bg-gray-900 position-relative overflow-hidden">
+            <span class="sarl-orbits" aria-hidden="true"></span>
+            <div class="container">
+                <div class="row align-items-end mb-xl-7 mb-5 g-4">
+                    <div class="col-lg-7">
+                        <span class="sarl-eyebrow">Featured Projects</span>
+                        <h2 class="my-3 text-white-stable display-6">Explore Our Portfolio</h2>
+                        <p class="mb-0">Discover how SARL’s expertise has been instrumental in transforming spaces across various sectors.</p>
+                    </div>
+                    <div class="col-lg-5 text-lg-end">
+                        <a href="projects.php" class="btn btn-outline-light rounded-pill px-4">View Our Projects Collection <i class="bi bi-arrow-right ms-1"></i></a>
+                    </div>
+                </div>
+
+                <div class="row g-4">
+                    <?php foreach ($home_cases as $i => $hc) {
+                        $row = $hc['row'];
+                        $cs = $hc['cs'];
+                        $href = 'project.php?id=' . $hc['id'] . '&' . slagify($row['title']);
+                        $col = $i === 0 ? 'col-lg-8' : 'col-lg-4 col-md-6';
+                        if ($i === 1) { $col = 'col-lg-4 col-md-6'; }
+                    ?>
+                    <div class="<?php echo $col; ?>" data-cue="fadeIn">
+                        <a href="<?php echo htmlspecialchars($href, ENT_QUOTES, 'UTF-8'); ?>" class="cs-tile<?php echo $i === 0 ? ' cs-tile--wide h-100' : ''; ?>">
+                            <img loading="lazy" src="uploads/<?php echo rawurlencode($cs['hero']); ?>" alt="<?php echo htmlspecialchars($cs['name'], ENT_QUOTES, 'UTF-8'); ?>" />
+                            <span class="cs-tile__go" aria-hidden="true"><i class="bi bi-arrow-right"></i></span>
+                            <span class="cs-tile__body">
+                                <span class="cs-tile__kicker">Case Study &middot; <?php echo htmlspecialchars($row['year'], ENT_QUOTES, 'UTF-8'); ?></span>
+                                <h3 class="cs-tile__title"><?php echo htmlspecialchars($cs['name'], ENT_QUOTES, 'UTF-8'); ?></h3>
+                                <span class="cs-tile__meta d-block"><?php echo htmlspecialchars(implode(' · ', array_slice($cs['services'], 0, 2)), ENT_QUOTES, 'UTF-8'); ?></span>
+                            </span>
+                        </a>
+                    </div>
+                    <?php } ?>
+                </div>
+            </div>
+        </section>
+        <!--Case studies end-->
+
+
+        <!--our Partners-->
+        <section class="py-lg-9 py-6">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-8 offset-lg-2 col-12">
-                        <div class="text-center mb-xl-7 mb-5">
-                            <small class="text-uppercase ls-md fw-semibold text-primary">Featured Projects</small>
-                            <h2 class="my-3 text-white-stable">Explore Our Portfolio</h2>
-                            <p class="mb-0 text-body">Discover how SARL’s expertise has been instrumental in transforming spaces across various sectors.</p>
+                    <div class="col-lg-6">
+                        <div class="mb-xl-7 mb-5">
+                            <span class="sarl-eyebrow">Working together</span>
+                            <h2 class="mb-3 mt-3">Our Partners</h2>
                         </div>
                     </div>
                 </div>
-                <div class="swiper-container swiper" id="swiper-1" data-pagination-type="" data-speed="400" data-space-between="100" data-pagination="false" data-navigation="true" data-autoplay="true" data-autoplay-delay="3000" data-breakpoints='{"480": {"slidesPerView": 1}, "768": {"slidesPerView": 1}, "1024": {"slidesPerView": 2}, "1200": {"slidesPerView": 3}}'>
-                    <div class="swiper-wrapper pb-lg-8 pb-6 pt-1">
+                <div class="row g-4">
+                    <?php foreach ([39, 40, 41] as $p) { ?>
+                    <div class="col-lg-4 col-md-6 col-12" data-cue="fadeIn">
+                        <figure class="sarl-partner">
+                            <img src="assets/images/sarl-clients/<?php echo $p; ?>.png" alt="Partner logo" style="max-width: 200px;" class="img-fluid" />
+                        </figure>
+                    </div>
+                    <?php } ?>
+                </div>
+            </div>
+        </section>
+        <!--our partners-->
 
-                        <?php while ($erow = $eres->fetch_assoc()) { ?>
-                            <!-- Slide 1 -->
-                            <div class="swiper-slide" data-cue="zoomIn">
-                                <div class="card border-0 h-100 card-lift">
-                                    <div class="project-image-contaner">
-                                    <a href="project.php?id=<?php echo $erow['event_id']; ?>&<?php echo slagify($erow['title']); ?>"><img loading="lazy" src="uploads/<?php echo $erow['cover_image']; ?>" alt="project at <?php echo $erow['title']; ?>" class="img-fluid rounded-top-3 equal-height-image" /></a>
+        <!--Clients-->
+        <section class="py-lg-9 py-6 sarl-section-mist-deep sarl-clients">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="mb-xl-7 mb-5">
+                            <span class="sarl-eyebrow">Trusted by</span>
+                            <h2 class="mb-3 mt-3">Our Clients</h2>
                         </div>
-                                    <div class="card-body">
-                                        <div class="d-flex flex-column gap-2">
-                                            <h4><a href="project.php?id=<?php echo $erow['event_id']; ?>&<?php echo slagify($erow['title']); ?>" class="text-reset"><?php echo $erow['title']; ?></a></h4>
-                                            <p class="mb-1"><?php echo $erow['short_desc']; ?></p>
-                                            <a href="project.php?id=<?php echo $erow['event_id']; ?>&<?php echo slagify($erow['title']); ?>" class="btn btn-primary">View Project</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                    </div>
+                </div>
+
+                <div class="marquee" style="height: 150px">
+                    <div class="track" style="height: 150px">
+                        <?php for ($i = 1; $i < 39; $i++) { ?>
+                        <span class="border rounded-3 mx-1 mb-0 p-3">
+                            <img src="assets/images/sarl-clients/<?php echo $i; ?>.png" alt="Client logo" style="max-width: 100px;" loading="lazy" />
+                        </span>
                         <?php } ?>
-
-
-                        <!-- Add more slides as needed -->
                     </div>
-                    <!-- Add Pagination -->
-                    <div class="swiper-pagination"></div>
-                    <!-- Add Navigation -->
-                    <div class="swiper-navigation position-absolute bottom-0 mb-5 start-lg-50">
-                        <div class="swiper-button-prev me-7"></div>
-                        <div class="swiper-button-next ms-7"></div>
-                    </div>
+                </div>
 
-                </div>
-                <div class="text-center mt-7">
-                    <a href="projects.php" class="btn btn-primary rounded-pill px-4 py-2">View Our Projects Collection</a>
-                </div>
             </div>
         </section>
-        <!--Projects end-->
-
-        </div>
-        </div>
-        </section>
-        <!--Projects end-->
-
-
-  <!--our Partners-->
-  <section class="my-lg-9 my-5">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-6">
-                <div class="mb-xl-7 mb-5">
-                    <h2 class="mb-3">Our Partners</h2>
-                </div>
-            </div>
-        </div>
-        <div class="row g-6">
-            <div class="col-lg-4 col-md-6 col-12 ">
-                <figure class="text-center border border-lg shadow">
-                    <img src="assets/images/sarl-clients/39.png"
-                        alt="logo" style="max-width: 200px;" />
-                </figure>
-            </div>
-            <div class="col-lg-4 col-md-6 col-12">
-                <figure class="text-center border border-lg shadow">
-                    <img src="assets/images/sarl-clients/40.png"
-                        alt="logo" style="max-width: 200px;"  />
-                </figure>
-            </div>
-            <div class="col-lg-4 col-md-12 col-12">
-                <figure class="text-center border border-lg shadow">
-                    <img src="assets/images/sarl-clients/41.png"
-                        alt="logo" style="max-width: 200px;"  />
-                </figure>
-            </div>
-        </div>
-    </div>
-</section>
-<!--our partners-->
-<!--Clients-->
-<section class="py-lg-9 py-6 bg-white">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-6">
-                <div class="mb-xl-7 mb-5">
-                    <h2 class="mb-3">Our Clients</h2>
-                </div>
-            </div>
-        </div>
-
-        <div class="marquee" style="height: 150px">
-            <div class="track" style="height: 150px">
-                <?php for($i=1;$i<25;$i++){?>
-                <span
-                    class="border rounded-3 mx-1 mb-0 p-3">
-                    <img src="assets/images/sarl-clients/<?php echo $i;?>.png"
-                        alt="logo" style="max-width: 100px;" />
-                </span>
-                <?php }?>
-                <?php for($i=25;$i<39;$i++){?>
-                <span
-                    class="border rounded-3 mx-1 mb-0 p-3">
-                    <img src="assets/images/sarl-clients/<?php echo $i;?>.png"
-                        alt="logo" style="max-width: 100px;" />
-                </span>
-                <?php }?>
-            </div>
-        </div>
-
-    </div>
-</section>
-<!--Clients-->
+        <!--Clients-->
 
 
         <!--Why Us start-->
@@ -686,17 +683,17 @@ $eres = $conn->query("SELECT * FROM event WHERE event_status = 1  ORDER BY year 
         <!--Why Us end-->
 
         <!-- CTA start -->
-        <div class="container py-5" data-bs-theme="dark" data-cues="fadeIn" data-duration="2000">
-            <div class="row px-lg-6 py-lg-6 p-4 align-items-center bg-primary rounded-3 g-lg-0">
-                <div class="col-xl-5 col-md-7">
-                    <h2 class="text-white-stick">Get in Touch for Your Next Project</h2>
-                    <p class="text-white-stick">Let SARL help you bring your next project to life with our expertise and dedication to quality.</p>
+        <div class="container py-lg-8 py-5" data-cues="fadeIn" data-duration="2000">
+            <div class="row px-lg-8 py-lg-8 p-5 align-items-center sarl-cta-band g-lg-0">
+                <span class="sarl-orbits" aria-hidden="true"></span>
+                <div class="col-xl-6 col-md-7">
+                    <h2 class="display-6">Get in Touch for Your Next Project</h2>
+                    <p class="lead mb-md-0">Let SARL help you bring your next project to life with our expertise and dedication to quality.</p>
                 </div>
-                <div class="offset-xl-2 col-xl-5 col-md-5">
-                    <div class="text-lg-center">
-                        
-                        <a href="contact.php" class="btn btn-dark">Contact Us Now</a>
-                        <p class="text-white-stick">Get a tailored solution for your space.</p>
+                <div class="offset-xl-1 col-xl-5 col-md-5">
+                    <div class="text-md-end">
+                        <a href="contact.php" class="btn btn-primary btn-lg sarl-cta">Contact Us Now</a>
+                        <p class="mt-3 mb-0">Get a tailored solution for your space.</p>
                     </div>
                 </div>
             </div>
@@ -713,47 +710,47 @@ $eres = $conn->query("SELECT * FROM event WHERE event_status = 1  ORDER BY year 
     <?php include 'includes/scripts.php'; ?>
 
 
-    <!-- Hero Slider & Video JS -->
+    <!-- Hero Slider JS -->
     <script>
-        // Carousel Script
         document.addEventListener('DOMContentLoaded', function() {
             const slides = document.querySelectorAll('.hero-slide');
+            const dotsWrap = document.querySelector('.sarl-hero-dots');
+            const delay = 5000;
             let currentSlide = 0;
+            let timer = null;
+            if (!slides.length) return;
 
-            function showNextSlide() {
+            // progress bars under the hero, one per slide
+            const dots = Array.from(slides).map(function(slide, i) {
+                const b = document.createElement('button');
+                b.type = 'button';
+                b.tabIndex = -1;
+                b.style.setProperty('--hero-delay', (delay / 1000) + 's');
+                b.addEventListener('click', function() { goTo(i); });
+                if (dotsWrap) dotsWrap.appendChild(b);
+                return b;
+            });
+
+            function goTo(i) {
                 slides[currentSlide].classList.remove('active');
-                currentSlide = (currentSlide + 1) % slides.length;
+                dots[currentSlide].classList.remove('is-active');
+                currentSlide = (i + slides.length) % slides.length;
                 slides[currentSlide].classList.add('active');
+                // restart the progress animation
+                void dots[currentSlide].offsetWidth;
+                dots[currentSlide].classList.add('is-active');
+                clearTimeout(timer);
+                timer = setTimeout(function() { goTo(currentSlide + 1); }, delay);
             }
 
-            setInterval(showNextSlide, 3000);
+            goTo(0);
         });
 
-        // Video Script
+        // Make sure the overview video keeps playing where autoplay is allowed
         document.addEventListener('DOMContentLoaded', function() {
-            const video = document.getElementById('sarlVideo');
-
-            video.play().catch(function(error) {
-                console.log("Video autoplay failed:", error);
-            });
-
-            video.addEventListener('ended', function() {
-                video.play();
-            });
-        });
-
-
-        //Navbar Script
-        document.addEventListener('DOMContentLoaded', function() {
-            const navbar = document.querySelector('.navbar');
-
-            window.addEventListener('scroll', function() {
-                if (window.scrollY > 50) {
-                    navbar.classList.add('sticky-nav');
-                } else {
-                    navbar.classList.remove('sticky-nav');
-                }
-            });
+            const video = document.querySelector('.sarl-video');
+            if (!video) return;
+            video.play().catch(function() {});
         });
     </script>
 

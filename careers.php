@@ -32,7 +32,8 @@
 
     <main>
         <!--Pageheader start-->
-        <section class="py-5 py-lg-8">
+        <section class="sarl-page-hero py-lg-9 py-7">
+            <span class="sarl-orbits" aria-hidden="true"></span>
             <div class="container">
                 <div class="row">
                     <div class="col-lg-8 offset-lg-2 col-md-12 col-12">
@@ -43,8 +44,8 @@
                                     We're always on the lookout for passionate and skilled individuals looking to contribute to our mission of excellence in aluminium fabrication and interior fit-outs. Think you have what it takes? You might belong at SARL.
                                 </p>
                             </div>
-                            <a href="#openPosition" class="btn btn-dark me-2">Open Positions</a>
-                            <a href="about.php" class="btn btn-outline-primary">Learn More About Us</a>
+                            <a href="#openPosition" class="btn btn-primary sarl-cta me-2">Open Positions</a>
+                            <a href="about.php" class="btn btn-outline-light rounded-pill">Learn More About Us</a>
                         </div>
                     </div>
                 </div>

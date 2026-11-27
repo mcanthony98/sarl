@@ -30,6 +30,9 @@
     <!-- Theme CSS -->
     <link rel="stylesheet" href="assets/css/theme.min.css">
 
+    <!-- SARL brand layer (header, logo, colours, case studies) -->
+    <link rel="stylesheet" href="assets/css/sarl-brand.css?v=2">
+
     <!-- Canonical URL (PHP-generated) -->
     <link rel="canonical" href="https://<?php echo $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']; ?>" />
 
@@ -118,6 +121,7 @@
    
 
 <?php
+if (!function_exists('slagify')) {
 function slagify($input) {
     // Convert the string to lowercase
     $lowercaseString = strtolower($input);
@@ -126,6 +130,7 @@ function slagify($input) {
     $formattedString = str_replace(' ', '-', $lowercaseString);
 
     return $formattedString;
+}
 }
 
 ?>

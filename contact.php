@@ -102,7 +102,8 @@
         <!--Page Content-->
         
         <!--Pageheader start-->
-        <section class="py-5 py-lg-8">
+        <section class="sarl-page-hero py-lg-9 py-7">
+            <span class="sarl-orbits" aria-hidden="true"></span>
             <div class="container">
                 <div class="row">
                     <div class="col-lg-6 offset-lg-1 col-md-12 col-12">

@@ -43,7 +43,8 @@
         <!--Page Content-->
 
         <!--Who we are start-->
-        <section class="mb-4 py-xl-5 py-5" data-cue="fadeIn">
+        <section class="sarl-page-hero mb-0 py-xl-9 py-6">
+            <span class="sarl-orbits" aria-hidden="true"></span>
             <div class="container pb-5">
                 <div class="row align-items-center g-4">
                     <div class="col-lg-6 col-md-12" data-cue="fadeIn" data-duration="1500">
@@ -59,9 +60,9 @@
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-12" data-cue="flipInX" data-duration="2000">
-                        <figure>
-                            <img src="assets/images/SARL.png" alt="About SARL" class="img-fluid rounded-3" />
-                        </figure>
+                        <div class="sarl-logo-hero sarl-brand">
+                            <?php sarl_logo(); ?>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -94,18 +95,19 @@
 
 
         <!--Our Core Values start-->
-        <section class="mt-1 mb-4">
+        <section class="py-lg-9 py-6">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-6 offset-lg-3 col-md-8 offset-md-2">
                         <div class="text-center mb-7" data-cue="slideInDown">
-                            <h2 class="mb-0">Our Core Values</h2>
+                            <span class="sarl-eyebrow">What drives us</span>
+                            <h2 class="mb-0 mt-3">Our Core Values</h2>
                         </div>
                     </div>
                 </div>
                 <div class="row g-lg-7 gy-5">
                     <div class="col-lg-3 col-md-6" data-cue="fadeIn" data-duration="500">
-                        <div class="mb-5 text-justified">
+                        <div class="sarl-card text-justified">
                             <i class="bi bi-people text-primary" style="font-size: 2rem;"></i>
                             <h4 class="mt-3">Our Clients</h4>
                             <p class="mb-0">
@@ -114,7 +116,7 @@
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-6" data-cue="fadeIn" data-duration="700">
-                        <div class="mb-5 text-justified">
+                        <div class="sarl-card text-justified">
                             <i class="bi bi-award text-primary" style="font-size: 2rem;"></i>
                             <h4 class="mt-3">Our Team</h4>
                             <p class="mb-0">
@@ -123,7 +125,7 @@
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-6" data-cue="fadeIn" data-duration="900">
-                        <div class="mb-5 text-justified">
+                        <div class="sarl-card text-justified">
                             <i class="bi bi-gear text-primary" style="font-size: 2rem;"></i>
                             <h4 class="mt-3">Our Suppliers</h4>
                             <p class="mb-0">
@@ -132,7 +134,7 @@
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-6" data-cue="fadeIn" data-duration="1100">
-                        <div class="mb-5 text-justified">
+                        <div class="sarl-card text-justified">
                             <i class="bi bi-people-fill text-primary" style="font-size: 2rem;"></i>
                             <h4 class="mt-3">Our Associates</h4>
                             <p class="mb-0">
@@ -146,25 +148,26 @@
         <!--Our Core Values end-->
 
         <!--Team member start-->
-        <section class="py-lg-9 py-5 bg-primary">
+        <section class="py-lg-9 py-6 sarl-section-navy position-relative overflow-hidden">
+            <span class="sarl-orbits" aria-hidden="true"></span>
             <div class="container">
                 <div class="row g-5">
                     <div class="col-md-4 col-6">
                         <div class="text-center" data-cue="slideInUp" data-duration="500">
-                            <h2 class="text-white-stable">35+</h2>
+                            <h2 class="text-white-stable display-5 fw-bold" data-count-to="35" data-suffix="+">35+</h2>
                             <h5 class="text-white-stable mb-0">Years of Experience</h5>
                         </div>
                     </div>
                     <div class="col-md-4 col-6">
                         <div class="text-center"  data-cue="slideInUp" data-duration="500">
-                            <h2 class="text-white-stable">300+</h2>
+                            <h2 class="text-white-stable display-5 fw-bold" data-count-to="300" data-suffix="+">300+</h2>
                             <h5 class="text-white-stable mb-0">Projects Done</h5>
                         </div>
                     </div>
                     <div class="col-md-4 col-6">
                         <div class="text-center"  data-cue="slideInUp" data-duration="500">
-                            <h2 class="text-white-stable">250+</h5>
-                                <h5 class="text-white-stable mb-0"> Clients</h5>
+                            <h2 class="text-white-stable display-5 fw-bold" data-count-to="250" data-suffix="+">250+</h2>
+                            <h5 class="text-white-stable mb-0">Clients</h5>
                         </div>
                     </div>
                 </div>
@@ -173,45 +176,36 @@
         <!--Team member end-->
 
           <!--our Partners-->
-  <section class="my-lg-9 my-5">
+  <section class="py-lg-9 py-6">
     <div class="container">
         <div class="row">
             <div class="col-lg-6">
                 <div class="mb-xl-7 mb-5">
-                    <h2 class="mb-3">Our Partners</h2>
+                    <span class="sarl-eyebrow">Working together</span>
+                    <h2 class="mb-3 mt-3">Our Partners</h2>
                 </div>
             </div>
         </div>
-        <div class="row g-6">
-            <div class="col-lg-4 col-md-6 col-12 ">
-                <figure class="text-center border border-lg shadow">
-                    <img src="assets/images/sarl-clients/39.png"
-                        alt="logo" style="max-width: 200px;" />
-                </figure>
-            </div>
+        <div class="row g-4">
+            <?php foreach ([39, 40, 41] as $p) { ?>
             <div class="col-lg-4 col-md-6 col-12">
-                <figure class="text-center border border-lg shadow">
-                    <img src="assets/images/sarl-clients/40.png"
-                        alt="logo" style="max-width: 200px;"  />
+                <figure class="sarl-partner">
+                    <img src="assets/images/sarl-clients/<?php echo $p; ?>.png" alt="Partner logo" style="max-width: 200px;" class="img-fluid" />
                 </figure>
             </div>
-            <div class="col-lg-4 col-md-12 col-12">
-                <figure class="text-center border border-lg shadow">
-                    <img src="assets/images/sarl-clients/41.png"
-                        alt="logo" style="max-width: 200px;"  />
-                </figure>
-            </div>
+            <?php } ?>
         </div>
     </div>
 </section>
 <!--our partners-->
 <!--Clients-->
-<section class="py-lg-9 py-6 bg-white">
+<section class="py-lg-9 py-6 sarl-section-mist-deep sarl-clients">
     <div class="container">
         <div class="row">
             <div class="col-lg-6">
                 <div class="mb-xl-7 mb-5">
-                    <h2 class="mb-3">Our Clients</h2>
+                    <span class="sarl-eyebrow">Trusted by</span>
+                    <h2 class="mb-3 mt-3">Our Clients</h2>
                 </div>
             </div>
         </div>
@@ -243,7 +237,7 @@
        
 
         <!--Behind the block start-->
-        <section class="mb-lg-9 mb-5 mt-2"  data-cue="slideInUp" data-duration="1500">
+        <section class="py-lg-9 py-6"  data-cue="slideInUp" data-duration="1500">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12 col-md-12">

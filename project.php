@@ -1,23 +1,44 @@
 <?php
 session_start();
 require "includes/connect.php";
+require "includes/case-studies.php";
 
+$id = isset($_GET['id']) ? (int) $_GET['id'] : 0;
 
-$id = $_GET['id'];
-$eres = $conn->query("SELECT * FROM event WHERE event_id = '$id'");
-$erow = $eres->fetch_assoc();
+$stmt = $conn->prepare("SELECT * FROM event WHERE event_id = ?");
+$stmt->bind_param('i', $id);
+$stmt->execute();
+$erow = $stmt->get_result()->fetch_assoc();
 
+if (!$erow) {
+    header('Location: projects.php');
+    exit;
+}
 
-$imgres = $conn->query("SELECT * FROM event_gallery WHERE event_id='$id' LIMIT 15");
+// Projects with a case study get the full case-study layout
+if (isset($CASE_STUDIES[$id])) {
+    $gallery = [];
+    $gstmt = $conn->prepare("SELECT image FROM event_gallery WHERE event_id = ? ORDER BY event_gallery_id");
+    $gstmt->bind_param('i', $id);
+    $gstmt->execute();
+    $gres = $gstmt->get_result();
+    while ($g = $gres->fetch_assoc()) {
+        $gallery[] = $g['image'];
+    }
+    include 'includes/case-study-view.php';
+    exit;
+}
+
+$imgres = $conn->query("SELECT * FROM event_gallery WHERE event_id = " . $id . " LIMIT 15");
 ?>
 <!doctype html>
 <html lang="en">
 
 
 <head>
-    <title><?php echo $erow['title'];?> <?php echo $erow['category'];?> Project | SARL</title>
+    <title><?php echo htmlspecialchars($erow['title'] . ' ' . $erow['category'], ENT_QUOTES, 'UTF-8');?> Project | SARL</title>
     
-    <meta name="description" content="Check out our completed <?php echo $erow['category'];?> project at <?php echo $erow['title'];?>">
+    <meta name="description" content="Check out our completed <?php echo htmlspecialchars($erow['category'] . ' project at ' . $erow['title'], ENT_QUOTES, 'UTF-8');?>">
     <!-- Head Content -->
     <?php include 'includes/head-content.php'; ?>
 
@@ -32,7 +53,7 @@ $imgres = $conn->query("SELECT * FROM event_gallery WHERE event_id='$id' LIMIT 1
 
          <!--Pageheader start-->
       <section class="py-10"
-         style="background-image: url(uploads/<?php echo $erow['cover_image'];?>); background-position: center; background-repeat: no-repeat; background-size: cover;filter: brightness(100%);">
+         style="background-image: url('uploads/<?php echo rawurlencode($erow['cover_image']);?>'); background-position: center; background-repeat: no-repeat; background-size: cover;filter: brightness(100%);">
          <div class="container py-lg-10">
             <div class="row" >
                <div class="col-lg-6 offset-lg-3 col-md-12 py-2" style="background-color: rgba(0, 0, 0, 0.3);">
@@ -138,7 +159,7 @@ $imgres = $conn->query("SELECT * FROM event_gallery WHERE event_id='$id' LIMIT 1
     </main>
 
     <!-- Footer -->
-    <?php //include 'includes/footer.php'; ?>
+    <?php include 'includes/footer.php'; ?>
 
     <!-- Image Modal -->
     <div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
@@ -159,9 +180,6 @@ $imgres = $conn->query("SELECT * FROM event_gallery WHERE event_id='$id' LIMIT 1
         </div>
     </div>
 
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
 
     <!-- Image Modal JS -->
     <script>

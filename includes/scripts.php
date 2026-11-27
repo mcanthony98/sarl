@@ -23,12 +23,16 @@
     <script src="assets/js/vendors/glight.js"></script>
     <script src="assets/js/vendors/tab-to-dropdown.js"></script>
 
+    <!-- SARL brand interactions -->
+    <script src="assets/js/sarl-brand.js?v=2"></script>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/masonry/4.2.2/masonry.pkgd.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js"></script>
 
     <script>
     document.addEventListener("DOMContentLoaded", function () {
         const grid = document.querySelector('#masonry-grid');
+        if (!grid) return;
         imagesLoaded(grid, function () {
             new Masonry(grid, {
                 itemSelector: '.col-sm-6',
